@@ -1,0 +1,20 @@
+[
+  {
+    "practice": "Cover Cropping and Green Manuring in Kerala",
+    "cropEn": "Cover Crops & Green Manure",
+    "cropMl": "മൂടുവിളകളും പച്ചിലവളങ്ങളും (Cover Crops)",
+    "varieties": ["Sunn hemp (ചണ)", "Daincha / Sesbania (ഡെയ്ഞ്ച)", "Cowpea / Yardlong bean (പയർ)", "Calopogonium mucunoides", "Mucuna bracteata", "Pueraria phaseoloides"],
+    "removalTimingEn": "When to remove or incorporate cover crops: 1) At flowering stage (45-50 days after sowing) when nitrogen content and green biomass are highest, before plants become fibrous or set seeds; 2) 2-3 weeks (15-20 days) before planting the main crop to allow proper decomposition and nutrient release in soil; 3) In plantations (Rubber, Coconut, Arecanut), slash/mow during peak summer (February-March) to create dry mulch for moisture conservation.",
+    "removalTimingMl": "മൂടുവിളകളും പച്ചിലവളങ്ങളും എപ്പോൾ വെട്ടിമാറ്റണം / മണ്ണിൽ ചേർക്കണം: 1) ചെടികൾ പൂവിടുന്ന ഘട്ടത്തിൽ (വിത്ത് വിതച്ച് 45-50 ദിവസത്തിൽ) - ഈ സമയത്താണ് ഏറ്റവും കൂടുതൽ നൈട്രജനും പച്ചില ജൈവാംശവും ലഭിക്കുന്നത്; 2) പ്രധാന വിള നടുന്നതിന് 2-3 ആഴ്ച (15-20 ദിവസം) മുമ്പ് മണ്ണിൽ ഉഴുതു ചേർക്കുക; 3) റബ്ബർ, തെങ്ങിൻ തോട്ടങ്ങളിൽ വേനൽക്കാലത്തിന് മുമ്പ് (ഫെബ്രുവരി-മാർച്ച്) വെട്ടി മണ്ണിന് മുകളിൽ പുതയായി ഇടുക.",
+    "benefitsEn": [
+      "Fixes atmospheric nitrogen (up to 40-80 kg N/ha)",
+      "Suppresses weeds and prevents topsoil erosion during heavy monsoon rains",
+      "Improves soil organic matter, water retention, and microbial activity"
+    ],
+    "benefitsMl": [
+      "അന്തരീക്ഷത്തിലെ നൈട്രജൻ മണ്ണിൽ സ്ഥിരീകരിക്കുന്നു (ഹെക്ടറിന് 40-80 കിലോഗ്രാം)",
+      "കളകളുടെ വളർച്ച തടയുകയും മഴക്കാലത്ത് മണ്ണൊലിപ്പ് തടയുകയും ചെയ്യുന്നു",
+      "മണ്ണിലെ ജൈവാംശവും ഈർപ്പവും വർദ്ധിപ്പിക്കുന്നു"
+    ]
+  }
+]

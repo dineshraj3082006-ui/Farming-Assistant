@@ -1,0 +1,1626 @@
+{
+  "Tomato___Early_blight": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Early Blight (Alternaria solani)",
+    "diseaseMl": "അലി സാറ്റ് ഫംഗസ് രോഗം / ഇലക്കരിച്ചിൽ",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Dark brown circular necrotic spots with characteristic concentric target-board rings on older foliage",
+      "Yellow chlorotic halo developing around the lesions",
+      "Lower leaves blighting, withering, and dropping prematurely",
+      "Dark sunken lesions on stems near soil level (collar rot stage)"
+    ],
+    "symptomsMl": [
+      "താഴത്തെ മൂത്ത ഇലകളിൽ കറുത്ത വളയങ്ങളോടുകൂടിയ പുള്ളികൾ",
+      "പാടുകൾക്ക് ചുറ്റും മഞ്ഞനിറം പടർന്നുപിടിക്കുന്നത്",
+      "ഇലകൾ കരിഞ്ഞ് ഉണങ്ങി അകാലത്തിൽ കൊഴിഞ്ഞു വീഴുന്നത്",
+      "തണ്ടിന്റെ ചുവട്ടിൽ കറുത്ത പാടുകൾ ഉണ്ടാവുന്നത്"
+    ],
+    "causesEn": [
+      "Alternaria solani fungal spores surviving in infected crop debris or solanaceous weeds",
+      "Prolonged leaf wetness combined with warm temperatures (24°C to 29°C)",
+      "High canopy humidity and splashing from overhead rain or sprinkler irrigation"
+    ],
+    "causesMl": [
+      "മണ്ണിലെ വിളാവശിഷ്ടങ്ങളിൽ അതിജീവിക്കുന്ന ആൾട്ടർനേരിയ ഫംഗസ്",
+      "അന്തരീക്ഷത്തിലെ അമിതമായ ഈർപ്പവും ചൂടും",
+      "ഇലകളിൽ വെള്ളം തെറിച്ചു വീഴുന്നത്"
+    ],
+    "immediateActionsEn": [
+      "Prune and destroy heavily infected lower leaves; do not compost diseased leaves",
+      "Sterilize pruning shears with 70% alcohol or 1% bleach between plants",
+      "Avoid handling wet plants to prevent spreading fungal spores"
+    ],
+    "immediateActionsMl": [
+      "രോഗം ബാധിച്ച താഴത്തെ ഇലകൾ ഉടൻ വെട്ടിമാറ്റി തീയിട്ടു നശിപ്പിക്കുക",
+      "കത്രികയോ കത്തികളോ അണുവിമുക്തമാക്കുക",
+      "നനഞ്ഞ ചെടികൾ തൊടുന്നത് ഒഴിവാക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Foliar spray of Pseudomonas fluorescens (20g/L) or Trichoderma viride (10g/L) every 10–14 days",
+      "Apply 5% Neem Seed Kernel Extract (NSKE) or Neem Oil emulsion (5ml/L with mild soap)",
+      "Drench root basin with fermented cow dung supernatant (20g/L filtered)"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് 20 ഗ്രാം ഒരു ലിറ്റർ വെള്ളത്തിൽ കലക്കി 10-14 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "5% വേപ്പെണ്ണ വെളുത്തുള്ളി മിശ്രിതം അല്ലെങ്കിൽ വേപ്പിൻ കുരു സത്ത് തളിക്കുക",
+      "ചുവട്ടിൽ ട്രൈക്കോഡെർമ ചേർത്ത ചാണകപ്പൊടി നൽകുക"
+    ],
+    "chemicalTreatmentEn": [
+      "In severe outbreaks, spray Mancozeb 75 WP (2g/L) or Copper Oxychloride 50 WP (3g/L) with sticker (0.5ml/L)",
+      "Ensure thorough spray coverage on both upper and lower leaf surfaces during dry weather",
+      "Always verify local label directions and maintain pre-harvest intervals (PHI)"
+    ],
+    "chemicalTreatmentMl": [
+      "രോഗം രൂക്ഷമാണെങ്കിൽ മാങ്കോസെബ് (2g/L) അല്ലെങ്കിൽ കോപ്പർ ഓക്സിക്ലോറൈഡ് (3g/L) തളിക്കുക",
+      "മഴയില്ലാത്ത തെളിഞ്ഞ കാലാവസ്ഥയിൽ ഇലയുടെ ഇരുവശങ്ങളിലും തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Practice 3-year crop rotation with non-solanaceous crops (e.g. cereals, legumes)",
+      "Provide wide plant spacing (60 cm x 50 cm) for optimal airflow and rapid canopy drying",
+      "Mulch soil around plants with straw or plastic to prevent soil-splash onto foliage",
+      "Use certified disease-free seeds or seedlings"
+    ],
+    "preventionMl": [
+      "തക്കാളി കൃഷിക്ക് ശേഷം പയർവർഗ്ഗങ്ങളോ ധാന്യങ്ങളോ കൃഷി ചെയ്യുക (വിള പരിക്രമണം)",
+      "ചെടികൾ തമ്മിൽ 60 സെ.മീ അകലം പാലിക്കുക",
+      "മണ്ണിൽ പുതയിട്ട് സംരക്ഷിക്കുക"
+    ],
+    "irrigationConsiderationsEn": "Always use drip irrigation or water the root basin directly. Never use overhead sprinklers which keep leaves wet for hours.",
+    "irrigationConsiderationsMl": "തുള്ളിനന രീതി ഉപയോഗിക്കുക അല്ലെങ്കിൽ ചുവട്ടിൽ മാത്രം വെള്ളം ഒഴിക്കുക. ഇലകളിൽ വെള്ളം തളിക്കരുത്.",
+    "sanitationEn": "Rake and burn crop residue after harvest. Disinfect stakes and support cages before reuse.",
+    "sanitationMl": "വിളവെടുപ്പിന് ശേഷം അവശിഷ്ടങ്ങൾ മുഴുവൻ തീയിട്ട് നശിപ്പിക്കുക. താങ്ങുകമ്പുകൾ അണുവിമുക്തമാക്കുക.",
+    "whenToSeekExpertHelpEn": "If stem lesions or fruit rot affect more than 20% of the crop, immediately consult your local Krishi Bhavan Agricultural Officer.",
+    "whenToSeekExpertHelpMl": "തോട്ടത്തിലെ 20% ചെടികളിൽ കൂടുതൽ രോഗം പടർന്നാൽ കൃഷിഭവനിലെ കൃഷി ഓഫീസറുമായി ബന്ധപ്പെടുക.",
+    "audioSummaryEn": "Tomato Early Blight detected. Prune infected lower leaves immediately, spray Pseudomonas fluorescens at 20 grams per liter, and avoid overhead watering.",
+    "audioSummaryMl": "തക്കാളിയിൽ അലി സാറ്റ് ഫംഗസ് രോഗം കണ്ടെത്തി. രോഗം ബാധിച്ച താഴത്തെ ഇലകൾ നീക്കം ചെയ്തു സ്യൂഡോമോണസ് 20 ഗ്രാം ഒരു ലിറ്റർ വെള്ളത്തിൽ തളിക്കുക."
+  },
+
+  "Tomato___Bacterial_spot": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Bacterial Spot (Xanthomonas vesicatoria)",
+    "diseaseMl": "തക്കാളിയിലെ ബാക്ടീരിയൽ പുള്ളി രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small, dark, water-soaked circular lesions on leaves and stems",
+      "Lesions turning greasy black with angular borders",
+      "Crabby, blister-like raised scab spots on green tomato fruits",
+      "Severe premature defoliation leading to sun-scald on exposed fruits"
+    ],
+    "symptomsMl": [
+      "ഇലകളിലും തണ്ടുകളിലും ചെറിയ കറുത്ത നനഞ്ഞ പുള്ളികൾ",
+      "പുള്ളികൾ കറുത്തു കരിഞ്ഞ് അരികുകൾ വളയുന്നത്",
+      "പച്ച തക്കാളിക്കായകളിൽ ചിരങ്ങ് പോലുള്ള പാടുകൾ",
+      "ഇലകൾ കൊഴിഞ്ഞുപോയി കായ്കളിൽ വെയിൽ തട്ടി കേടുവരുന്നത്"
+    ],
+    "causesEn": [
+      "Xanthomonas campestris pv. vesicatoria bacteria introduced via infected seed or rain splash",
+      "Warm, wet weather (25°C - 30°C) with frequent rain or overhead sprinkler watering"
+    ],
+    "causesMl": [
+      "വിത്ത് വഴിയോ മഴവെള്ളം തെറിച്ചോ പകരുന്ന സാന്തോമോണാസ് ബാക്ടീരിയ",
+      "അന്തരീക്ഷത്തിലെ ചൂടും ഈർപ്പവും"
+    ],
+    "immediateActionsEn": [
+      "Remove severely infected leaves during dry weather",
+      "Do not touch or cultivate crops while leaves are wet",
+      "Sanitize all garden tools and stakes"
+    ],
+    "immediateActionsMl": [
+      "രോഗബാധിതമായ ഇലകൾ ഉണങ്ങിയ കാലാവസ്ഥയിൽ മാറ്റി നശിപ്പിക്കുക",
+      "ഇലകൾ നനഞ്ഞിരിക്കുമ്പോൾ പണി ചെയ്യരുത്"
+    ],
+    "organicTreatmentEn": [
+      "Foliar spray of Pseudomonas fluorescens (20g/L) at 7–10 day intervals",
+      "Apply Bordeaux Mixture 1% (10g copper sulphate + 10g lime per 1L water) with sticker",
+      "Seed treatment with hot water at 50°C for 25 minutes prior to nursery sowing"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് (20g/L) ആഴ്ചയിലൊരിക്കൽ തളിക്കുക",
+      "1% ബോർഡോ മിശ്രിതം ഇലകളിൽ തളിക്കുക",
+      "വിത്ത് നടുന്നതിന് മുൻപ് ചൂടുവെള്ളത്തിൽ (50°C) 25 മിനിറ്റ് മുക്കി വെക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Copper Oxychloride 50 WP (2.5g/L) combined with Streptocycline (1g in 10L water) during active spread",
+      "Follow manufacturer dosage and safety precautions"
+    ],
+    "chemicalTreatmentMl": [
+      "കോപ്പർ ഓക്സിക്ലോറൈഡ് (2.5g/L) സ്ട്രെപ്റ്റോസൈക്ലിൻ (1g/10L) ചേർത്ത് തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Plant certified disease-free seeds and disease-resistant tomato hybrids",
+      "Implement a minimum 2-year rotation away from peppers and tomatoes",
+      "Ensure proper row spacing for rapid morning drying"
+    ],
+    "preventionMl": [
+      "പ്രതിരോധ ശേഷിയുള്ള വിത്തിനങ്ങളും ഗുണമേന്മയുള്ള തൈകളും നടുക",
+      "വിള പരിക്രമണം നടത്തുക"
+    ],
+    "irrigationConsiderationsEn": "Use furrow or drip irrigation to keep plant foliage completely dry.",
+    "irrigationConsiderationsMl": "ചുവട്ടിൽ മാത്രം വെള്ളം നനയ്ക്കുക.",
+    "sanitationEn": "Plow under or destroy all solanaceous plant residues immediately after harvesting.",
+    "sanitationMl": "വിളവെടുപ്പിന് ശേഷം തോട്ടം വൃത്തിയാക്കുക.",
+    "whenToSeekExpertHelpEn": "If bacterial spots spread aggressively during early flowering, consult agricultural officers for bactericide guidance.",
+    "whenToSeekExpertHelpMl": "പൂവിടുന്ന സമയത്ത് രോഗം പടരുകയാണെങ്കിൽ കൃഷി വിദഗ്ദ്ധരെ കാണുക.",
+    "audioSummaryEn": "Tomato Bacterial Spot detected. Avoid overhead watering, spray 1% Bordeaux Mixture or Pseudomonas fluorescens, and destroy diseased foliage.",
+    "audioSummaryMl": "തക്കാളിയിൽ ബാക്ടീരിയൽ പുള്ളി രോഗം കണ്ടെത്തി. ഇലകളിൽ വെള്ളം തളിക്കാതെ 1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ സ്യൂഡോമോണസ് തളിക്കുക."
+  },
+
+  "Tomato___Late_blight": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Late Blight (Phytophthora infestans)",
+    "diseaseMl": "തക്കാളിയിലെ ലേറ്റ് ബ്ലൈറ്റ് / ചീയൽ രോഗം",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Large, irregular water-soaked pale green lesions rapidly expanding across leaves",
+      "Lesions turning dark purplish-brown with delicate white downy fungal growth on leaf undersides",
+      "Greasy dark brown rot on stems and large leathery brown blotches on green fruits",
+      "Rapid total plant collapse and foul decaying odor in cool wet conditions"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ വേഗത്തിൽ പടരുന്ന ഇരുണ്ട നനഞ്ഞ പാടുകൾ",
+      "ഇലകളുടെ അടിവശത്ത് വെളുത്ത പൂപ്പൽ വളർച്ച",
+      "തണ്ടുകളിലും കായ്കളിലും തവിട്ടുനിറത്തിലുള്ള ചീയൽ",
+      "ചെടികൾ മുഴുവനായി ചീഞ്ഞു നശിക്കുന്നത്"
+    ],
+    "causesEn": [
+      "Phytophthora infestans oomycete pathogen thriving in cool, overcast, high humidity (>90%) conditions",
+      "Airborne sporangia travelling long distances during monsoon and fog"
+    ],
+    "causesMl": [
+      "തണുത്ത ഈർപ്പമുള്ള കാലാവസ്ഥയിൽ പടരുന്ന ഫൈറ്റോഫ്ത്തോറ പൂപ്പൽ",
+      "മൺസൂൺ മഴക്കാലത്തെ തുടർച്ചയായ നനവ്"
+    ],
+    "immediateActionsEn": [
+      "Bag and destroy heavily blighted plants immediately; do NOT leave in open field",
+      "Improve airflow and stop all overhead irrigation"
+    ],
+    "immediateActionsMl": [
+      "രോഗം രൂക്ഷമായ ചെടികൾ പിഴുതു മാറ്റി കത്തിക്കുക",
+      "തോട്ടത്തിലെ ഈർപ്പം കുറയ്ക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Preventive foliar spray of 1% Bordeaux Mixture before monsoon showers",
+      "Spray Pseudomonas fluorescens (20g/L) mixed with Trichoderma harzianum",
+      "Apply copper hydroxide / copper soap bio-fungicides"
+    ],
+    "organicTreatmentMl": [
+      "മഴക്കാലത്തിന് മുൻപായി 1% ബോർഡോ മിശ്രിതം തളിക്കുക",
+      "സ്യൂഡോമോണസ് ലായനി തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Apply Cymoxanil 8% + Mancozeb 64% WP (2g/L) or Metalaxyl-M 4% + Mancozeb 64% WP (2g/L) immediately upon first symptom appearance",
+      "Alternate chemical classes to prevent fungicide resistance"
+    ],
+    "chemicalTreatmentMl": [
+      "മെറ്റലാക്സിൽ മാങ്കോസെബ് മിശ്രിതം (Metalaxyl-Mancozeb 2g/L) തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Plant resistant varieties with Ph-2 / Ph-3 resistance genes",
+      "Eliminate cull piles, volunteer potato/tomato plants within 500m of field",
+      "Increase planting distance to 75cm between rows"
+    ],
+    "preventionMl": [
+      "പ്രതിരോധ ഇനങ്ങൾ നടുക, തൈകൾ തമ്മിൽ അകലം വർദ്ധിപ്പിക്കുക"
+    ],
+    "irrigationConsiderationsEn": "Strictly utilize drip systems and irrigate early in the morning so sun quickly evaporates any accidental surface wetness.",
+    "irrigationConsiderationsMl": "രാവിലെ മാത്രം ചുവട്ടിൽ നനയ്ക്കുക.",
+    "sanitationEn": "Burn all infected plant residues; Phytophthora can overwinter in living host tissue.",
+    "sanitationMl": "ചീഞ്ഞ ഇലകളും കായ്കളും തോട്ടത്തിൽ ഉപേക്ഷിക്കാതെ നശിപ്പിക്കുക.",
+    "whenToSeekExpertHelpEn": "Late Blight is an aggressive community-level pathogen. Notify your local Krishi Bhavan immediately upon detection.",
+    "whenToSeekExpertHelpMl": "ലേറ്റ് ബ്ലൈറ്റ് അതിവേഗം പടരുന്നതിനാൽ ഉടൻ കൃഷിഭവനിൽ അറിയിക്കുക.",
+    "audioSummaryEn": "Late Blight detected. This is a critical pathogen. Remove severely infected plants, spray Metalaxyl-Mancozeb or 1% Bordeaux Mixture, and cease sprinkler irrigation.",
+    "audioSummaryMl": "തക്കാളിയിൽ ലേറ്റ് ബ്ലൈറ്റ് രോഗം കണ്ടെത്തി. കേടായ ഭാഗങ്ങൾ മാറ്റി ഉടനടി ബോർഡോ മിശ്രിതമോ ഫംഗിസൈഡോ തളിക്കുക."
+  },
+
+  "Tomato___Leaf_Mold": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Leaf Mold (Passalora fulva)",
+    "diseaseMl": "തക്കാളിയിലെ ഇലപ്പൂപ്പൽ രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Pale green to yellowish chlorotic spots on upper leaf surfaces with indistinct margins",
+      "Dense, olive-green to velvety brown velvety fungal mold on lower leaf surfaces beneath spots",
+      "Infected leaves curling, withering, and dropping prematurely"
+    ],
+    "symptomsMl": [
+      "ഇലയുടെ മുകൾഭാഗത്ത് ഇളം മഞ്ഞ പാടുകൾ",
+      "ഇലയുടെ അടിഭാഗത്ത് പച്ച കലർന്ന തവിട്ടുനിറത്തിലുള്ള വെൽവെറ്റ് പൂപ്പൽ",
+      "ഇലകൾ ചുരുണ്ട് ഉണങ്ങി വീഴുന്നത്"
+    ],
+    "causesEn": [
+      "Passalora fulva (Cladosporium fulvum) fungus in high relative humidity (>85%) and 21°C–24°C temperatures",
+      "Poor ventilation in greenhouses, polyhouses, or dense field canopies"
+    ],
+    "causesMl": [
+      "പോളിഹൗസിലോ തോട്ടത്തിലോ ഉള്ള അമിത വായുമർദ്ദവും ഈർപ്പവും"
+    ],
+    "immediateActionsEn": [
+      "Prune lower suckers and dense foliage to maximize canopy air circulation",
+      "Ventilate polyhouses to lower relative humidity below 80%"
+    ],
+    "immediateActionsMl": [
+      "താഴത്തെ ഇലകൾ വെട്ടിമാറ്റി കാറ്റും വെളിച്ചവും കിട്ടാൻ സൗകര്യമൊരുക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Foliar spray of Potassium Bicarbonate (5g/L) or Baking Soda with horticultural oil",
+      "Spray Pseudomonas fluorescens (20g/L) or Bacillus subtilis bio-fungicide",
+      "Apply 1% Bordeaux mixture on lower leaf surfaces"
+    ],
+    "organicTreatmentMl": [
+      "പൊട്ടാസ്യം ബൈകാർബണേറ്റ് (5g/L) അല്ലെങ്കിൽ സ്യൂഡോമോണസ് തളിക്കുക",
+      "1% ബോർഡോ മിശ്രിതം ഇലയുടെ അടിയിൽ തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Chlorothalonil 75 WP (2g/L) or Azoxystrobin 23 SC (1ml/L) as per label instructions"
+    ],
+    "chemicalTreatmentMl": [
+      "ക്ലോറോതലോനിൽ (2g/L) ഇലകളിൽ തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Use resistant tomato hybrids (Cf resistance gene series)",
+      "Ensure minimum 60cm row spacing and install exhaust fans in protected structures"
+    ],
+    "preventionMl": [
+      "നല്ല വായുസഞ്ചാരം ഉറപ്പാക്കുക, പ്രതിരോധ ഇനങ്ങൾ ഉപയോഗിക്കുക"
+    ],
+    "irrigationConsiderationsEn": "Drip irrigate early in the morning to allow soil surface to dry before evening.",
+    "irrigationConsiderationsMl": "തുള്ളിനന രീതി മാത്രം ഉപയോഗിക്കുക.",
+    "sanitationEn": "Disinfect polyhouse structures and stakes with 10% sodium hypochlorite between crop cycles.",
+    "sanitationMl": "പോളിഹൗസ് കൃഷിയിടം പൂർണ്ണമായി അണുവിമുക്തമാക്കുക.",
+    "whenToSeekExpertHelpEn": "If leaf mold persists despite ventilation improvement, consult polyhouse agronomy specialists.",
+    "whenToSeekExpertHelpMl": "പോളിഹൗസിൽ രോഗം നിയന്ത്രണവിധേയമല്ലെങ്കിൽ കൃഷി ഉദ്യോഗസ്ഥരെ സമീപിക്കുക.",
+    "audioSummaryEn": "Tomato Leaf Mold detected. Increase air ventilation, lower humidity, prune dense bottom leaves, and apply Pseudomonas or Potassium Bicarbonate spray.",
+    "audioSummaryMl": "തക്കാളിയിൽ ഇലപ്പൂപ്പൽ രോഗം കണ്ടെത്തി. വായുസഞ്ചാരം കൂട്ടി ഇലയുടെ അടിയിൽ സ്യൂഡോമോണസ് ലായനി തളിക്കുക."
+  },
+
+  "Tomato___healthy": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "No Disease Detected (Healthy Plant)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള തക്കാളി ചെടി)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": [
+      "Vibrant uniform green foliage with no necrotic or chlorotic spots",
+      "Strong turgid stems and vigorous vegetative growth",
+      "No fungal sporulation, bacterial slime, or pest damage"
+    ],
+    "symptomsMl": [
+      "നല്ല പച്ചനിറവും തുടിപ്പുമുള്ള ഇലകൾ",
+      "പാടുകളോ കേടുകളോ ഇല്ലാത്ത തണ്ടും ഇലകളും",
+      "ചെടി പൂർണ്ണ ആരോഗ്യത്തോടെ വളരുന്നു"
+    ],
+    "causesEn": ["Optimal agronomic care, balanced nutrition, and good hygiene."],
+    "causesMl": ["ശരിയായ പരിചരണവും വളപ്രയോഗവും."],
+    "immediateActionsEn": ["No chemical or therapeutic intervention needed. Continue standard cultural practices."],
+    "immediateActionsMl": ["മരുന്നുകൾ തളിക്കേണ്ടതില്ല. പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": [
+      "Apply preventive foliar sprays of Panchagavya (3%) or Jiwamrita every 15 days to sustain vigor",
+      "Top-dress with well-rotted vermicompost (250g per plant) every month"
+    ],
+    "organicTreatmentMl": [
+      "പഞ്ചഗവ്യം (3%) അല്ലെങ്കിൽ ജീവാമൃതം 15 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "മാസത്തിലൊരിക്കൽ ചുവട്ടിൽ മണ്ണിരക്കമ്പോസ്റ്റ് നൽകുക"
+    ],
+    "chemicalTreatmentEn": ["No chemical pesticides or fungicides required. Maintain balanced NPK nutrition."],
+    "chemicalTreatmentMl": ["രാസകീടനാശിനികൾ ആവശ്യമില്ല."],
+    "preventionEn": [
+      "Maintain weekly inspections for early detection of pests like whiteflies and mites",
+      "Keep soil mulched to preserve root zone moisture and prevent weed competition"
+    ],
+    "preventionMl": [
+      "ആഴ്ചയിലൊരിക്കൽ ഇലകളുടെ അടിവശം നിരീക്ഷിക്കുക, ചുവട്ടിൽ പുതയിടുക"
+    ],
+    "irrigationConsiderationsEn": "Water regularly at the root zone (approx 2.5 cm water per week) depending on temperature and soil drainage.",
+    "irrigationConsiderationsMl": "ആവശ്യത്തിന് മാത്രം ചുവട്ടിൽ നനയ്ക്കുക.",
+    "sanitationEn": "Keep field free of solanaceous weeds (e.g. nightshade) which harbor viruses.",
+    "sanitationMl": "ചെടികൾക്ക് ചുറ്റുമുള്ള കളകൾ നീക്കം ചെയ്യുക.",
+    "whenToSeekExpertHelpEn": "Routine consultation with Krishi Bhavan during regular crop advisory meetings.",
+    "whenToSeekExpertHelpMl": "പതിവ് കാർഷിക സംശയങ്ങൾക്ക് കൃഷിഭവൻ സന്ദർശിക്കുക.",
+    "audioSummaryEn": "Your tomato plant is healthy with no diseases detected! Keep up the good work with balanced nutrition and proper watering.",
+    "audioSummaryMl": "നിങ്ങളുടെ തക്കാളി ചെടി തികച്ചും ആരോഗ്യവത്താണ്! പതിവ് പരിചരണവും ജൈവവളങ്ങളും നൽകുന്നത് തുടരുക."
+  },
+
+  "Pepper__bell___Bacterial_spot": {
+    "cropEn": "Bell Pepper / Capsicum",
+    "cropMl": "ക്യാപ്സിക്കം / മുളക് (Pepper)",
+    "diseaseEn": "Bacterial Spot (Xanthomonas euvesicatoria)",
+    "diseaseMl": "ക്യാപ്സിക്കത്തിലെ ബാക്ടീരിയൽ ഇലപ്പുള്ളി രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small, yellow-green circular lesions on leaves rapidly turning dark brown with pale centers",
+      "Severe lower leaf yellowing and premature defoliation leaving stems bare",
+      "Rough, blistered, raised warty scabs on pepper fruit skins"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ മഞ്ഞ കലർന്ന പച്ച പാടുകൾ കറുത്ത പുള്ളികളാകുന്നത്",
+      "ഇലകൾ വേഗത്തിൽ കൊഴിഞ്ഞു തണ്ട് മാത്രമാവുന്നത്",
+      "കായ്കളിൽ ചിരങ്ങ് പോലുള്ള തടിപ്പുകൾ"
+    ],
+    "causesEn": [
+      "Xanthomonas bacterial pathogen spread via contaminated seed lots and splashing rain",
+      "Warm temperatures (24°C - 30°C) with persistent foliar moisture"
+    ],
+    "causesMl": [
+      "സാന്തോമോണാസ് ബാക്ടീരിയ വഴിയുള്ള അണുബാധ",
+      "മഴക്കാലത്തെ അമിതമായ നനവ്"
+    ],
+    "immediateActionsEn": [
+      "Prune affected lower leaves during dry sunny afternoons",
+      "Do not cultivate or prune crops while plants are wet"
+    ],
+    "immediateActionsMl": [
+      "കേടായ ഇലകൾ ഉണങ്ങിയ സമയത്ത് വെട്ടി മാറ്റുക"
+    ],
+    "organicTreatmentEn": [
+      "Foliar spray of 1% Bordeaux Mixture (10g copper sulphate + 10g lime/L water)",
+      "Apply Pseudomonas fluorescens (20g/L) bio-agent weekly to colonize leaf surfaces",
+      "Hot-water seed treatment at 50°C for 25 minutes before nursery sowing"
+    ],
+    "organicTreatmentMl": [
+      "1% ബോർഡോ മിശ്രിതം ഇലകളിൽ തളിക്കുക",
+      "സ്യൂഡോമോണസ് (20g/L) ആഴ്ചയിലൊരിക്കൽ തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Copper Oxychloride 50 WP (2.5g/L) mixed with Streptocycline (1g in 10L water) upon early detection",
+      "Follow product safety guidelines"
+    ],
+    "chemicalTreatmentMl": [
+      "കോപ്പർ ഓക്സിക്ലോറൈഡ് (2.5g/L) സ്ട്രെപ്റ്റോസൈക്ലിൻ ചേർത്ത് തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Plant certified resistant bell pepper varieties",
+      "Implement a 3-year crop rotation avoiding tomato, potato, and eggplant"
+    ],
+    "preventionMl": [
+      "പ്രതിരോധ ഇനങ്ങൾ കൃഷി ചെയ്യുക, വിള പരിക്രമണം നടത്തുക"
+    ],
+    "irrigationConsiderationsEn": "Strictly utilize drip irrigation to keep pepper leaves completely dry.",
+    "irrigationConsiderationsMl": "തുള്ളിനന രീതി മാത്രം ഉപയോഗിക്കുക.",
+    "sanitationEn": "Thoroughly incorporate or destroy crop debris following harvest.",
+    "sanitationMl": "വിളവെടുപ്പിന് ശേഷം അവശിഷ്ടങ്ങൾ നശിപ്പിക്കുക.",
+    "whenToSeekExpertHelpEn": "If fruit lesions develop on more than 15% of crop, seek guidance from local horticulture experts.",
+    "whenToSeekExpertHelpMl": "കായ്കളിൽ രോഗം പടരുകയാണെങ്കിൽ കൃഷി ഓഫീസറെ ബന്ധപ്പെടുക.",
+    "audioSummaryEn": "Bell Pepper Bacterial Spot detected. Avoid overhead watering, spray 1% Bordeaux Mixture or Pseudomonas fluorescens, and remove diseased leaves.",
+    "audioSummaryMl": "ക്യാപ്സിക്കത്തിൽ ബാക്ടീരിയൽ ഇലപ്പുള്ളി രോഗം കണ്ടെത്തി. ഇലകളിൽ വെള്ളം തളിക്കാതെ ബോർഡോ മിശ്രിതമോ സ്യൂഡോമോണസോ തളിക്കുക."
+  },
+
+  "Pepper__bell___healthy": {
+    "cropEn": "Bell Pepper / Capsicum",
+    "cropMl": "ക്യാപ്സിക്കം / മുളക് (Pepper)",
+    "diseaseEn": "No Disease Detected (Healthy Plant)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള ക്യാപ്സിക്കം)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": [
+      "Glossy, dark green, intact leaves without spotting or distortion",
+      "Healthy branching with active vegetative and flowering nodes",
+      "No pest feeding signs or fungal blotches"
+    ],
+    "symptomsMl": [
+      "നല്ല തിളക്കമുള്ള പച്ച ഇലകൾ",
+      "കേടുകളോ പുള്ളികളോ ഇല്ലാത്ത ചെടി",
+      "പൂക്കളും കായ്കളും ആരോഗ്യത്തോടെ കാണപ്പെടുന്നു"
+    ],
+    "causesEn": ["Balanced management, optimal sun exposure, and good disease prevention."],
+    "causesMl": ["മികച്ച പരിചരണം."],
+    "immediateActionsEn": ["Maintain regular fertilization and scouting."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": [
+      "Foliar spray of 3% Panchagavya or Fish Amino Acid every 14 days",
+      "Apply 5% Neem Oil Garlic Emulsion periodically to repel sap-sucking thrips and aphids"
+    ],
+    "organicTreatmentMl": [
+      "പഞ്ചഗവ്യം (3%) അല്ലെങ്കിൽ മീൻ അമിനോ ആസിഡ് 14 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "വേപ്പെണ്ണ വെളുത്തുള്ളി മിശ്രിതം തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": ["No chemical fungicides or bactericides required."],
+    "chemicalTreatmentMl": ["രാസവളങ്ങളോ കീടനാശിനികളോ ആവശ്യമില്ല."],
+    "preventionEn": ["Install blue and yellow sticky traps to capture vector pests early."],
+    "preventionMl": ["മഞ്ഞക്കെണികളും നീലക്കെണികളും സ്ഥാപിക്കുക."],
+    "irrigationConsiderationsEn": "Maintain steady, even soil moisture to avoid blossom end rot.",
+    "irrigationConsiderationsMl": "മണ്ണിൽ പാകത്തിന് നനവ് നിലനിർത്തുക.",
+    "sanitationEn": "Keep beds weed-free to prevent harboring insect vectors.",
+    "sanitationMl": "കളകൾ മാറ്റി തടം വൃത്തിയായി സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Routine visits to local Krishi Bhavan for seasonal inputs.",
+    "whenToSeekExpertHelpMl": "സാധാരണ കാർഷിക ഉപദേശങ്ങൾക്ക് കൃഷിഭവനെ സമീപിക്കുക.",
+    "audioSummaryEn": "Your bell pepper plant is completely healthy! Continue regular organic care and pest monitoring.",
+    "audioSummaryMl": "നിങ്ങളുടെ ക്യാപ്സിക്കം ചെടി തികച്ചും ആരോഗ്യവത്താണ്! ജൈവ പരിചരണവും നനയും തുടരുക."
+  },
+
+  "Potato___Early_blight": {
+    "cropEn": "Potato",
+    "cropMl": "ഉരുളക്കിഴങ്ങ് (Potato)",
+    "diseaseEn": "Early Blight (Alternaria solani)",
+    "diseaseMl": "ഉരുളക്കിഴങ്ങിലെ ഏർലി ബ്ലൈറ്റ് / ഇലക്കരിച്ചിൽ",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small brown to black spots with concentric rings creating target-board appearance on older leaves",
+      "Surrounding tissue turns chlorotic yellow",
+      "Brown corky dry rot lesions on harvested potato tubers"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ വളയങ്ങളോടുകൂടിയ കറുത്ത പാടുകൾ",
+      "പാടുകൾക്ക് ചുറ്റും മഞ്ഞനിറം പടരുന്നത്",
+      "കിഴങ്ങുകളിൽ വരണ്ട കറുത്ത പാടുകൾ"
+    ],
+    "causesEn": [
+      "Alternaria solani surviving on potato debris and solanaceous weeds in warm humid weather"
+    ],
+    "causesMl": [
+      "ആൾട്ടർനേരിയ ഫംഗസ് പൂപ്പൽ"
+    ],
+    "immediateActionsEn": ["Remove severely diseased lower leaves and bury or burn them."],
+    "immediateActionsMl": ["രോഗം ബാധിച്ച ഇലകൾ നശിപ്പിക്കുക."],
+    "organicTreatmentEn": [
+      "Foliar spray of Pseudomonas fluorescens (20g/L) or Trichoderma viride (10g/L)",
+      "Apply 5% Neem Seed Kernel Extract (NSKE)"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് (20g/L) അല്ലെങ്കിൽ ട്രൈക്കോഡെർമ തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Mancozeb 75 WP (2g/L) or Copper Oxychloride 50 WP (3g/L) at 10-day intervals"
+    ],
+    "chemicalTreatmentMl": [
+      "മാങ്കോസെബ് (2g/L) തളിക്കുക"
+    ],
+    "preventionEn": ["Practice 3-year crop rotation, use certified disease-free seed tubers, and hill potatoes properly."],
+    "preventionMl": ["വിള പരിക്രമണം നടത്തുക, സാക്ഷ്യപ്പെടുത്തിയ വിത്ത് കിഴങ്ങുകൾ ഉപയോഗിക്കുക."],
+    "irrigationConsiderationsEn": "Use furrow or drip irrigation; avoid late afternoon overhead watering.",
+    "irrigationConsiderationsMl": "ചുവട്ടിൽ മാത്രം നനയ്ക്കുക.",
+    "sanitationEn": "Destroy volunteer potato plants and vine residues after harvest.",
+    "sanitationMl": "വിളവെടുപ്പിന് ശേഷം തോട്ടം വൃത്തിയാക്കുക.",
+    "whenToSeekExpertHelpEn": "Consult agricultural officers if tuber rot exceeds 5% at harvest.",
+    "whenToSeekExpertHelpMl": "കിഴങ്ങുകളിൽ രോഗം കാണുകയാണെങ്കിൽ കൃഷി ഓഫീസറെ സമീപിക്കുക.",
+    "audioSummaryEn": "Potato Early Blight detected. Remove infected leaves, spray Pseudomonas fluorescens or Mancozeb, and avoid overhead watering.",
+    "audioSummaryMl": "ഉരുളക്കിഴങ്ങിൽ ഏർലി ബ്ലൈറ്റ് രോഗം കണ്ടെത്തി. കേടായ ഇലകൾ മാറ്റി സ്യൂഡോമോണസ് തളിക്കുക."
+  },
+
+  "Potato___Late_blight": {
+    "cropEn": "Potato",
+    "cropMl": "ഉരുളക്കിഴങ്ങ് (Potato)",
+    "diseaseEn": "Late Blight (Phytophthora infestans)",
+    "diseaseMl": "ഉരുളക്കിഴങ്ങിലെ ലേറ്റ് ബ്ലൈറ്റ് / കരിച്ചിൽ രോഗം",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Dark, water-soaked expanding lesions on leaves and petioles",
+      "White cottony fungal growth on underside of leaves in moist weather",
+      "Brown granular rot extending into tuber flesh"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ നനഞ്ഞ കറുത്ത വലിയ പാടുകൾ",
+      "ഇലയുടെ അടിയിൽ വെളുത്ത പൂപ്പൽ വളർച്ച",
+      "കിഴങ്ങിന്റെ ഉൾഭാഗം തവിട്ടുനിറമായി ചീയുന്നത്"
+    ],
+    "causesEn": [
+      "Phytophthora infestans pathogen proliferating in cool (10°C-20°C), wet, foggy conditions"
+    ],
+    "causesMl": [
+      "തണുപ്പും ഈർപ്പവുമുള്ള കാലാവസ്ഥയിലെ ഫൈറ്റോഫ്ത്തോറ പൂപ്പൽ"
+    ],
+    "immediateActionsEn": ["Immediately destroy severely infected plants to prevent field-wide devastation."],
+    "immediateActionsMl": ["രോഗം ബാധിച്ച ചെടികൾ ഉടനടി പിഴുതു നശിപ്പിക്കുക."],
+    "organicTreatmentEn": [
+      "Preventive spray of 1% Bordeaux Mixture before monsoon onset",
+      "Spray Pseudomonas fluorescens (20g/L)"
+    ],
+    "organicTreatmentMl": [
+      "1% ബോർഡോ മിശ്രിതം തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Metalaxyl-M 4% + Mancozeb 64% WP (2g/L) or Cymoxanil + Mancozeb (2g/L) immediately upon first symptom"
+    ],
+    "chemicalTreatmentMl": [
+      "മെറ്റലാക്സിൽ മാങ്കോസെബ് (2g/L) തളിക്കുക"
+    ],
+    "preventionEn": ["Plant certified blight-resistant varieties and maintain high soil ridges over developing tubers."],
+    "preventionMl": ["പ്രതിരോധ ഇനങ്ങൾ നടുക, കിഴങ്ങുകൾക്ക് മുകളിൽ മണ്ണ് കൂട്ടിയിടുക."],
+    "irrigationConsiderationsEn": "Avoid overhead watering. Keep foliage dry.",
+    "irrigationConsiderationsMl": "ഇലകളിൽ വെള്ളം വീഴാതെ നനയ്ക്കുക.",
+    "sanitationEn": "Kill potato vines 2 weeks prior to harvest to prevent spore transfer to tubers.",
+    "sanitationMl": "വിളവെടുപ്പിന് രണ്ടാഴ്ച മുൻപ് വള്ളികൾ ഉണക്കുക.",
+    "whenToSeekExpertHelpEn": "Report immediately to Krishi Bhavan as Late Blight causes rapid epidemic spread.",
+    "whenToSeekExpertHelpMl": "ഉടൻ കൃഷിഭവനിൽ അറിയിക്കുക.",
+    "audioSummaryEn": "Potato Late Blight detected. This is a critical disease. Apply Metalaxyl-Mancozeb or Bordeaux Mixture immediately and destroy diseased vines.",
+    "audioSummaryMl": "ഉരുളക്കിഴങ്ങിൽ ലേറ്റ് ബ്ലൈറ്റ് രോഗം കണ്ടെത്തി. ഉടനടി ബോർഡോ മിശ്രിതമോ ഫംഗിസൈഡോ തളിക്കുക."
+  },
+
+  "Potato___healthy": {
+    "cropEn": "Potato",
+    "cropMl": "ഉരുളക്കിഴങ്ങ് (Potato)",
+    "diseaseEn": "No Disease Detected (Healthy Plant)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള ഉരുളക്കിഴങ്ങ് ചെടി)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": [
+      "Vigorous green foliage with upright stems and intact leaf margins",
+      "No foliar blighting, spots, or tuber soft rot"
+    ],
+    "symptomsMl": [
+      "നല്ല പച്ചനിറമുള്ള ഇലകളും കരുത്തുള്ള തണ്ടും",
+      "പാടുകളോ ചീയലോ ഇല്ലാത്ത അവസ്ഥ"
+    ],
+    "causesEn": ["Optimal agronomic care and disease prevention."],
+    "causesMl": ["മികച്ച പരിചരണം."],
+    "immediateActionsEn": ["Continue standard nutrition and earthing up."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": ["Apply regular bio-fertilizers and vermicompost."],
+    "organicTreatmentMl": ["ജൈവവളങ്ങൾ നൽകുക."],
+    "chemicalTreatmentEn": ["No chemical fungicides required."],
+    "chemicalTreatmentMl": ["രാസവളങ്ങൾ ആവശ്യമില്ല."],
+    "preventionEn": ["Hill soil around plants to protect developing tubers from sunlight and blight spores."],
+    "preventionMl": ["ചെടിയുടെ ചുവട്ടിൽ മണ്ണ് കൂട്ടിയിടുക."],
+    "irrigationConsiderationsEn": "Maintain steady moisture during tuber initiation.",
+    "irrigationConsiderationsMl": "ആവശ്യത്തിന് നനയ്ക്കുക.",
+    "sanitationEn": "Keep potato rows free of weeds.",
+    "sanitationMl": "കളകൾ നീക്കം ചെയ്യുക.",
+    "whenToSeekExpertHelpEn": "Regular agricultural center consultations.",
+    "whenToSeekExpertHelpMl": "പതിവ് സംശയങ്ങൾക്ക് കൃഷിഭവനെ സമീപിക്കുക.",
+    "audioSummaryEn": "Your potato crop is completely healthy! Keep earthing up soil and maintain regular care.",
+    "audioSummaryMl": "നിങ്ങളുടെ ഉരുളക്കിഴങ്ങ് ചെടി തികച്ചും ആരോഗ്യവത്താണ്! പതിവ് പരിചരണവും മണ്ണ് കൂട്ടലും തുടരുക."
+  },
+
+  "Corn_(maize)___Common_rust_": {
+    "cropEn": "Corn / Maize",
+    "cropMl": "ചോളം (Maize / Corn)",
+    "diseaseEn": "Common Rust (Puccinia sorghi)",
+    "diseaseMl": "ചോളത്തിലെ തുരുമ്പ് രോഗം (Common Rust)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Cinnamon-brown to golden powdery pustules (uredinia) scattered on both upper and lower leaf surfaces",
+      "Pustules rupture leaf epidermis to release powdery orange-brown spores",
+      "Leaves yellowing and drying prematurely under heavy infection"
+    ],
+    "symptomsMl": [
+      "ഇലയുടെ ഇരുവശങ്ങളിലും തവിട്ടുനിറത്തിലുള്ള പൊടി രൂപത്തിലുള്ള തടിപ്പുകൾ",
+      "തടിപ്പുകൾ പൊട്ടി തുരുമ്പ് പോലുള്ള പൊടി പുറത്തുവരുന്നത്",
+      "ഇലകൾ നേരത്തെ ഉണങ്ങി കരിയുന്നത്"
+    ],
+    "causesEn": [
+      "Puccinia sorghi fungus spores transported on wind currents during moderate temperatures (16°C–25°C) and high humidity"
+    ],
+    "causesMl": [
+      "കാറ്റ് വഴി പകരുന്ന പുക്സീനിയ പൂപ്പൽ"
+    ],
+    "immediateActionsEn": ["Inspect field to assess percentage of leaf area affected on upper canopy."],
+    "immediateActionsMl": ["ഇലകളിലെ രോഗബാധയുടെ തോത് പരിശോധിക്കുക."],
+    "organicTreatmentEn": [
+      "Foliar spray of Pseudomonas fluorescens (20g/L) or Bacillus subtilis",
+      "Apply 5% Neem Seed Kernel Extract (NSKE)"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് (20g/L) അല്ലെങ്കിൽ വേപ്പെണ്ണ മിശ്രിതം തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Azoxystrobin 18.2% + Difenoconazole 11.4% SC (1ml/L) or Mancozeb 75 WP (2g/L) if rust appears before silking on upper leaves"
+    ],
+    "chemicalTreatmentMl": [
+      "മാങ്കോസെബ് (2g/L) തളിക്കുക"
+    ],
+    "preventionEn": ["Plant rust-resistant hybrid corn cultivars with Rp resistance genes and avoid late planting."],
+    "preventionMl": ["പ്രതിരോധ ഇനങ്ങൾ കൃഷി ചെയ്യുക."],
+    "irrigationConsiderationsEn": "Avoid excessive overhead sprinkler irrigation in late afternoon.",
+    "irrigationConsiderationsMl": "വൈകുന്നേരങ്ങളിൽ ഇലകളിൽ വെള്ളം തളിക്കുന്നത് ഒഴിവാക്കുക.",
+    "sanitationEn": "Plow under crop residues after harvest to reduce local spore reservoirs.",
+    "sanitationMl": "വിളവെടുപ്പിന് ശേഷം തോട്ടം ഉഴുതു മറിക്കുക.",
+    "whenToSeekExpertHelpEn": "If rust pustules cover more than 10% of the ear leaf before tassel emergence, consult agricultural officers.",
+    "whenToSeekExpertHelpMl": "പൂവിടുന്നതിന് മുൻപ് രോഗം പടർന്നാൽ കൃഷി ഓഫീസറെ സമീപിക്കുക.",
+    "audioSummaryEn": "Corn Common Rust detected. If infection is early, spray Mancozeb or Pseudomonas fluorescens and avoid evening overhead irrigation.",
+    "audioSummaryMl": "ചോളത്തിൽ തുരുമ്പ് രോഗം കണ്ടെത്തി. സ്യൂഡോമോണസോ മാങ്കോസെബോ തളിക്കുക."
+  },
+
+  "Corn_(maize)___healthy": {
+    "cropEn": "Corn / Maize",
+    "cropMl": "ചോളം (Maize / Corn)",
+    "diseaseEn": "No Disease Detected (Healthy Maize)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള ചോളം)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": [
+      "Deep green, robust broad leaves with clear intact veins and vigorous stalk development",
+      "No fungal rust pustules, leaf blights, or smut galling"
+    ],
+    "symptomsMl": [
+      "നല്ല പച്ചനിറമുള്ള വീതിയേറിയ ഇലകളും കരുത്തുള്ള തണ്ടും",
+      "പാടുകളോ തുരുമ്പോ ഇല്ലാത്ത അവസ്ഥ"
+    ],
+    "causesEn": ["Balanced fertilizer management, sufficient sunlight, and healthy soil."],
+    "causesMl": ["മികച്ച പരിചരണം."],
+    "immediateActionsEn": ["Continue standard fertilization and weeding schedule."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": ["Apply regular organic compost and bio-fertilizers like Azospirillum."],
+    "organicTreatmentMl": ["അസോസ്പൈറില്ലം പോലുള്ള ജൈവവളങ്ങൾ നൽകുക."],
+    "chemicalTreatmentEn": ["No fungicides required."],
+    "chemicalTreatmentMl": ["രാസവളങ്ങൾ ആവശ്യമില്ല."],
+    "preventionEn": ["Monitor regularly for fall armyworm and stem borer pests."],
+    "preventionMl": ["പടയപ്പുഴുവിനെതിരെ നിരീക്ഷണം നടത്തുക."],
+    "irrigationConsiderationsEn": "Ensure critical watering during tasseling and silking stages.",
+    "irrigationConsiderationsMl": "പൂവിടുന്ന സമയത്ത് കൃത്യമായി നനയ്ക്കുക.",
+    "sanitationEn": "Maintain clean inter-row spaces free of grassy weeds.",
+    "sanitationMl": "തോട്ടം കളകളില്ലാതെ സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Routine consultation at Krishi Bhavan.",
+    "whenToSeekExpertHelpMl": "പതിവ് സംശയങ്ങൾക്ക് കൃഷിഭവൻ സന്ദർശിക്കുക.",
+    "audioSummaryEn": "Your maize crop is healthy and growing strongly! Maintain proper irrigation during flowering.",
+    "audioSummaryMl": "നിങ്ങളുടെ ചോളവിള തികച്ചും ആരോഗ്യവത്താണ്! പൂവിടുന്ന സമയത്ത് കൃത്യമായി നനയ്ക്കുക."
+  },
+
+  "Apple___Apple_scab": {
+    "cropEn": "Apple",
+    "cropMl": "ആപ്പിൾ (Apple)",
+    "diseaseEn": "Apple Scab (Venturia inaequalis)",
+    "diseaseMl": "ആപ്പിളിലെ സ്കാബ് / പുള്ളി രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Olive-green to brown velvety circular lesions with feathery borders on leaves",
+      "Leaves turning yellow, puckering, and dropping prematurely",
+      "Dark, scabby, corky cracked lesions on apple fruit skin"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ പച്ച കലർന്ന തവിട്ടുനിറത്തിലുള്ള പാടുകൾ",
+      "ഇലകൾ മഞ്ഞനിറമായി കൊഴിയുന്നത്",
+      "കായ്കളിൽ കറുത്ത ചിരങ്ങ് പോലുള്ള പാടുകൾ"
+    ],
+    "causesEn": ["Venturia inaequalis fungus overwintering on fallen leaves; activated during cool, rainy spring weather"],
+    "causesMl": ["തണുപ്പും മഴയുമുള്ള കാലാവസ്ഥയിലെ വെഞ്ചൂറിയ പൂപ്പൽ"],
+    "immediateActionsEn": ["Prune diseased twigs and rake up fallen leaves beneath the tree canopy."],
+    "immediateActionsMl": ["വീണുകിടക്കുന്ന ഇലകൾ കൂട്ടിയിട്ട് നശിപ്പിക്കുക."],
+    "organicTreatmentEn": [
+      "Spray 1% Bordeaux Mixture or Copper Hydroxide before bud break",
+      "Apply Lime Sulphur or Neem Oil spray"
+    ],
+    "organicTreatmentMl": ["1% ബോർഡോ മിശ്രിതം തളിക്കുക"],
+    "chemicalTreatmentEn": [
+      "Apply Captan 50 WP (2g/L) or Difenoconazole 25 EC (0.5ml/L) during pink bud and petal fall stages"
+    ],
+    "chemicalTreatmentMl": ["ഡൈഫെനൊകൊണസോൾ അല്ലെങ്കിൽ കാപ്റ്റാൻ തളിക്കുക"],
+    "preventionEn": ["Plant scab-resistant cultivars and prune canopy to maximize sunlight penetration."],
+    "preventionMl": ["പ്രതിരോധ ഇനങ്ങൾ നടുക, കൊമ്പുകൾ കോതുക."],
+    "irrigationConsiderationsEn": "Avoid overhead sprinkler systems; utilize under-canopy micro-drip.",
+    "irrigationConsiderationsMl": "ചുവട്ടിൽ മാത്രം നനയ്ക്കുക.",
+    "sanitationEn": "Spray urea (5%) on fallen autumn leaves to accelerate leaf breakdown.",
+    "sanitationMl": "ഇലകൾ വേഗത്തിൽ ദ്രവിക്കാൻ നടപടി സ്വീകരിക്കുക.",
+    "whenToSeekExpertHelpEn": "Consult fruit pathology specialists if fruit scab affects commercial grade.",
+    "whenToSeekExpertHelpMl": "കായ്കളിൽ രോഗം കൂടിയാൽ കൃഷി വിദഗ്ദ്ധരെ കാണുക.",
+    "audioSummaryEn": "Apple Scab detected. Rake and destroy fallen leaves, prune canopy for airflow, and apply Captan or Bordeaux Mixture spray.",
+    "audioSummaryMl": "ആപ്പിളിൽ സ്കാബ് രോഗം കണ്ടെത്തി. വീണ ഇലകൾ നശിപ്പിച്ച് ബോർഡോ മിശ്രിതം തളിക്കുക."
+  },
+
+  "Apple___Black_rot": {
+    "cropEn": "Apple",
+    "cropMl": "ആപ്പിൾ (Apple)",
+    "diseaseEn": "Black Rot (Botryosphaeria obtusa)",
+    "diseaseMl": "ആപ്പിളിലെ ബ്ലാക്ക് റോട്ട് / കറുത്ത ചീയൽ",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Frog-eye leaf spots: small purple specks expanding into circular lesions with light tan centers and purple margins",
+      "Firm, leathery rotting fruit with concentric black rings, eventually shriveling into mummies",
+      "Sunken cankers on branches and limbs"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ തവളക്കണ്ണു പോലുള്ള പാടുകൾ",
+      "കായ്കൾ കറുത്തു ചീഞ്ഞു ഉണങ്ങുന്നത്",
+      "കൊമ്പുകളിൽ വ്രണങ്ങൾ ഉണ്ടാവുന്നത്"
+    ],
+    "causesEn": ["Botryosphaeria obtusa fungus surviving in dead wood, mummified fruits, and bark cankers"],
+    "causesMl": ["ഉണങ്ങിയ കൊമ്പുകളിൽ ജീവിക്കുന്ന പൂപ്പൽ"],
+    "immediateActionsEn": ["Prune out all dead wood, branch cankers, and remove dried mummified fruits."],
+    "immediateActionsMl": ["ഉണങ്ങിയ കൊമ്പുകളും ചീഞ്ഞ പഴങ്ങളും മുറിച്ചു മാറ്റുക."],
+    "organicTreatmentEn": ["Spray 1% Bordeaux Mixture or Copper soap during dormant season."],
+    "organicTreatmentMl": ["ബോർഡോ മിശ്രിതം തളിക്കുക."],
+    "chemicalTreatmentEn": ["Apply Captan 50 WP (2g/L) or Mancozeb (2g/L) from pink bud through harvest."],
+    "chemicalTreatmentMl": ["കാപ്റ്റാൻ അല്ലെങ്കിൽ മാങ്കോസെബ് തളിക്കുക."],
+    "preventionEn": ["Control apple insects that wound fruits and avoid trunk injury during pruning."],
+    "preventionMl": ["കീടങ്ങൾ കായ്കളെ മുറിവേൽപ്പിക്കാതെ നോക്കുക."],
+    "irrigationConsiderationsEn": "Ensure adequate soil moisture to prevent drought stress that weakens bark.",
+    "irrigationConsiderationsMl": "ആവശ്യത്തിന് നന നൽകുക.",
+    "sanitationEn": "Burn all pruned cankered wood immediately.",
+    "sanitationMl": "മുറിച്ചു മാറ്റിയ കൊമ്പുകൾ കത്തിക്കുക.",
+    "whenToSeekExpertHelpEn": "Consult orchard extension officers if limb cankers threaten main scaffold branches.",
+    "whenToSeekExpertHelpMl": "തായ്ത്തടിയിലേക്ക് രോഗം പടർന്നാൽ കൃഷി ഓഫീസറെ സമീപിക്കുക.",
+    "audioSummaryEn": "Apple Black Rot detected. Prune cankered wood and mummified fruits, and apply protective Captan or Mancozeb fungicide.",
+    "audioSummaryMl": "ആപ്പിളിൽ ബ്ലാക്ക് റോട്ട് കണ്ടെത്തി. ഉണങ്ങിയ കൊമ്പുകൾ നീക്കം ചെയ്ത് ഫംഗിസൈഡ് തളിക്കുക."
+  },
+
+  "Apple___healthy": {
+    "cropEn": "Apple",
+    "cropMl": "ആപ്പിൾ (Apple)",
+    "diseaseEn": "No Disease Detected (Healthy Apple)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള ആപ്പിൾ മരം)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": ["Lush green leaves, healthy fruit spurs, and clear unblemished bark."],
+    "symptomsMl": ["നല്ല പച്ചപ്പുള്ള ഇലകളും കരുത്തുള്ള കൊമ്പുകളും."],
+    "causesEn": ["Optimal orchard management and balanced nutrition."],
+    "causesMl": ["മികച്ച തോട്ടം പരിചരണം."],
+    "immediateActionsEn": ["Continue standard orchard pruning and nutrition."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": ["Apply dormant horticultural oil sprays to prevent mites."],
+    "organicTreatmentMl": ["ജൈവ പരിചരണം തുടരുക."],
+    "chemicalTreatmentEn": ["No fungicides required."],
+    "chemicalTreatmentMl": ["രാസവളങ്ങൾ ആവശ്യമില്ല."],
+    "preventionEn": ["Maintain annual pruning to preserve open canopy sunlight."],
+    "preventionMl": ["കൊമ്പുകൾ കൃത്യമായി കോതുക."],
+    "irrigationConsiderationsEn": "Maintain uniform basin irrigation during fruit development.",
+    "irrigationConsiderationsMl": "കൃത്യമായി നനയ്ക്കുക.",
+    "sanitationEn": "Keep orchard floor mowed and free of fallen debris.",
+    "sanitationMl": "തോട്ടം വൃത്തിയായി സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Routine seasonal horticulture visits.",
+    "whenToSeekExpertHelpMl": "പതിവ് കാർഷിക ഉപദേശം തേടുക.",
+    "audioSummaryEn": "Your apple tree is completely healthy! Continue regular orchard management and pruning.",
+    "audioSummaryMl": "നിങ്ങളുടെ ആപ്പിൾ മരം തികച്ചും ആരോഗ്യവത്താണ്! പതിവ് പരിചരണം തുടരുക."
+  },
+
+  "Grape___Black_rot": {
+    "cropEn": "Grape",
+    "cropMl": "മുന്തിരി (Grape)",
+    "diseaseEn": "Black Rot (Guignardia bidwellii)",
+    "diseaseMl": "മുന്തിരിയിലെ ബ്ലാക്ക് റോട്ട് / കറുത്ത ചീയൽ",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small, circular reddish-brown spots with dark borders on leaves with tiny black fungal pycnidia",
+      "Soft water-soaked rotting berries rapidly turning hard, shriveled, and wrinkled blue-black mummies",
+      "Black oval lesions on young shoots and petioles"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ ചുവപ്പ് കലർന്ന തവിട്ടുനിറമുള്ള പുള്ളികൾ",
+      "മുന്തിരിങ്ങകൾ ചുരുങ്ങി കറുത്തുണങ്ങി ഉണക്കമുന്തിരി പോലെ ആകുന്നത്",
+      "തണ്ടുകളിൽ കറുത്ത പാടുകൾ"
+    ],
+    "causesEn": ["Guignardia bidwellii fungus overwintering on cane lesions and mummified berries"],
+    "causesMl": ["അന്തരീക്ഷ ഈർപ്പത്തിൽ പടരുന്ന പൂപ്പൽ രോഗം"],
+    "immediateActionsEn": ["Remove and burn all shriveled mummified grape clusters and diseased shoots."],
+    "immediateActionsMl": ["ചീഞ്ഞ മുന്തിരിക്കുലകൾ മാറ്റി നശിപ്പിക്കുക."],
+    "organicTreatmentEn": ["Spray 1% Bordeaux Mixture or Copper Hydroxide from early shoot growth."],
+    "organicTreatmentMl": ["1% ബോർഡോ മിശ്രിതം തളിക്കുക."],
+    "chemicalTreatmentEn": ["Apply Mancozeb 75 WP (2g/L) or Myclobutanil 10 WP (0.5g/L) at 10-14 day intervals from bud break through fruit set."],
+    "chemicalTreatmentMl": ["മാങ്കോസെബ് (2g/L) തളിക്കുക."],
+    "preventionEn": ["Prune grapevines to promote open canopy and rapid airflow."],
+    "preventionMl": ["മുന്തിരിവള്ളികൾ പന്തലിൽ കൃത്യമായി കോതി ഒതുക്കുക."],
+    "irrigationConsiderationsEn": "Use drip irrigation under trellis; avoid overhead irrigation.",
+    "irrigationConsiderationsMl": "ചുവട്ടിൽ മാത്രം നനയ്ക്കുക.",
+    "sanitationEn": "Strip all mummies from vines during winter pruning.",
+    "sanitationMl": "ഉണങ്ങിയ പഴങ്ങൾ വള്ളിയിൽ അവശേഷിപ്പിക്കാതെ നീക്കം ചെയ്യുക.",
+    "whenToSeekExpertHelpEn": "If berry rot affects more than 10% of clusters, consult viticulture specialists.",
+    "whenToSeekExpertHelpMl": "കുലകളിൽ രോഗം കൂടിയാൽ കൃഷി വിദഗ്ദ്ധരെ കാണുക.",
+    "audioSummaryEn": "Grape Black Rot detected. Remove shriveled mummified berries, prune for air circulation, and spray Mancozeb or 1% Bordeaux Mixture.",
+    "audioSummaryMl": "മുന്തിരിയിൽ ബ്ലാക്ക് റോട്ട് കണ്ടെത്തി. ഉണങ്ങിയ കുലകൾ നീക്കം ചെയ്തു ബോർഡോ മിശ്രിതമോ മാങ്കോസെബോ തളിക്കുക."
+  },
+
+  "Grape___healthy": {
+    "cropEn": "Grape",
+    "cropMl": "മുന്തിരി (Grape)",
+    "diseaseEn": "No Disease Detected (Healthy Grapevine)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള മുന്തിരിവള്ളി)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": ["Broad, deep green leaves with vibrant tendrils and clean clusters."],
+    "symptomsMl": ["നല്ല പച്ചനിറമുള്ള ഇലകളും തളിരുകളും."],
+    "causesEn": ["Good trellis management and balanced vine nutrition."],
+    "causesMl": ["മികച്ച പന്തൽ പരിചരണം."],
+    "immediateActionsEn": ["Maintain regular canopy training and shoot positioning."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": ["Apply foliar seaweed extract or bio-stimulants every 2 weeks."],
+    "organicTreatmentMl": ["ജൈവവളങ്ങൾ നൽകുക."],
+    "chemicalTreatmentEn": ["No fungicides required."],
+    "chemicalTreatmentMl": ["രാസവളങ്ങൾ ആവശ്യമില്ല."],
+    "preventionEn": ["Regularly remove excess leaves around fruit zones for optimal light."],
+    "preventionMl": ["കുലകൾക്ക് ചുറ്റും വെളിച്ചം ഉറപ്പാക്കാൻ ഇലകൾ ഒതുക്കുക."],
+    "irrigationConsiderationsEn": "Regulate drip watering carefully during veraison.",
+    "irrigationConsiderationsMl": "പാകത്തിന് നനയ്ക്കുക.",
+    "sanitationEn": "Keep vineyard floor free of wild weeds.",
+    "sanitationMl": "തോട്ടം കളകളില്ലാതെ സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Routine seasonal viticulture advice.",
+    "whenToSeekExpertHelpMl": "പതിവ് കാർഷിക ഉപദേശങ്ങൾ തേടുക.",
+    "audioSummaryEn": "Your grapevine is healthy with no diseases detected! Keep up good vine canopy management.",
+    "audioSummaryMl": "നിങ്ങളുടെ മുന്തിരിവള്ളി തികച്ചും ആരോഗ്യവത്താണ്! പതിവ് പരിചരണം തുടരുക."
+  },
+
+  "Rice___False_Smut": {
+    "cropEn": "Rice / Paddy",
+    "cropMl": "നെല്ല് (Paddy / Rice)",
+    "diseaseEn": "Paddy False Smut (Ustilaginoidea virens)",
+    "diseaseMl": "നെല്ലിലെ മഞ്ഞക്കരിരോഗം / കരിമ്പുള്ളി (False Smut)",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Individual rice grains in the panicle transforming into large, velvety yellow-orange spore balls",
+      "Spore masses gradually turning dark olive-green or powdery black at maturity",
+      "Premature panicle chalkiness and severe grain yield / milling quality loss",
+      "Chaffy panicles with infected floral organs"
+    ],
+    "symptomsMl": [
+      "നെൽക്കതിരിലെ മണികൾ വലുതായി മഞ്ഞനിറത്തിലുള്ള പഞ്ഞിപോലുള്ള ഉണ്ടകളായി മാറുന്നത്",
+      "പിന്നീട് ഇവ ഇരുണ്ട പച്ചയോ കറുപ്പോ നിറമായി കരിഞ്ഞുപൊടിയുന്നത് (കരിമ്പുള്ളി)",
+      "കതിരുകൾ പതിരായി പോകുന്നതും വിളവ് ഗണ്യമായി കുറയുന്നതും",
+      "ധാന്യത്തിന്റെ ഗുണനിലവാരം നഷ്ടപ്പെടുന്നത്"
+    ],
+    "causesEn": [
+      "Ustilaginoidea virens fungal spores infecting florets during the flowering/booting stage",
+      "Excessive nitrogen fertilizer application and continuous rainy/humid weather during heading",
+      "High relative humidity (>90%) and temperatures between 25°C to 30°C"
+    ],
+    "causesMl": [
+      "പൂവിടുന്ന സമയത്ത് കതിരുകളെ ബാധിക്കുന്ന ഫംഗസ് രോഗാണുക്കൾ",
+      "അമിതമായ യൂറിയ (നൈട്രജൻ) പ്രയോഗവും അന്തരീക്ഷത്തിലെ കൂടിയ ഈർപ്പവും",
+      "മഴയും മൂടിക്കെട്ടിയ അന്തരീക്ഷവും രോഗം അതിവേഗം പടർത്തുന്നു"
+    ],
+    "immediateActionsEn": [
+      "Carefully remove and destroy infected smutted panicles in a plastic bag before harvest to avoid spore spread in the field",
+      "Avoid handling wet infected plants during morning dew hours"
+    ],
+    "immediateActionsMl": [
+      "രോഗം ബാധിച്ച കതിരുകൾ ഒരു പ്ലാസ്റ്റിക് കവറിലിട്ട് പൊതിഞ്ഞ് പറിച്ചു മാറ്റി തീയിട്ട് നശിപ്പിക്കുക",
+      "പാടത്ത് രോഗം പടരാതിരിക്കാൻ മണിപൊഴിയാതെ ശ്രദ്ധിക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Spray 2% Pseudomonas fluorescens (20g/L) during early boot leaf and 50% flowering stages",
+      "Apply 5% Neem Seed Kernel Extract (NSKE) or Neem oil garlic emulsion (5ml/L)",
+      "Apply bio-control Trichoderma viride enriched farmyard manure during land preparation"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് 20 ഗ്രാം ഒരു ലിറ്റർ വെള്ളത്തിൽ കലക്കി കതിരുവരുന്ന ഘട്ടത്തിൽ തളിക്കുക",
+      "5% വേപ്പിൻകുരു സത്തോ വേപ്പെണ്ണ-വെളുത്തുള്ളി മിശ്രിതമോ തളിക്കുക",
+      "നിലമൊരുക്കുമ്പോൾ ട്രൈക്കോഡെർമ ചേർത്ത ചാണകം നൽകുക"
+    ],
+    "chemicalTreatmentEn": [
+      "At early booting stage (before panicle emergence), spray Propiconazole 25 EC (1ml/L) or Copper Hydroxide 77 WP (2g/L)",
+      "Alternatively spray Tebuconazole 50% + Trifloxystrobin 25% WG (0.4g/L) at flag leaf stage",
+      "Follow strict pre-harvest intervals and Kerala Agricultural University POP guidelines"
+    ],
+    "chemicalTreatmentMl": [
+      "കതിര് വരുന്നതിന് തൊട്ടുമുമ്പ് പ്രൊപ്പികൊനാസോൾ (1ml/L) അല്ലെങ്കിൽ കോപ്പർ ഹൈഡ്രോക്സൈഡ് (2g/L) തളിക്കുക",
+      "ടെബുകോനാസോൾ മിശ്രിതം (0.4g/L) ഫ്ലാഗ് ഇല ഘട്ടത്തിൽ തളിക്കുന്നത് രോഗം തടയും"
+    ],
+    "preventionEn": [
+      "Use certified disease-free seeds and treat seeds with Pseudomonas fluorescens (10g/kg seed)",
+      "Avoid split application of excess nitrogen fertilizers; ensure balanced potassium (potash) nutrition",
+      "Practice clean field sanitation and deep summer plowing to bury fungal sclerotia"
+    ],
+    "preventionMl": [
+      "വിത്ത് സ്യൂഡോമോണസ് 10 ഗ്രാം ചേർത്ത് വിത്തുചികിത്സ നടത്തുക",
+      "യൂറിയയുടെ അമിത ഉപയോഗം ഒഴിവാക്കി പൊട്ടാഷ് വളങ്ങൾ കൃത്യമായി നൽകുക",
+      "വേനൽക്കാലത്ത് ആഴത്തിൽ ഉഴുതുമറിച്ച് നിലം വെയിലുകൊള്ളിക്കുക"
+    ],
+    "irrigationConsiderationsEn": "Avoid stagnant standing water during grain filling; practice intermittent alternate wetting and drying.",
+    "irrigationConsiderationsMl": "കതിര് പാകമാകുമ്പോൾ പാടത്ത് വെള്ളം കെട്ടിക്കിടക്കാതെ നിയന്ത്രിച്ചു നനയ്ക്കുക.",
+    "sanitationEn": "Burn crop stubble after harvest in severely infected plots and clear border grasses.",
+    "sanitationMl": "കൊയ്ത്തിന് ശേഷം പാടത്തെ അവശിഷ്ടങ്ങൾ കത്തിക്കുക, വരമ്പിലെ പുല്ലുകൾ ചെത്തി വൃത്തിയാക്കുക.",
+    "whenToSeekExpertHelpEn": "If smut balls are visible across more than 5% of tillers, immediately contact your local Krishi Bhavan Agricultural Officer.",
+    "whenToSeekExpertHelpMl": "പാടത്ത് കരിമ്പുള്ളി രോഗം വ്യാപകമായാൽ കൃഷിഭവനിലെ കൃഷി ഓഫീസറുമായി ബന്ധപ്പെടുക.",
+    "audioSummaryEn": "Paddy False Smut detected. Carefully remove infected panicles, apply Propiconazole or Pseudomonas fluorescens at 20 grams per liter, and avoid excessive nitrogen.",
+    "audioSummaryMl": "നെല്ലിൽ മഞ്ഞക്കരിരോഗം / കരിമ്പുള്ളി കണ്ടെത്തി. രോഗബാധയുള്ള കതിരുകൾ മാറ്റി സ്യൂഡോമോണസ് തളിക്കുക, അമിതമായ യൂറിയ ഉപയോഗം ഒഴിവാക്കുക."
+  },
+
+  "Rice___Leaf_Blast": {
+    "cropEn": "Rice / Paddy",
+    "cropMl": "നെല്ല് (Paddy / Rice)",
+    "diseaseEn": "Paddy Leaf Blast (Magnaporthe oryzae)",
+    "diseaseMl": "നെല്ലിലെ പോളരോഗം & ഇലക്കരിച്ചിൽ (Leaf Blast)",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Spindle-shaped or eye-shaped diamond lesions with brown margins and grey/whitish centers on leaves",
+      "Lesions enlarging and coalescing to cause complete drying and blighting of foliage",
+      "Neck blast causing blackening and breakage of the panicle neck, resulting in chaffy upright ears",
+      "Node blast causing blackening and rot at lower plant nodes"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ കണ്ണുകളുടെ ആകൃതിയിലുള്ള പുള്ളികൾ (മധ്യത്തിൽ ചാരനിറവും അരികുകളിൽ തവിട്ടുനിറവും)",
+      "പുള്ളികൾ തമ്മിൽ ചേർന്ന് ഇലകൾ മുഴുവനായി കരിഞ്ഞുണങ്ങിപ്പോവുന്നത് (ഇലക്കരിച്ചിൽ)",
+      "കതിരിന്റെ കഴുത്ത് കറുത്ത് ഒടിഞ്ഞു വീഴുന്നത് (കഴുത്തുരോഗം / Neck Blast)",
+      "കതിരുകൾ പതിരായി തൂങ്ങിക്കിടക്കുന്നത്"
+    ],
+    "causesEn": [
+      "Magnaporthe oryzae (Pyricularia oryzae) fungus airborne conidia infecting foliage in cloudy rainy weather",
+      "High humidity (>90%) with cool night temperatures (20–24°C) and dew formation",
+      "Heavy application of nitrogenous fertilizers without adequate potash"
+    ],
+    "causesMl": [
+      "പൈറിക്കുലേറിയ ഫംഗസ് രോഗാണുക്കൾ അന്തരീക്ഷത്തിലെ ഈർപ്പത്തിലൂടെ പടരുന്നത്",
+      "മൂടിക്കെട്ടിയ അന്തരീക്ഷവും രാത്രിയിലെ തണുപ്പും മഞ്ഞുവീഴ്ചയും",
+      "യൂറിയ വളങ്ങൾ അമിതമായി നൽകുന്നത്"
+    ],
+    "immediateActionsEn": [
+      "Drain excess standing water from the field temporarily for 24-48 hours",
+      "Withhold nitrogen (urea) top-dressing until disease symptoms subside"
+    ],
+    "immediateActionsMl": [
+      "പാടത്തെ വെള്ളം വാർത്തു കളഞ്ഞ് നിലം അല്പം ഉണങ്ങാൻ അനുവദിക്കുക",
+      "യൂറിയ വളം നൽകുന്നത് ഉടൻ നിർത്തിവെക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Foliar spray of Pseudomonas fluorescens (20g/L) at first appearance of spots",
+      "Apply 5% Neem Seed Kernel Extract (NSKE) or Neem garlic emulsion",
+      "Apply Panchagavya (3%) foliar spray to boost plant systemic immunity"
+    ],
+    "organicTreatmentMl": [
+      "സ്യൂഡോമോണസ് 20 ഗ്രാം ഒരു ലിറ്റർ വെള്ളത്തിൽ കലക്കി ഇലകളിൽ തളിക്കുക",
+      "5% വേപ്പിൻകുരു സത്ത് തളിക്കുക",
+      "പഞ്ചഗവ്യം 3% തളിക്കുന്നത് ചെടിയുടെ പ്രതിരോധശേഷി വർദ്ധിപ്പിക്കും"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Tricyclazole 75 WP (0.6g/L) or Isoprothiolane 40 EC (1.5ml/L) or Kasugamycin 3% SL (2ml/L)",
+      "Alternatively apply Azoxystrobin 18.2% + Difenoconazole 11.4% SC (1ml/L) during severe leaf blast",
+      "Ensure spray reaches both foliage and the base of the tillers"
+    ],
+    "chemicalTreatmentMl": [
+      "ട്രൈസൈക്ലാസോൾ (0.6g/L) അല്ലെങ്കിൽ ഐസോപ്രോത്തിയോലേൻ (1.5ml/L) അല്ലെങ്കിൽ കാസുഗാമൈസിൻ (2ml/L) തളിക്കുക",
+      "കഴുത്തുരോഗം തടയാൻ കതിര് വരുന്ന സമയത്ത് ട്രൈസൈക്ലാസോൾ തളിക്കുന്നത് അത്യാവശ്യമാണ്"
+    ],
+    "preventionEn": [
+      "Treat seeds with Pseudomonas fluorescens (10g/kg) or Tricyclazole (2g/kg) before sowing",
+      "Use blast-resistant Kerala varieties (such as Uma, Jyothi, Kanchana, Prathyasha)",
+      "Apply split doses of nitrogen combined with required potassic fertilizers"
+    ],
+    "preventionMl": [
+      "ഉമ, ജ്യോതി, കാഞ്ചന തുടങ്ങിയ രോഗപ്രതിരോധശേഷിയുള്ള വിത്തിനങ്ങൾക്ക് മുൻഗണന നൽകുക",
+      "വിത്ത് സ്യൂഡോമോണസ് ചേർത്ത് വിത്തുചികിത്സ നടത്തുക",
+      "പൊട്ടാഷ് വളങ്ങൾ കൃത്യമായി നൽകുക"
+    ],
+    "irrigationConsiderationsEn": "Avoid drying stress during vegetative phase, but drain fields periodically to aerate soil.",
+    "irrigationConsiderationsMl": "വെള്ളം നിയന്ത്രിച്ച് നൽകുക.",
+    "sanitationEn": "Clear bunds of wild grasses (such as Digitaria and Leersia) which act as collateral blast hosts.",
+    "sanitationMl": "വരമ്പിലെ കാട്ടുപുല്ലുകൾ ചെത്തി വൃത്തിയാക്കുക.",
+    "whenToSeekExpertHelpEn": "If blast spots cover more than 15% of the leaf canopy or neck breakage begins, immediately consult Krishi Bhavan.",
+    "whenToSeekExpertHelpMl": "ഇലകളിൽ രോഗം പടരുകയോ കതിരൊടിയുകയോ ചെയ്താൽ ഉടൻ കൃഷിഭവനുമായി ബന്ധപ്പെടുക.",
+    "audioSummaryEn": "Paddy Leaf Blast detected. Spray Tricyclazole at 0.6g per liter or Pseudomonas fluorescens at 20g per liter, and stop nitrogen application immediately.",
+    "audioSummaryMl": "നെല്ലിൽ ഇലക്കരിച്ചിൽ / പോളരോഗം കണ്ടെത്തി. ട്രൈസൈക്ലാസോളോ സ്യൂഡോമോണസോ തളിക്കുക, യൂറിയ പ്രയോഗം നിർത്തിവെക്കുക."
+  },
+
+  "Rice___healthy": {
+    "cropEn": "Rice / Paddy",
+    "cropMl": "നെല്ല് (Paddy / Rice)",
+    "diseaseEn": "No Disease Detected (Healthy Rice Crop)",
+    "diseaseMl": "രോഗലക്ഷണങ്ങളില്ല (ആരോഗ്യമുള്ള നെൽച്ചെടി)",
+    "severity": "Healthy",
+    "isHealthy": true,
+    "symptomsEn": [
+      "Vibrant erect green tillers with clean sword-like foliage",
+      "Healthy golden-green flowering panicles with fully developed clean grains",
+      "No blast spindle lesions, brown spots, or smut balls"
+    ],
+    "symptomsMl": [
+      "നല്ല പച്ചനിറമുള്ള കരുത്തുറ്റ നെൽച്ചെടികളും ഇലകളും",
+      "കേടുകളില്ലാത്ത മണികളോടുകൂടിയ കതിരുകൾ",
+      "രോഗലക്ഷണങ്ങളോ കരിമ്പുള്ളികളോ ഇല്ലാത്ത അവസ്ഥ"
+    ],
+    "causesEn": ["Optimal soil health, proper water management, and balanced NPK fertilization."],
+    "causesMl": ["മികച്ച പരിചരണവും വളപ്രയോഗവും."],
+    "immediateActionsEn": ["Continue standard water management according to growth stage."],
+    "immediateActionsMl": ["പതിവ് പരിചരണം തുടരുക."],
+    "organicTreatmentEn": ["Apply foliar spray of Pseudomonas (20g/L) as a preventive tonic during tillering."],
+    "organicTreatmentMl": ["സ്യൂഡോമോണസ് ലായനി മുൻകരുതലായി തളിക്കാം."],
+    "chemicalTreatmentEn": ["No chemical fungicides required."],
+    "chemicalTreatmentMl": ["രാസകീടനാശിനികൾ ആവശ്യമില്ല."],
+    "preventionEn": ["Maintain regular field scouting for early pest or disease appearance."],
+    "preventionMl": ["പാടത്ത് പതിവായി നിരീക്ഷണം നടത്തുക."],
+    "irrigationConsiderationsEn": "Maintain 2-5cm water level during tillering and flowering.",
+    "irrigationConsiderationsMl": "ആവശ്യത്തിന് വെള്ളം ഉറപ്പാക്കുക.",
+    "sanitationEn": "Keep field bunds weed-free.",
+    "sanitationMl": "വരമ്പുകൾ വൃത്തിയായി സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Routine advisory during Krishi Bhavan farmer meetings.",
+    "whenToSeekExpertHelpMl": "പതിവ് ഉപദേശങ്ങൾ തേടുക.",
+    "audioSummaryEn": "Your rice paddy is healthy with vigorous growth! Continue balanced water and nutrient management.",
+    "audioSummaryMl": "നിങ്ങളുടെ നെൽച്ചെടികൾ തികച്ചും ആരോഗ്യത്തോടെ വളരുന്നു! പതിവ് പരിചരണം തുടരുക."
+  },
+
+  "Banana___Sigatoka": {
+    "cropEn": "Banana (Nendran)",
+    "cropMl": "വാഴ (Banana / Nendran)",
+    "diseaseEn": "Sigatoka Leaf Spot (Mycosphaerella musicola)",
+    "diseaseMl": "വാഴയിലെ സിഗാറ്റോക്ക മഞ്ഞളിപ്പ് & ഇലപ്പുള്ളി രോഗം",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small yellowish-green linear streaks parallel to leaf veins",
+      "Streaks expanding into elliptical dark brown necrotic spots with sunken greyish centers",
+      "Entire leaf drying, tearing, and collapsing prematurely (scorched appearance)",
+      "Poor bunch filling and premature fruit ripening on the tree"
+    ],
+    "symptomsMl": [
+      "വാഴയിലകളിൽ ഞരമ്പുകൾക്ക് സമാന്തരമായി മഞ്ഞകലർന്ന വരകൾ",
+      "വരകൾ വലുതായി തവിട്ടുനിറമുള്ള പാടുകളായി മാറുന്നത്",
+      "ഇലകൾ അകാലത്തിൽ കരിഞ്ഞുണങ്ങി ഒടിഞ്ഞുതൂങ്ങുന്നത്",
+      "കുലകളിൽ കായ്കൾ മൂപ്പെത്താതെ പഴുത്തുപോവുന്നത്"
+    ],
+    "causesEn": [
+      "Mycosphaerella airborne fungal spores thriving during high humidity and monsoon rains",
+      "Dense planting with poor air circulation and waterlogged soil conditions"
+    ],
+    "causesMl": ["വർഷകാലത്തെ കൂടിയ ഈർപ്പവും കാറ്റിലൂടെ പടരുന്ന ഫംഗസും."],
+    "immediateActionsEn": [
+      "Cut and burn heavily infected dried leaves (deleafing) to reduce spore inoculum",
+      "Improve drainage channels to drain stagnant rainwater from the banana basin"
+    ],
+    "immediateActionsMl": [
+      "കരിഞ്ഞ ഇലകൾ വെട്ടിമാറ്റി തോട്ടത്തിന് പുറത്ത് കൊണ്ടുപോയി തീയിടുക",
+      "വാഴച്ചുവട്ടിൽ വെള്ളം കെട്ടിനിൽക്കാതെ ചാലുകൾ കീറി ഒഴുക്കിക്കളയുക"
+    ],
+    "organicTreatmentEn": [
+      "Spray 1% Bordeaux Mixture or Pseudomonas fluorescens (20g/L) on both upper and lower leaf surfaces",
+      "Apply 5% Neem oil garlic emulsion with soft soap (5ml/L)"
+    ],
+    "organicTreatmentMl": [
+      "1% വീര്യമുള്ള ബോർഡോ മിശ്രിതമോ സ്യൂഡോമോണസോ (20g/L) തളിക്കുക",
+      "വേപ്പെണ്ണ വെളുത്തുള്ളി മിശ്രിതം തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Propiconazole 25 EC (1ml/L) or Carbendazim 50 WP (1g/L) mixed with mineral oil (10ml/L) or sticker",
+      "Rotate chemical fungicides to prevent fungal resistance"
+    ],
+    "chemicalTreatmentMl": [
+      "പ്രൊപ്പികൊനാസോൾ (1ml/L) അല്ലെങ്കിൽ കാർബൻഡാസിം (1g/L) മിനറൽ ഓയിൽ ചേർത്ത് തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Ensure proper spacing (2.1m x 2.1m for Nendran) and maintain clean drainage",
+      "Apply recommended doses of potash and organic compost to strengthen plant tissues"
+    ],
+    "preventionMl": [
+      "വാഴകൾ തമ്മിൽ 2.1 മീറ്റർ അകലം പാലിക്കുക",
+      "പൊട്ടാഷ് വളങ്ങൾ യഥാസമയം നൽകുക"
+    ],
+    "irrigationConsiderationsEn": "Avoid overhead watering; use drip or basin watering.",
+    "irrigationConsiderationsMl": "ഇലകളിൽ വെള്ളം തളിക്കാതെ ചുവട്ടിൽ മാത്രം നനയ്ക്കുക.",
+    "sanitationEn": "Keep banana pits weed-free and de-sucker regularly leaving only 1-2 suckers.",
+    "sanitationMl": "അധികമുള്ള കന്നുകൾ വെട്ടിമാറ്റുക.",
+    "whenToSeekExpertHelpEn": "If more than 5 functional leaves are damaged before bunch shooting, consult Krishi Bhavan.",
+    "whenToSeekExpertHelpMl": "കുലയ്ക്കുന്നതിന് മുൻപ് ഇലകൾ വ്യാപകമായി കരിഞ്ഞാൽ കൃഷി ഓഫീസറെ കാണുക.",
+    "audioSummaryEn": "Banana Sigatoka detected. Remove dried leaves, spray 1% Bordeaux Mixture or Propiconazole, and improve drainage.",
+    "audioSummaryMl": "വാഴയിൽ സിഗാറ്റോക്ക രോഗം കണ്ടെത്തി. കരിഞ്ഞ ഇലകൾ വെട്ടിമാറ്റി ബോർഡോ മിശ്രിതമോ പ്രൊപ്പികൊനാസോളോ തളിക്കുക."
+  },
+
+  "Coconut___Root_Wilt": {
+    "cropEn": "Coconut",
+    "cropMl": "തെങ്ങ് (Coconut)",
+    "diseaseEn": "Root (Wilt) Disease (Phytoplasma)",
+    "diseaseMl": "തെങ്ങിന്റെ കാറ്റുവീഴ്ച രോഗം (Root Wilt)",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Characteristic ribbing and flaccidity of the leaflets (inward curling of leaf margins)",
+      "General yellowing and marginal necrosis of the outer fronds",
+      "Stunting of the crown, shedding of buttons, and drastic reduction in nut yield and copra quality"
+    ],
+    "symptomsMl": [
+      "ഓലക്കാലുകൾ ഉള്ളിലോട്ടു വളഞ്ഞ് കൈപ്പത്തിപോലെ വാടിയ അവസ്ഥ (Flaccidity)",
+      "ഓലകൾക്ക് മഞ്ഞനിറം വരികയും അരികുകൾ കരിഞ്ഞുപോവുകയും ചെയ്യുന്നത്",
+      "കുലകളിലെ കൊമ്പൻ കൊഴിഞ്ഞുപോകുന്നതും തേങ്ങയുടെ വലിപ്പം കുറയുന്നതും"
+    ],
+    "causesEn": [
+      "Phytoplasma organism transmitted by lace bugs (Stephanitis typica) and planthoppers (Proutista moesta)"
+    ],
+    "causesMl": ["കണ്ണാടിപ്പേനുകളും തുള്ളൻ പുഴുക്കളും പരത്തുന്ന ഫൈറ്റോപ്ലാസ്മ രോഗാണുക്കൾ."],
+    "immediateActionsEn": [
+      "Eradicate and remove terminally diseased unthrifty palms yielding less than 10 nuts/year",
+      "Control insect vectors by spraying 0.5% neem oil emulsion on leaf axils"
+    ],
+    "immediateActionsMl": [
+      "തീരെ വിളവില്ലാത്ത രോഗം മൂർച്ഛിച്ച തെങ്ങുകൾ വെട്ടിമാറ്റി നശിപ്പിക്കുക",
+      "രോഗം പരത്തുന്ന പ്രാണികളെ നിയന്ത്രിക്കാൻ വേപ്പെണ്ണ മിശ്രിതം തളിക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Apply 50 kg farmyard manure and 5 kg neem cake enriched with Trichoderma per palm annually",
+      "Grow green manure cover crops (Pueraria or Mucuna) in the basin and incorporate into soil"
+    ],
+    "organicTreatmentMl": [
+      "തെങ്ങൊന്നിന് 50 കിലോ ചാണകപ്പൊടിയും 5 കിലോ വേപ്പിൻപിണ്ണാക്കും നൽകുക",
+      "തടത്തിൽ പയർവർഗ്ഗ ചെടികൾ വളർത്തി മണ്ണിൽ ഉഴുതുചേർക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Apply 1.3 kg Urea, 2.0 kg Rock Phosphate, and 3.5 kg Muriate of Potash (MOP) per palm per year in two splits",
+      "Apply 1 kg Magnesium Sulphate per palm per year to correct foliar chlorosis"
+    ],
+    "chemicalTreatmentMl": [
+      "വർഷത്തിൽ 1.3 കിലോ യൂറിയ, 2 കിലോ രാജ്ഫോസ്, 3.5 കിലോ പൊട്ടാഷ് രണ്ടു തവണകളായി നൽകുക",
+      "1 കിലോ മഗ്നീഷ്യം സൾഫേറ്റ് തെങ്ങിൻ ചുവട്ടിൽ ചേർക്കുക"
+    ],
+    "preventionEn": [
+      "Plant resistant / tolerant hybrid seedlings like Kera Sankara or Chandrasankara",
+      "Practice balanced irrigation during summer months (40-50 liters/day/palm)"
+    ],
+    "preventionMl": [
+      "കാറ്റുവീഴ്ചയെ പ്രതിരോധിക്കുന്ന സങ്കരയിനം തെങ്ങിൻ തൈകൾ നടുക",
+      "വേനൽക്കാലത്ത് കൃത്യമായി നനയ്ക്കുക"
+    ],
+    "irrigationConsiderationsEn": "Drip irrigate at root zone during dry periods.",
+    "irrigationConsiderationsMl": "തുള്ളിനന രീതി പ്രയോജനപ്പെടുത്തുക.",
+    "sanitationEn": "Keep coconut basins clean and mulched.",
+    "sanitationMl": "തെങ്ങിൻ തടം വൃത്തിയായി സൂക്ഷിക്കുക.",
+    "whenToSeekExpertHelpEn": "Consult CPCRI or Krishi Bhavan for phytoplasma management schemes.",
+    "whenToSeekExpertHelpMl": "കൃഷി ഓഫീസറുമായി ബന്ധപ്പെട്ട് സഹായങ്ങൾ തേടുക.",
+    "audioSummaryEn": "Coconut Root Wilt disease detected. Apply 3.5kg potash, 1kg magnesium sulphate, and spray neem oil emulsion to control insect vectors.",
+    "audioSummaryMl": "തെങ്ങിൽ കാറ്റുവീഴ്ച രോഗലക്ഷണങ്ങൾ കണ്ടെത്തി. പൊട്ടാഷും മഗ്നീഷ്യം സൾഫേറ്റും നൽകുക, വേപ്പെണ്ണ തളിച്ചു പ്രാണികളെ നിയന്ത്രിക്കുക."
+  },
+
+  "Chilli___Leaf_Curl": {
+    "cropEn": "Chilli",
+    "cropMl": "മുളക് (Chilli)",
+    "diseaseEn": "Chilli Leaf Curl Virus (Begomovirus)",
+    "diseaseMl": "മുളകിലെ ഇലച്ചുരുൾ രോഗം (Leaf Curl Virus)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Upward curling and crinkling of leaf margins accompanied by vein clearing",
+      "Leaves becoming thickened, leathery, and clustered together in bushy rosettes",
+      "Severe stunting of plants with deformed, undersized chilli pods"
+    ],
+    "symptomsMl": [
+      "മുളകിലകൾ മുകളിലേക്ക് ചുരുളുന്നതും വലിപ്പം കുറയുന്നതും",
+      "ഇലകൾ തടിച്ച് കട്ടിയാവുകയും ചെടിയുടെ വളർച്ച മുരടിക്കുകയും ചെയ്യുന്നത്",
+      "കായ്പിടുത്തം തീരെ കുറയുന്നതും കായ്കൾ ചെറുതാവുന്നതും"
+    ],
+    "causesEn": [
+      "Chilli Leaf Curl Begomovirus transmitted by silverleaf whiteflies (Bemisia tabaci) and thrips"
+    ],
+    "causesMl": ["വെള്ളീച്ചകളും ഇലപ്പേനുകളും പരത്തുന്ന വൈറസ് രോഗം."],
+    "immediateActionsEn": [
+      "Rogue out and burn severely virus-stunted plants immediately to prevent spreading",
+      "Install yellow sticky traps (10-12 per acre) in the chilli field to capture whiteflies"
+    ],
+    "immediateActionsMl": [
+      "രോഗം ബാധിച്ച ചെടികൾ വേരോടെ പിഴുതുമാറ്റി നശിപ്പിക്കുക",
+      "വെള്ളീച്ചകളെ കുടുക്കാൻ മഞ്ഞക്കെണികൾ സ്ഥാപിക്കുക"
+    ],
+    "organicTreatmentEn": [
+      "Spray 5% Neem Seed Kernel Extract (NSKE) or Neem oil garlic emulsion (5ml/L) every 7-10 days",
+      "Spray Verticillium lecanii bio-pesticide (5g/L) to control sucking pests naturally"
+    ],
+    "organicTreatmentMl": [
+      "5% വേപ്പിൻകുരു സത്തോ വെളുത്തുള്ളി-വേപ്പെണ്ണ മിശ്രിതമോ തളിക്കുക",
+      "വെർട്ടിസീലിയം ജൈവ കീടനാശിനി തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Imidacloprid 17.8 SL (0.5ml/L) or Diafenthiuron 50 WP (1g/L) to control vector whiteflies and thrips",
+      "Observe 7-day pre-harvest interval before picking green chillies"
+    ],
+    "chemicalTreatmentMl": [
+      "രോഗം പരത്തുന്ന വെള്ളീച്ചകളെ നിയന്ത്രിക്കാൻ ഇമിഡാക്ലോപ്രിഡ് (0.5ml/L) തളിക്കുക"
+    ],
+    "preventionEn": [
+      "Grow border crops of 2-3 rows of maize or sorghum to act as physical vector barriers",
+      "Use certified disease-free nursery seedlings"
+    ],
+    "preventionMl": [
+      "തോട്ടത്തിന് ചുറ്റും ചോളം തടസ്സവിളയായി കൃഷി ചെയ്യുക",
+      "ആരോഗ്യമുള്ള തൈകൾ മാത്രം നടുക"
+    ],
+    "irrigationConsiderationsEn": "Avoid water stress which attracts sucking pests.",
+    "irrigationConsiderationsMl": "കൃത്യമായി നനയ്ക്കുക.",
+    "sanitationEn": "Keep fields free of solanaceous weeds.",
+    "sanitationMl": "കളകൾ യഥാസമയം നീക്കം ചെയ്യുക.",
+    "whenToSeekExpertHelpEn": "If leaf curl spreads to over 15% of plants, consult Krishi Bhavan.",
+    "whenToSeekExpertHelpMl": "രോഗം പടർന്നാൽ കൃഷി ഓഫീസറുമായി ബന്ധപ്പെടുക.",
+    "audioSummaryEn": "Chilli Leaf Curl Virus detected. Install yellow sticky traps and spray neem oil emulsion or Imidacloprid to control whiteflies.",
+    "audioSummaryMl": "മുളകിൽ ഇലച്ചുരുൾ രോഗം കണ്ടെത്തി. മഞ്ഞക്കെണികൾ സ്ഥാപിക്കുക, വെള്ളീച്ചകളെ നിയന്ത്രിക്കാൻ വേപ്പെണ്ണ മിശ്രിതം തളിക്കുക."
+  },
+
+  "Tomato___Septoria_leaf_spot": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Septoria Leaf Spot (Septoria lycopersici)",
+    "diseaseMl": "സെപ്റ്റോറിയ ഇലപ്പുള്ളി രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Numerous small circular spots with dark brown margins and gray centers on lower leaves",
+      "Tiny black fruiting bodies (pycnidia) visible in the center of lesions",
+      "Severe defoliation starting from the bottom of the plant",
+      "Fruit sunscald due to exposed fruit after excessive leaf loss"
+    ],
+    "symptomsMl": [
+      "താഴത്തെ ഇലകളിൽ ചെറിയ ഗോളാകൃതി പുള്ളികൾ — കറുത്ത വിളുമ്പും ചാരനിറ നടുഭാഗവും",
+      "പുള്ളികളുടെ നടുവിൽ കറുത്ത ബീജാണുഘടനകൾ കാണാം",
+      "ഇലകൾ താഴെ നിന്ന് മുകളിലേക്ക് ഉണങ്ങി കൊഴിയുന്നത്",
+      "ഇലനഷ്ടം മൂലം പഴങ്ങൾ വെയിലേറ്റ് കരിയുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Remove and destroy infected lower leaves immediately to slow spread",
+      "Spray 1% Bordeaux Mixture or Copper Hydroxide (2g/L) every 7-10 days",
+      "Foliar spray of Pseudomonas fluorescens (20g/L) as preventive biocontrol"
+    ],
+    "organicTreatmentMl": [
+      "രോഗം ബാധിച്ച താഴത്തെ ഇലകൾ ഉടൻ നീക്കം ചെയ്യുക",
+      "1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ കോപ്പർ ഹൈഡ്രോക്സൈഡ് (2g/L) 7-10 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "സ്യൂഡോമോണസ് (20g/L) പ്രതിരോധ ജൈവ നിയന്ത്രണമായി തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Mancozeb 75 WP (2g/L) or Chlorothalonil (2g/L) at 7-10 day intervals in wet weather"
+    ],
+    "chemicalTreatmentMl": [
+      "മഴക്കാലത്ത് മാങ്കോസെബ് (2g/L) 7-10 ദിവസത്തിലൊരിക്കൽ തളിക്കുക"
+    ],
+    "preventionEn": "Mulch soil to prevent rain splash, stake plants for air circulation, and rotate crops on 2-3 year cycles.",
+    "preventionMl": "മണ്ണിൽ പുതയിടുക, ചെടികൾ കെട്ടിയുയർത്തി വായുസഞ്ചാരം ഉറപ്പാക്കുക.",
+    "audioSummaryEn": "Tomato Septoria Leaf Spot detected. Remove infected lower leaves and spray Bordeaux Mixture.",
+    "audioSummaryMl": "തക്കാളിയിൽ സെപ്റ്റോറിയ ഇലപ്പുള്ളി രോഗം കണ്ടെത്തി. രോഗബാധിത ഇലകൾ മാറ്റി ബോർഡോ മിശ്രിതം തളിക്കുക."
+  },
+
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+    "diseaseMl": "തക്കാളി മഞ്ഞ ഇലച്ചുരുൾ വൈറസ് (TYLCV)",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Severe upward curling and cupping of young leaves with bright yellow margins",
+      "Stunted plant growth with shortened internodes",
+      "Flowers dropping without setting fruit; drastically reduced yield",
+      "Leaf surface becomes thickened, leathery, and crinkled"
+    ],
+    "symptomsMl": [
+      "ഇളം ഇലകൾ മുകളിലേക്ക് ചുരുണ്ട് മഞ്ഞ വിളുമ്പുകൾ കാണിക്കുന്നത്",
+      "ചെടിയുടെ വളർച്ച മുരടിച്ച് ഇടനാഴികൾ ചെറുതാകുന്നത്",
+      "പൂക്കൾ കൊഴിഞ്ഞ് കായ്ഫലം ഗണ്യമായി കുറയുന്നത്",
+      "ഇലകൾ കട്ടിയാകുകയും ചുളിവുകൾ ഉണ്ടാവുകയും ചെയ്യുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Rogue out and destroy infected plants immediately — no cure exists for viral infection",
+      "Install 40-mesh nylon net covers over nursery and young transplants",
+      "Deploy yellow sticky traps (10-15 per acre) to trap whitefly vectors",
+      "Spray Neem Oil emulsion (5ml/L) to repel whiteflies"
+    ],
+    "organicTreatmentMl": [
+      "രോഗം ബാധിച്ച ചെടികൾ ഉടൻ പിഴുതു നശിപ്പിക്കുക",
+      "നഴ്സറിയിൽ 40-മെഷ് വല ഉപയോഗിക്കുക",
+      "മഞ്ഞ ഒട്ടുകെണികൾ (ഏക്കറിന് 10-15) സ്ഥാപിക്കുക",
+      "വേപ്പെണ്ണ (5ml/L) തളിച്ച് വെള്ളീച്ചകളെ അകറ്റുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Imidacloprid 17.8 SL (0.3ml/L) to control whitefly vectors"
+    ],
+    "chemicalTreatmentMl": [
+      "വെള്ളീച്ചകളെ നിയന്ത്രിക്കാൻ ഇമിഡാക്ലോപ്രിഡ് (0.3ml/L) തളിക്കുക"
+    ],
+    "preventionEn": "Use TYLCV-resistant tomato varieties, raise seedlings under insect-proof net.",
+    "preventionMl": "പ്രതിരോധ ശേഷിയുള്ള ഇനങ്ങൾ ഉപയോഗിക്കുക, കീടസുരക്ഷാ വലക്കുള്ളിൽ തൈകൾ വളർത്തുക.",
+    "audioSummaryEn": "Tomato Yellow Leaf Curl Virus detected. Destroy infected plants and control whiteflies with sticky traps and neem oil.",
+    "audioSummaryMl": "തക്കാളിയിൽ മഞ്ഞ ഇലച്ചുരുൾ വൈറസ് കണ്ടെത്തി. രോഗബാധിത ചെടികൾ നശിപ്പിക്കുക."
+  },
+
+  "Tomato___Spider_mites_Two-spotted_spider_mite": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Two-Spotted Spider Mite Infestation (Tetranychus urticae)",
+    "diseaseMl": "ചിലന്തിപ്പേൻ ആക്രമണം (Spider Mites)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Fine yellow or white stippling on upper leaf surface",
+      "Delicate silk webbing on leaf undersides and between stems",
+      "Leaves turn bronze, dry out, and drop prematurely",
+      "Tiny moving dots (mites) visible on leaf undersides"
+    ],
+    "symptomsMl": [
+      "ഇലകളുടെ മേൽഭാഗത്ത് മഞ്ഞ/വെള്ള നേർത്ത പുള്ളികൾ",
+      "ഇലകളുടെ അടിയിൽ നേർത്ത വല കാണാം",
+      "ഇലകൾ വെങ്കല നിറമായി ഉണങ്ങി കൊഴിയുന്നത്",
+      "ഇലയുടെ അടിയിൽ സൂക്ഷ്മമായ ചലിക്കുന്ന ജീവികൾ കാണാം"
+    ],
+    "organicTreatmentEn": [
+      "Strong water spray on leaf undersides to dislodge mites",
+      "Spray Neem Oil emulsion (5ml/L) every 5-7 days",
+      "Release predatory mites or ladybird beetles as biocontrol"
+    ],
+    "organicTreatmentMl": [
+      "ഇലകളുടെ അടിയിൽ ശക്തമായ ജലധാര തളിക്കുക",
+      "വേപ്പെണ്ണ (5ml/L) 5-7 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "ജൈവ നിയന്ത്രണത്തിന് ഇരപിടിയൻ ചിലന്തികളെ വിടുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Dicofol 18.5 EC (2.5ml/L) or Abamectin 1.8 EC (0.5ml/L) for severe infestations"
+    ],
+    "chemicalTreatmentMl": [
+      "രൂക്ഷമായ ആക്രമണത്തിന് ഡൈക്കോഫോൾ (2.5ml/L) തളിക്കുക"
+    ],
+    "preventionEn": "Maintain adequate irrigation — drought stress worsens mite outbreaks. Avoid excessive nitrogen.",
+    "preventionMl": "നനയ്ക്കൽ കൃത്യമായി ചെയ്യുക — വരൾച്ച ചിലന്തിപ്പേൻ ആക്രമണം വർദ്ധിപ്പിക്കും.",
+    "audioSummaryEn": "Spider mite infestation detected on tomato. Spray neem oil on leaf undersides and maintain adequate watering.",
+    "audioSummaryMl": "തക്കാളിയിൽ ചിലന്തിപ്പേൻ ആക്രമണം കണ്ടെത്തി. ഇലയുടെ അടിയിൽ വേപ്പെണ്ണ തളിക്കുക."
+  },
+
+  "Tomato___Target_Spot": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Target Spot (Corynespora cassiicola)",
+    "diseaseMl": "ടാർഗെറ്റ് സ്പോട്ട് രോഗം (Target Spot)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Small dark brown spots with concentric rings on leaves, stems, and fruits",
+      "Spots enlarge rapidly in warm humid conditions",
+      "Severe leaf blight and defoliation in prolonged wet weather",
+      "Sunken dark lesions on fruit surface"
+    ],
+    "symptomsMl": [
+      "ഇലകളിലും പഴങ്ങളിലും ഇരുണ്ട വളയങ്ങളോടു കൂടിയ കറുത്ത പാടുകൾ",
+      "ചൂടുള്ള ഈർപ്പ കാലാവസ്ഥയിൽ പാടുകൾ വേഗം വലുതാകുന്നത്",
+      "ഇലകൾ കൂട്ടത്തോടെ കരിഞ്ഞ് ഉണങ്ങുന്നത്",
+      "പഴങ്ങളിൽ കുഴിഞ്ഞ ഇരുണ്ട പാടുകൾ"
+    ],
+    "organicTreatmentEn": [
+      "Remove and destroy infected leaves and fruit immediately",
+      "Spray Pseudomonas fluorescens (20g/L) every 10 days",
+      "Apply Bordeaux Mixture (1%) as protective fungicide spray"
+    ],
+    "organicTreatmentMl": [
+      "രോഗബാധിത ഇലകളും പഴങ്ങളും ഉടൻ നീക്കം ചെയ്യുക",
+      "സ്യൂഡോമോണസ് (20g/L) 10 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "1% ബോർഡോ മിശ്രിതം തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Azoxystrobin 23 SC (1ml/L) or Mancozeb 75 WP (2g/L) at 10-day intervals"
+    ],
+    "chemicalTreatmentMl": [
+      "അസോക്സിസ്ട്രോബിൻ (1ml/L) അല്ലെങ്കിൽ മാങ്കോസെബ് (2g/L) തളിക്കുക"
+    ],
+    "preventionEn": "Ensure proper plant spacing, stake plants for ventilation, and avoid overhead irrigation.",
+    "preventionMl": "ചെടികൾക്കിടയിൽ ശരിയായ അകലം നൽകുക, കെട്ടിയുയർത്തി വായുസഞ്ചാരം ഉറപ്പാക്കുക.",
+    "audioSummaryEn": "Tomato Target Spot detected. Remove infected parts and spray Bordeaux Mixture.",
+    "audioSummaryMl": "തക്കാളിയിൽ ടാർഗെറ്റ് സ്പോട്ട് രോഗം കണ്ടെത്തി. ബോർഡോ മിശ്രിതം തളിക്കുക."
+  },
+
+  "Tomato___Tomato_mosaic_virus": {
+    "cropEn": "Tomato",
+    "cropMl": "തക്കാളി (Tomato)",
+    "diseaseEn": "Tomato Mosaic Virus (ToMV)",
+    "diseaseMl": "തക്കാളി മൊസൈക് വൈറസ് (ToMV)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Light and dark green mosaic mottling pattern on leaves",
+      "Leaves become fern-like with narrow elongated leaflets",
+      "Fruit showing uneven ripening with yellowish-brown blotches",
+      "Stunted growth and reduced fruit size"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ ഇളം/കടും പച്ചയുടെ മൊസൈക് പാറ്റേൺ",
+      "ഇലകൾ നേർത്ത് പന്നലിന്റെ ഇല പോലെ ആകുന്നത്",
+      "പഴങ്ങളിൽ അസമമായ പാകമാകലും മഞ്ഞ-തവിട്ട് പാടുകളും",
+      "ചെടിയുടെ വളർച്ച മുരടിക്കുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "No cure — destroy infected plants by burning or deep burial",
+      "Disinfect tools with milk solution (1:4 milk:water) between plants",
+      "Spray skimmed milk solution (10%) as preventive foliar spray"
+    ],
+    "organicTreatmentMl": [
+      "ചികിത്സയില്ല — രോഗബാധിത ചെടികൾ കത്തിച്ച് നശിപ്പിക്കുക",
+      "ഉപകരണങ്ങൾ പാൽ ലായനി (1:4) കൊണ്ട് അണുവിമുക്തമാക്കുക",
+      "10% പാൽ ലായനി പ്രതിരോധ തളിയായി ഉപയോഗിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "No chemical treatment effective against viruses. Focus on sanitation and vector control."
+    ],
+    "chemicalTreatmentMl": [
+      "വൈറസിനെതിരെ രാസ ചികിത്സ ഫലപ്രദമല്ല. ശുചിത്വത്തിൽ ശ്രദ്ധിക്കുക."
+    ],
+    "preventionEn": "Use certified virus-free seeds, resistant varieties, and strict crop hygiene. Do not smoke near plants.",
+    "preventionMl": "വൈറസ് രഹിത വിത്തുകൾ ഉപയോഗിക്കുക, പുകവലി ചെടികൾക്ക് സമീപം ഒഴിവാക്കുക.",
+    "audioSummaryEn": "Tomato Mosaic Virus detected. Destroy infected plants and disinfect tools with milk solution.",
+    "audioSummaryMl": "തക്കാളിയിൽ മൊസൈക് വൈറസ് കണ്ടെത്തി. രോഗബാധിത ചെടികൾ നശിപ്പിക്കുക."
+  },
+
+  "Apple___Cedar_apple_rust": {
+    "cropEn": "Apple",
+    "cropMl": "ആപ്പിൾ (Apple)",
+    "diseaseEn": "Cedar Apple Rust (Gymnosporangium juniperi-virginianae)",
+    "diseaseMl": "ആപ്പിൾ റസ്റ്റ് രോഗം (Cedar Apple Rust)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Bright orange-yellow circular spots on upper leaf surface",
+      "Raised orange-brown projections on leaf undersides",
+      "Yellow spots on fruit causing deformation and cracking",
+      "Premature defoliation reducing tree vigor"
+    ],
+    "symptomsMl": [
+      "ഇലകളുടെ മേൽഭാഗത്ത് തിളങ്ങുന്ന ഓറഞ്ച്-മഞ്ഞ പാടുകൾ",
+      "ഇലയുടെ അടിയിൽ ഓറഞ്ച്-തവിട്ട് ഘടനകൾ",
+      "പഴങ്ങളിൽ മഞ്ഞ പാടുകളും വൈകല്യവും",
+      "ഇലകൾ അകാലത്തിൽ കൊഴിയുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Remove nearby cedar/juniper trees (alternate host) if possible",
+      "Spray sulfur-based fungicide (Wettable Sulfur 3g/L) at pink bud stage",
+      "Apply Bordeaux Mixture (1%) before and after bloom"
+    ],
+    "organicTreatmentMl": [
+      "സമീപത്തുള്ള സീഡാർ/ജൂനിപ്പർ മരങ്ങൾ നീക്കം ചെയ്യുക",
+      "മൊട്ട് ഘട്ടത്തിൽ സൾഫർ ഫംഗിസൈഡ് (3g/L) തളിക്കുക",
+      "1% ബോർഡോ മിശ്രിതം പൂവിടുന്നതിന് മുമ്പും ശേഷവും തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Myclobutanil (0.5ml/L) or Mancozeb (2g/L) at 10-14 day intervals from pink bud to petal fall"
+    ],
+    "chemicalTreatmentMl": [
+      "മൈക്ലോബ്യൂട്ടാനിൽ (0.5ml/L) അല്ലെങ്കിൽ മാങ്കോസെബ് (2g/L) തളിക്കുക"
+    ],
+    "preventionEn": "Plant rust-resistant apple varieties. Remove cedar galls from nearby junipers in winter.",
+    "preventionMl": "റസ്റ്റ് പ്രതിരോധ ശേഷിയുള്ള ആപ്പിൾ ഇനങ്ങൾ നടുക.",
+    "audioSummaryEn": "Apple Cedar Rust detected. Remove nearby juniper hosts and spray sulfur at bud stage.",
+    "audioSummaryMl": "ആപ്പിളിൽ സീഡാർ റസ്റ്റ് രോഗം കണ്ടെത്തി. സൾഫർ തളിക്കുക."
+  },
+
+  "Grape___Esca_(Black_Measles)": {
+    "cropEn": "Grape",
+    "cropMl": "മുന്തിരി (Grape)",
+    "diseaseEn": "Esca / Black Measles (Phaeomoniella chlamydospora)",
+    "diseaseMl": "എസ്ക / ബ്ലാക്ക് മീസിൽസ് രോഗം (Esca)",
+    "severity": "Critical",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Tiger-stripe pattern on leaves: interveinal chlorosis with necrotic margins",
+      "Dark purple-black measles-like spots on berries",
+      "Wood cross-section shows wedge-shaped necrotic sectors",
+      "Sudden vine collapse in hot weather"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ കടുവ വരകൾ പോലുള്ള മഞ്ഞ/തവിട്ട് പാറ്റേൺ",
+      "മുന്തിരിപ്പഴങ്ങളിൽ ഇരുണ്ട പർപ്പിൾ-കറുപ്പ് പുള്ളികൾ",
+      "തടിയുടെ ഉള്ളിൽ ആപ്പ് ആകൃതിയിൽ ചീഞ്ഞ ഭാഗങ്ങൾ",
+      "ചൂടുള്ള കാലാവസ്ഥയിൽ വള്ളി പെട്ടെന്ന് വാടി ചാകുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Prune dead wood during dormant season and apply wound sealant",
+      "Trunk surgery: remove necrotic wood and apply Trichoderma paste (20g/L)",
+      "Foliar spray of calcium and boron micronutrients"
+    ],
+    "organicTreatmentMl": [
+      "ഉറക്ക കാലത്ത് ചത്ത തടി വെട്ടിമാറ്റുക; മുറിവിൽ സീലന്റ് പുരട്ടുക",
+      "ചീഞ്ഞ ഭാഗങ്ങൾ മാറ്റി ട്രൈക്കോഡെർമ പേസ്റ്റ് പുരട്ടുക",
+      "കാൽസ്യവും ബോറോണും അടങ്ങിയ സ്പ്രേ തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "No reliable chemical cure. Preventive Trichoderma-based biocontrol agents are most effective."
+    ],
+    "chemicalTreatmentMl": [
+      "ഫലപ്രദമായ രാസ ചികിത്സ ഇല്ല. ട്രൈക്കോഡെർമ ജൈവ നിയന്ത്രണമാണ് ഏറ്റവും നല്ലത്."
+    ],
+    "preventionEn": "Sanitize tools between vines and replace severely affected vines with clean stock.",
+    "preventionMl": "ഉപകരണങ്ങൾ അണുവിമുക്തമാക്കുക, രൂക്ഷമായ വള്ളികൾ മാറ്റിനടുക.",
+    "audioSummaryEn": "Grape Esca Black Measles detected. Prune dead wood and apply Trichoderma to wounds.",
+    "audioSummaryMl": "മുന്തിരിയിൽ എസ്ക രോഗം കണ്ടെത്തി. ചത്ത തടി വെട്ടിമാറ്റി ട്രൈക്കോഡെർമ പുരട്ടുക."
+  },
+
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "cropEn": "Grape",
+    "cropMl": "മുന്തിരി (Grape)",
+    "diseaseEn": "Grape Leaf Blight / Isariopsis Leaf Spot",
+    "diseaseMl": "മുന്തിരി ഇലക്കരിച്ചിൽ രോഗം",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Irregular dark brown to black blotches on leaf surface",
+      "Yellowing and drying of leaf margins",
+      "Premature leaf drop reducing vine capacity",
+      "Fruit quality decline due to poor sugar accumulation"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ ക്രമരഹിതമായ ഇരുണ്ട തവിട്ട്/കറുപ്പ് പാടുകൾ",
+      "ഇലയുടെ അരികുകൾ മഞ്ഞളിച്ച് ഉണങ്ങുന്നത്",
+      "ഇലകൾ അകാലത്തിൽ കൊഴിയുന്നത്",
+      "പഴങ്ങളുടെ ഗുണമേന്മ താഴുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Remove and destroy infected leaves",
+      "Spray Bordeaux Mixture (1%) or Copper Oxychloride (3g/L) every 10-14 days",
+      "Apply Trichoderma harzianum (5g/L) as foliar biocontrol"
+    ],
+    "organicTreatmentMl": [
+      "രോഗബാധിത ഇലകൾ നീക്കം ചെയ്ത് നശിപ്പിക്കുക",
+      "1% ബോർഡോ മിശ്രിതം 10-14 ദിവസത്തിലൊരിക്കൽ തളിക്കുക",
+      "ട്രൈക്കോഡെർമ (5g/L) ജൈവ നിയന്ത്രണ സ്പ്രേ തളിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Mancozeb 75 WP (2g/L) or Carbendazim (1g/L) during active disease"
+    ],
+    "chemicalTreatmentMl": [
+      "മാങ്കോസെബ് (2g/L) അല്ലെങ്കിൽ കാർബെൻഡാസിം (1g/L) തളിക്കുക"
+    ],
+    "preventionEn": "Train vines for good air circulation and remove fallen leaf debris.",
+    "preventionMl": "വള്ളികൾ വായുസഞ്ചാരത്തിന് പരിശീലിപ്പിക്കുക.",
+    "audioSummaryEn": "Grape Leaf Blight detected. Remove infected leaves and spray Bordeaux Mixture.",
+    "audioSummaryMl": "മുന്തിരിയിൽ ഇലക്കരിച്ചിൽ രോഗം കണ്ടെത്തി. ബോർഡോ മിശ്രിതം തളിക്കുക."
+  },
+
+  "Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot": {
+    "cropEn": "Corn / Maize",
+    "cropMl": "ചോളം (Corn / Maize)",
+    "diseaseEn": "Cercospora Leaf Spot / Gray Leaf Spot",
+    "diseaseMl": "ചോളത്തിലെ ചാര ഇലപ്പുള്ളി രോഗം (Gray Leaf Spot)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Long narrow rectangular gray-tan lesions parallel to leaf veins",
+      "Lesions have sharp parallel edges",
+      "Lower leaves affected first; progresses upward under humid conditions",
+      "Severe infections cause premature leaf death reducing grain fill"
+    ],
+    "symptomsMl": [
+      "ഇലഞരമ്പുകൾക്ക് സമാന്തരമായി നീളമുള്ള ചതുരാകൃതി ചാര-തവിട്ട് പാടുകൾ",
+      "പാടുകൾക്ക് കൂർത്ത സമാന്തര വിളുമ്പുകൾ",
+      "താഴത്തെ ഇലകൾ ആദ്യം ബാധിക്കപ്പെടുന്നത്",
+      "ധാന്യ നിറവ് കുറഞ്ഞ് വിളവ് കുറയുന്നത്"
+    ],
+    "organicTreatmentEn": [
+      "Deep plough crop residues after harvest",
+      "Rotate corn with legumes for 1-2 seasons",
+      "Apply Trichoderma viride (10g/L) as seed treatment and foliar spray"
+    ],
+    "organicTreatmentMl": [
+      "വിളവെടുപ്പിന് ശേഷം വിളാവശിഷ്ടങ്ങൾ ആഴത്തിൽ ഉഴുതുമറിക്കുക",
+      "ചോളം പയർ വർഗ വിളകളുമായി ഇടവിട്ട് കൃഷി ചെയ്യുക",
+      "ട്രൈക്കോഡെർമ (10g/L) വിത്ത് പരിചരണമായും ഇല തളിയായും ഉപയോഗിക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Propiconazole 25 EC (1ml/L) or Azoxystrobin (1ml/L) at disease onset"
+    ],
+    "chemicalTreatmentMl": [
+      "പ്രൊപ്പിക്കൊണസോൾ (1ml/L) അല്ലെങ്കിൽ അസോക്സിസ്ട്രോബിൻ (1ml/L) തളിക്കുക"
+    ],
+    "preventionEn": "Plant resistant hybrids and ensure proper plant spacing.",
+    "preventionMl": "പ്രതിരോധ ശേഷിയുള്ള ഹൈബ്രിഡ് ഇനങ്ങൾ നടുക.",
+    "audioSummaryEn": "Corn Gray Leaf Spot detected. Rotate crops with legumes and use resistant hybrids.",
+    "audioSummaryMl": "ചോളത്തിൽ ചാര ഇലപ്പുള്ളി രോഗം കണ്ടെത്തി. വിളമാറ്റം ചെയ്യുക."
+  },
+
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "cropEn": "Corn / Maize",
+    "cropMl": "ചോളം (Corn / Maize)",
+    "diseaseEn": "Northern Leaf Blight (Exserohilum turcicum)",
+    "diseaseMl": "ചോളത്തിലെ നോർത്തേൺ ഇലക്കരിച്ചിൽ (Northern Leaf Blight)",
+    "severity": "Moderate",
+    "isHealthy": false,
+    "symptomsEn": [
+      "Long elliptical cigar-shaped grayish-green to tan lesions on leaves",
+      "Lesions may coalesce to blight entire leaf blades",
+      "Lower leaves affected first",
+      "Yield loss up to 30-50% if infection occurs before tasseling"
+    ],
+    "symptomsMl": [
+      "ഇലകളിൽ നീളമുള്ള സിഗാർ ആകൃതിയിൽ ചാര-പച്ച/തവിട്ട് പാടുകൾ",
+      "പാടുകൾ ഒന്നിച്ച് ചേർന്ന് ഇലകൾ മുഴുവൻ കരിയുന്നത്",
+      "താഴത്തെ ഇലകൾ ആദ്യം ബാധിക്കപ്പെടുന്നത്",
+      "പൂവിടുന്നതിന് മുമ്പ് ബാധിച്ചാൽ 30-50% വിളനഷ്ടം"
+    ],
+    "organicTreatmentEn": [
+      "Remove lower infected leaves to slow progression",
+      "Apply Trichoderma viride (10g/L) as foliar spray",
+      "Incorporate crop residues deep into soil after harvest"
+    ],
+    "organicTreatmentMl": [
+      "താഴത്തെ രോഗബാധിത ഇലകൾ മാറ്റി നശിപ്പിക്കുക",
+      "ട്രൈക്കോഡെർമ (10g/L) തളിക്കുക",
+      "വിളാവശിഷ്ടങ്ങൾ മണ്ണിൽ ആഴത്തിൽ ചേർക്കുക"
+    ],
+    "chemicalTreatmentEn": [
+      "Spray Propiconazole 25 EC (1ml/L) or Mancozeb 75 WP (2.5g/L) at 10-14 day intervals"
+    ],
+    "chemicalTreatmentMl": [
+      "പ്രൊപ്പിക്കൊണസോൾ (1ml/L) അല്ലെങ്കിൽ മാങ്കോസെബ് (2.5g/L) തളിക്കുക"
+    ],
+    "preventionEn": "Plant Ht-resistant corn hybrids, practice 2-year crop rotation.",
+    "preventionMl": "Ht-പ്രതിരോധ ഹൈബ്രിഡ് ഇനങ്ങൾ നടുക, 2-വർഷ വിളമാറ്റം ചെയ്യുക.",
+    "audioSummaryEn": "Corn Northern Leaf Blight detected. Use resistant hybrids and rotate crops.",
+    "audioSummaryMl": "ചോളത്തിൽ നോർത്തേൺ ഇലക്കരിച്ചിൽ രോഗം കണ്ടെത്തി. പ്രതിരോധ ഇനങ്ങൾ ഉപയോഗിക്കുക."
+  }
+}
+

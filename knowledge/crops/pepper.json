@@ -1,0 +1,11 @@
+{
+  "crop": "Black Pepper",
+  "localName": "കുരുമുളക്",
+  "districts": ["Idukki", "Wayanad", "Kannur", "Kottayam"],
+  "soils": ["Rich Organic Laterite Soil", "Hill Slopes Soil"],
+  "varieties": ["Panniyur-1", "Panniyur-5", "Karimunda", "Subhakara"],
+  "waterRequirement": "Rainfed with summer supplemental protective irrigation",
+  "commonIssues": ["Quick Wilt / Phytophthora Foot Rot", "Slow Wilt", "Pollu Beetle"],
+  "guidanceEn": "Apply Trichoderma enriched neem cake (2kg per vine) during pre-monsoon May. Ensure good hill slope drainage.",
+  "guidanceMl": "മഴക്കാലത്ത് തടത്തിൽ വെള്ളം കെട്ടി നിൽക്കാതിരിക്കാൻ ശ്രദ്ധിക്കുക. ട്രൈക്കോഡെർമ ചേർത്ത വേപ്പിൻപിണ്ണാക്ക് നൽകുക."
+}

@@ -1,0 +1,12 @@
+{
+  "crop": "Tomato",
+  "localName": "തക്കാളി",
+  "districts": ["Thrissur", "Palakkad", "Wayanad", "Idukki", "Ernakulam"],
+  "soils": ["Loamy Soil", "Well-drained Red Soil", "Sandy Loam"],
+  "varieties": ["Anagha", "Vellayani Vijay", "Arka Rakshak", "Akshaya"],
+  "waterRequirement": "Moderate (Avoid overhead sprinkling to prevent leaf fungus)",
+  "fertilizerSchedule": "75:40:25 kg NPK/ha. Apply organic Jiwamrita or Vermicompost. Foliar spray 1% potassium nitrate during fruiting.",
+  "commonIssues": ["Early Blight (Alternaria solani)", "Bacterial Wilt (Ralstonia solanacearum)", "Tomato Leaf Curl Virus", "Yellow leaves due to nitrogen deficiency or moisture imbalance"],
+  "guidanceEn": "Stake plants early to keep leaves and fruit off the soil. Remove bottom leaves touching soil.",
+  "guidanceMl": "തക്കാളി ഇലകളിൽ വെള്ളം തളിക്കരുത്. തടത്തിൽ മാത്രം നനയ്ക്കുക. ഇലകൾ മണ്ണിൽ തട്ടാതെ കമ്പുകൾ കുത്തി താങ്ങ് നൽകുക."
+}

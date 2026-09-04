@@ -1,0 +1,21 @@
+{
+  "name": "krishimitra-ai-backend",
+  "version": "1.0.0",
+  "description": "AI-Powered Personal Farming Assistant for Kerala Farmers (SIH25074)",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "ml:service": "python ml_service/app.py",
+    "ml:train": "python ml_service/train.py",
+    "ml:eval": "python ml_service/evaluate.py",
+    "ml:inspect": "python ml_service/inspect_dataset.py",
+    "ml:test": "python ml_service/test_service.py"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

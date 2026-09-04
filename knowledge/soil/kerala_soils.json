@@ -1,0 +1,20 @@
+[
+  {
+    "soilType": "Laterite Soil",
+    "localName": "ലാറ്ററൈറ്റ് മണ്ണ് (ചെങ്കൽ മണ്ണ്)",
+    "coverage": "65% of Kerala midland terrain (Thrissur, Palakkad, Malappuram, Kannur, Kasaragod, Kottayam)",
+    "characteristics": "Acidic pH (4.5 - 5.8), low organic matter, poor phosphorus availability, high iron/aluminum content.",
+    "suitableCrops": ["Rubber", "Coconut", "Nendran Banana", "Tapioca", "Pepper", "Cashew", "Vegetables"],
+    "managementEn": "Apply agricultural lime / dolomite (250g/m2) once every two years to correct soil acidity. Incorporate organic compost to improve water holding capacity.",
+    "managementMl": "അമ്ലത്വം കുറയ്ക്കാനും മണ്ണിലെ ഫോസ്ഫറസ് ലഭ്യത കൂട്ടാനും രണ്ടു വർഷത്തിലൊരിക്കൽ അല്പം കുമ്മായം അല്ലെങ്കിൽ ഡോളമൈറ്റ് ചേർക്കുക."
+  },
+  {
+    "soilType": "Alluvial Soil",
+    "localName": "എക്കൽ മണ്ണ്",
+    "coverage": "River valleys and coastal plains (Thrissur, Palakkad, Ernakulam, Alappuzha)",
+    "characteristics": "Fertile, near neutral pH (6.0 - 7.0), rich in organic matter and potash.",
+    "suitableCrops": ["Rice (Paddy)", "Banana", "Vegetables", "Sugarcane"],
+    "managementEn": "Maintain good drainage to prevent waterlogging during monsoon.",
+    "managementMl": "നല്ല ഫലഭൂയിഷ്ഠിയുള്ള മണ്ണ്. മഴക്കാലത്ത് ഡ്രെയിനേജ് സുഗമമാക്കുക."
+  }
+]

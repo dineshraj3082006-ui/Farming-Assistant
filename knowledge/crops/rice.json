@@ -1,0 +1,13 @@
+{
+  "crop": "Rice / Paddy",
+  "localName": "നെല്ല്",
+  "districts": ["Palakkad", "Thrissur", "Alappuzha (Kuttanad)", "Wayanad"],
+  "seasons": ["Virippu (Kharif)", "Mundakan (Rabi)", "Puncha (Summer)"],
+  "soils": ["Alluvial Soil", "Laterite Soil", "Kuttanad Peaty/Kari Soil"],
+  "varieties": ["Uma", "Jyothi", "Kanchana", "Matta Triveni", "Aiswarya"],
+  "waterRequirement": "High (1200 - 1500 mm, flooded conditions required)",
+  "fertilizerSchedule": "N:P:K 70:35:35 kg/ha. Apply organic compost during first ploughing, Urea in 3 split doses.",
+  "commonIssues": ["Leaf yellowing due to nitrogen deficiency or iron toxicity in Kuttanad", "Paddy Blast", "Sheath Blight", "Rice Stem Borer"],
+  "guidanceEn": "Ensure proper field levelling. For Virippu season, sow with pre-monsoon showers in May-June. Maintain 5cm water level during tillering phase.",
+  "guidanceMl": "മെയ്-ജൂൺ മാസങ്ങളിൽ വിരിപ്പ് കൃഷി തുടങ്ങാം. പൊടിവിതയ്ക്കോ ഞാറുനടീലിനോ അനുയോജ്യമായ സമയമാണിത്. കതിര് വരുമ്പോൾ പാടത്ത് ആവശ്യത്തിന് വെള്ളം നിലനിർത്തുക."
+}

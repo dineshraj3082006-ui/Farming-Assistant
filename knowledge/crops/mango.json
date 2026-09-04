@@ -1,0 +1,11 @@
+{
+  "crop": "Mango",
+  "localName": "മാവ് / മാങ്ങ",
+  "districts": ["Palakkad (Muthalamada)", "Kannur", "Thrissur"],
+  "soils": ["Deep Well-drained Loamy Soil", "Laterite Soil"],
+  "varieties": ["Alphonso", "Neelum", "Banganapalli", "Muvandan", "Prior"],
+  "waterRequirement": "Moderate during establishment, rainfed later",
+  "commonIssues": ["Mango Hopper", "Powdery Mildew", "Anthracnose"],
+  "guidanceEn": "Prune interior criss-cross branches after harvest to allow sun penetration.",
+  "guidanceMl": "വിളവെടുപ്പിന് ശേഷം ആവശ്യത്തിന് വെയിൽ കിട്ടാൻ മാവിന്റെ കൊമ്പുകൾ കോതുക."
+}

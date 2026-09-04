@@ -1,0 +1,16 @@
+[
+  {
+    "guideline": "Integrated Pest Management (IPM) for Kerala Farmers",
+    "principlesEn": [
+      "Regular field monitoring once per week",
+      "Biological control using Trichoderma, Pseudomonas fluorescens, and Beauveria bassiana",
+      "Mechanical traps: Yellow sticky traps for whiteflies, Pheromone traps for fruit flies",
+      "Chemical pesticides as last resort adhering strictly to safety waiting periods"
+    ],
+    "principlesMl": [
+      "ആഴ്ചയിലൊരിക്കൽ തോട്ടം സന്ദർശിച്ചു രോഗലക്ഷണങ്ങൾ നിരീക്ഷിക്കുക",
+      "സ്യൂഡോമോണസ്, ട്രൈക്കോഡെർമ തുടങ്ങിയ ജൈവനിയന്ത്രണ മാർഗ്ഗങ്ങൾ ഉപയോഗിക്കുക",
+      "കീടനാശിനികൾ അവസാന വഴി മാത്രം ഉപയോഗിക്കുക"
+    ]
+  }
+]

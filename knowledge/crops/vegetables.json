@@ -1,0 +1,10 @@
+{
+  "crop": "Kerala Cool Season & Tropical Vegetables (Brinjal, Bitter Gourd, Snake Gourd, Chili, Cowpea)",
+  "localName": "പച്ചക്കറികൾ (വഴുതന, പാവൽ, പടവലം, പച്ചമുളക്, പയർ)",
+  "districts": ["Thrissur", "Palakkad", "Ernakulam", "Wayanad", "Idukki"],
+  "soils": ["Rich Organic Sandy Loam", "Alluvial Soil"],
+  "waterRequirement": "Moderate to High",
+  "commonIssues": ["Fruit Borer", "Damping Off", "Powdery Mildew", "Leaf Yellowing"],
+  "guidanceEn": "Apply yellow sticky traps for fruit flies and whiteflies. Spray Neem oil (5ml/L) regularly.",
+  "guidanceMl": "കീടങ്ങൾക്കെതിരെ മഞ്ഞക്കെണികൾ സ്ഥാപിക്കുക. ആഴ്ചയിലൊരിക്കൽ വേപ്പെണ്ണ ലായനി തളിക്കുന്നത് നല്ലതാണ്."
+}

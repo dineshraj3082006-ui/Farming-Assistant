@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>My Farm Profile - KrishiMitra AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body id="page-profile">
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="chatbot.html" data-i18n="navChatbot">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-disease.html" data-i18n="navDisease">Crop Doctor</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-recommendation.html" data-i18n="navCropRec">Crop Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="weather.html" data-i18n="navWeather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="market.html" data-i18n="navMarket">Market Prices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-xl-8">
+        
+        <!-- Profile Header Banner -->
+        <div class="profile-header-banner">
+          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+            <div id="prof-avatar-badge" class="profile-avatar-circle">
+              <span id="prof-initials">RN</span>
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h1 id="prof-display-name" class="h3 fw-bold text-white mb-0">Raman Nair (രാമൻ നായർ)</h1>
+                <span class="badge bg-success border border-light text-white px-2 py-1 small">
+                  <i class="fa-solid fa-circle-check me-1"></i>Verified Farmer
+                </span>
+              </div>
+              <p class="text-white-50 small mb-2">Personalized Agricultural Profile • Connected to KAU Knowledge Base</p>
+              
+              <!-- Quick Stats Badges -->
+              <div class="d-flex flex-wrap gap-2 pt-1">
+                <span class="profile-stat-badge">
+                  <i class="fa-solid fa-location-dot text-warning"></i>
+                  <span id="badge-district">Thrissur</span>
+                </span>
+                <span class="profile-stat-badge">
+                  <i class="fa-solid fa-leaf text-success"></i>
+                  <span id="badge-crop">Paddy, Banana</span>
+                </span>
+                <span class="profile-stat-badge">
+                  <i class="fa-solid fa-ruler-combined text-info"></i>
+                  <span id="badge-land">2.5 Acres</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="profile-form">
+          
+          <!-- Section 1: Personal & Contact Information -->
+          <div class="profile-section-card">
+            <div class="profile-section-header">
+              <div class="profile-section-icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold text-primary-dark mb-0">Personal & Contact Details</h5>
+                <small class="text-muted">Your contact information for SMS advisory and verification</small>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label-aligned" data-i18n="farmerName">
+                  <i class="fa-solid fa-user text-primary-green"></i> Farmer Name
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-signature auth-input-icon"></i>
+                  <input type="text" id="prof-name" class="form-control" placeholder="e.g. Raman Nair" required>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label-aligned" data-i18n="mobileNumber">
+                  <i class="fa-solid fa-phone text-primary-green"></i> Mobile Number
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-phone auth-input-icon"></i>
+                  <input type="tel" id="prof-mobile" class="form-control" maxlength="10" placeholder="9876543210" required>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label-aligned" data-i18n="emailAddress">
+                  <i class="fa-solid fa-envelope text-primary-green"></i> Advisory Email
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-envelope auth-input-icon"></i>
+                  <input type="email" id="prof-email" class="form-control" placeholder="farmer@example.com">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Farm & Soil Parameters (Real-Time Regional & Agro-Climatic Sync) -->
+          <div class="profile-section-card">
+            <div class="profile-section-header justify-content-between flex-wrap gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="profile-section-icon">
+                  <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold text-primary-dark mb-0">Agricultural & Soil Parameters</h5>
+                  <small class="text-muted">Real-time sync with KAU agro-climatic zones and live weather</small>
+                </div>
+              </div>
+              <button type="button" id="btn-gps-detect" class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-1 shadow-sm">
+                <i class="fa-solid fa-location-crosshairs text-success"></i>
+                <span id="gps-btn-text">Auto-Detect via GPS</span>
+              </button>
+            </div>
+
+            <!-- Live Agro-Climatic Intelligence Sync Banner -->
+            <div id="agro-realtime-status" class="alert alert-success-subtle border border-success-subtle p-2 px-3 rounded-3 d-flex align-items-center justify-content-between mb-3 small shadow-xs">
+              <div class="d-flex align-items-center gap-2">
+                <span class="spinner-grow spinner-grow-sm text-success" style="width: 10px; height: 10px;" role="status"></span>
+                <span id="agro-status-text"><strong>Real-time Agro Sync:</strong> Thrissur • Laterite Soil • 29°C • Rain 54%</span>
+              </div>
+              <span class="badge bg-success text-white">Live KAU Sync</span>
+            </div>
+
+            <div class="row g-3">
+              <!-- District -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="districtSelect">
+                  <i class="fa-solid fa-location-dot text-primary-green"></i> District / Region
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-map-pin auth-input-icon"></i>
+                  <select id="prof-district" class="form-select">
+                    <option value="Thiruvananthapuram">Thiruvananthapuram (തിരുവനന്തപുരം)</option>
+                    <option value="Kollam">Kollam (കൊല്ലം)</option>
+                    <option value="Pathanamthitta">Pathanamthitta (പത്തനംതിട്ട)</option>
+                    <option value="Alappuzha">Alappuzha (ആലപ്പുഴ)</option>
+                    <option value="Kottayam">Kottayam (കോട്ടയം)</option>
+                    <option value="Idukki">Idukki (ഇടുക്കി)</option>
+                    <option value="Ernakulam">Ernakulam (എറണാകുളം)</option>
+                    <option value="Thrissur">Thrissur (തൃശ്ശൂർ)</option>
+                    <option value="Palakkad">Palakkad (പാലക്കാട്)</option>
+                    <option value="Malappuram">Malappuram (മലപ്പുറം)</option>
+                    <option value="Kozhikode">Kozhikode (കോഴിക്കോട്)</option>
+                    <option value="Wayanad">Wayanad (വയനാട്)</option>
+                    <option value="Kannur">Kannur (കണ്ണൂർ)</option>
+                    <option value="Kasaragod">Kasaragod (കാസർഗോഡ്)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Farm Location -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="locationLabel">
+                  <i class="fa-solid fa-house-chimney text-primary-green"></i> Farm Location / Village
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-location-crosshairs auth-input-icon"></i>
+                  <input type="text" id="prof-location" class="form-control" placeholder="e.g. Mannuthy, Thrissur">
+                </div>
+              </div>
+
+              <!-- Main Crops -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="mainCrops">
+                  <i class="fa-solid fa-leaf text-primary-green"></i> Main Cultivated Crops
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-seedling auth-input-icon"></i>
+                  <input type="text" id="prof-crops" class="form-control" placeholder="e.g. Rice / Paddy, Banana, Coconut">
+                </div>
+                <div class="mt-1 d-flex flex-wrap align-items-center gap-1">
+                  <small class="text-muted" style="font-size: 0.78rem;">Quick Add:</small>
+                  <span id="crop-suggestion-pills" class="d-inline-flex flex-wrap gap-1">
+                    <!-- dynamically injected by script.js?v=8.4 -->
+                  </span>
+                </div>
+              </div>
+
+              <!-- Land Area -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="landArea">
+                  <i class="fa-solid fa-ruler-combined text-primary-green"></i> Total Land Area (Acres)
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-arrows-left-right auth-input-icon"></i>
+                  <input type="number" id="prof-land" class="form-control" step="0.1" min="0.1" placeholder="e.g. 2.5">
+                </div>
+              </div>
+
+              <!-- Soil Type -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="soilSelect">
+                  <i class="fa-solid fa-mountain text-primary-green"></i> Soil Type (KAU Mapped)
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-layer-group auth-input-icon"></i>
+                  <select id="prof-soil" class="form-select">
+                    <option value="Laterite Soil">Laterite Soil (ചെങ്കൽ മണ്ണ്)</option>
+                    <option value="Alluvial Soil">Alluvial Soil (എക്കൽ മണ്ണ്)</option>
+                    <option value="Red Soil">Red Soil (ചെമ്മണ്ണ്)</option>
+                    <option value="Black Soil">Black Soil (കരിമണ്ണ്)</option>
+                    <option value="Coastal Sandy">Coastal Sandy (തീരദേശ മണൽ)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Water Source -->
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="waterAvail">
+                  <i class="fa-solid fa-droplet text-primary-green"></i> Irrigation / Water Source
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-water auth-input-icon"></i>
+                  <input type="text" id="prof-water" class="form-control" placeholder="e.g. Open Well, Canal & Drip">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: AI Preferences & Language -->
+          <div class="profile-section-card">
+            <div class="profile-section-header">
+              <div class="profile-section-icon">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold text-primary-dark mb-0">AI Assistant & Advisory Preferences</h5>
+                <small class="text-muted">Configure your preferred communication language and report channels</small>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-aligned" data-i18n="prefLang">
+                  <i class="fa-solid fa-language text-primary-green"></i> Preferred App Language
+                </label>
+                <div class="auth-input-group">
+                  <i class="fa-solid fa-globe auth-input-icon"></i>
+                  <select id="prof-lang" class="form-select">
+                    <option value="ml">മലയാളം (Malayalam - AI Audio & Text)</option>
+                    <option value="en">English (AI Audio & Text)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-center">
+                <div class="p-3 bg-light rounded-3 border w-100 mt-2">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="prof-auto-voice" checked>
+                    <label class="form-check-label fw-bold text-dark ms-2" for="prof-auto-voice">
+                      Enable Auto-Voice Speaking in Assistant
+                    </label>
+                  </div>
+                  <small class="text-muted d-block ms-4 ps-2">AI automatically speaks responses in your selected language.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-5">
+            <a href="dashboard.html" class="btn btn-km-outline w-100 w-sm-auto">
+              <i class="fa-solid fa-arrow-left me-1"></i> Back to Dashboard
+            </a>
+            <button type="submit" class="btn btn-km-primary btn-lg px-4 w-100 w-sm-auto">
+              <i class="fa-solid fa-floppy-disk me-1"></i> <span data-i18n="save">Save Changes</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer text-center">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card active">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=8.9"></script>
+</body>
+</html>
+
+

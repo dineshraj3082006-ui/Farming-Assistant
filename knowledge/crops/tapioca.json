@@ -1,0 +1,11 @@
+{
+  "crop": "Tapioca / Cassava",
+  "localName": "മരച്ചീനി (കപ്പ)",
+  "districts": ["Kollam", "Trivandrum", "Kottayam", "Pathanamthitta", "Thrissur"],
+  "soils": ["Laterite Soil", "Red Soil", "Sandy Loam"],
+  "varieties": ["M4", "Sree Visakham", "Sree Jaya", "Kalpaka"],
+  "waterRequirement": "Low (Drought tolerant)",
+  "commonIssues": ["Cassava Mosaic Virus (transmitted by whitefly)", "Spider Mites"],
+  "guidanceEn": "Plant healthy 20cm stem cuttings vertically on mounds. Earth up soil at 45 and 90 days after planting.",
+  "guidanceMl": "മണ്ണു കൂട്ടി കൂനകളിൽ തണ്ട് കുത്തനെ നടുക. വെള്ളം കെട്ടിക്കിടക്കാത്ത സ്ഥലങ്ങളിൽ നല്ല വിളവ് ലഭിക്കും."
+}

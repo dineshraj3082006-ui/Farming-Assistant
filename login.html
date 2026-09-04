@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Farmer Login & Registration - KrishiMitra AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body id="page-login" class="d-flex flex-column min-vh-100">
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <a href="index.html" class="btn btn-km-outline d-none d-sm-inline-flex">
+          <i class="fa-solid fa-house me-1"></i> <span data-i18n="navHome">Home</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Auth Container -->
+  <main class="auth-wrapper flex-grow-1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-11 col-lg-12">
+          
+          <div class="auth-card-main">
+            <div class="row g-0">
+              
+              <!-- Left Column: Agricultural Showcase & Demo -->
+              <div class="col-lg-5 auth-showcase-panel d-none d-lg-flex">
+                <div>
+                  <div class="auth-showcase-badge">
+                    <i class="fa-solid fa-sparkles text-warning"></i>
+                    <span data-i18n="poweredByAI">Powered by AI • Designed for Kerala Farmers</span>
+                  </div>
+                  
+                  <h2 class="h2 fw-bold text-white mb-3" data-i18n="showcaseTitle">Empowering Kerala Farmers with AI</h2>
+                  <p class="text-white-50 mb-4" data-i18n="loginSubtitle">Sign in to access personalized AI crop advisories, weather radar, and market trends.</p>
+
+                  <div class="showcase-feature-list mb-4">
+                    <div class="showcase-feature-item">
+                      <div class="showcase-feature-icon">
+                        <i class="fa-solid fa-microscope"></i>
+                      </div>
+                      <div>
+                        <div class="fw-bold text-white fs-6" data-i18n="showcase1">🔬 24/7 AI Crop Doctor & Disease Diagnostics</div>
+                        <small class="text-white-50">Instant botanical leaf analysis & KAU verified remedies</small>
+                      </div>
+                    </div>
+
+                    <div class="showcase-feature-item">
+                      <div class="showcase-feature-icon">
+                        <i class="fa-solid fa-cloud-bolt"></i>
+                      </div>
+                      <div>
+                        <div class="fw-bold text-white fs-6" data-i18n="showcase2">🌦️ Hyperlocal Kerala Rainfall & Weather Radar</div>
+                        <small class="text-white-50">Severe monsoon alerts & smart irrigation schedules</small>
+                      </div>
+                    </div>
+
+                    <div class="showcase-feature-item">
+                      <div class="showcase-feature-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                      </div>
+                      <div>
+                        <div class="fw-bold text-white fs-6" data-i18n="showcase3">📈 Live Mandi Crop Prices & Trend Analytics</div>
+                        <small class="text-white-50">50+ crops tracked daily across all 14 Kerala districts</small>
+                      </div>
+                    </div>
+
+                    <div class="showcase-feature-item">
+                      <div class="showcase-feature-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                      </div>
+                      <div>
+                        <div class="fw-bold text-white fs-6" data-i18n="showcase4">🌱 Data-Driven Crop & Fertilizer Advisory</div>
+                        <small class="text-white-50">Customized NPK, bio-fertilizers & organic schedules</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <button type="button" id="btn-quick-demo" class="auth-demo-badge-btn">
+                    <i class="fa-solid fa-bolt-lightning text-warning"></i>
+                    <span data-i18n="quickDemoLogin">⚡ 1-Click Demo Login</span>
+                  </button>
+                  <p class="text-center text-white-50 small mt-2 mb-0" data-i18n="demoNote">(Demo Mode: Enter your credentials or click 1-Click Demo Login, OTP: 1234)</p>
+                </div>
+              </div>
+
+              <!-- Right Column: Interactive Tabbed Form -->
+              <div class="col-lg-7 p-3 p-sm-4 p-md-5">
+                
+                <!-- Mobile Only Quick Demo Banner -->
+                <div class="d-lg-none mb-3">
+                  <button type="button" id="btn-quick-demo-mobile" class="btn btn-warning w-100 fw-bold py-2 shadow-sm d-flex align-items-center justify-content-center gap-2">
+                    <i class="fa-solid fa-bolt-lightning text-dark"></i>
+                    <span data-i18n="quickDemoLogin">⚡ 1-Click Demo Login</span>
+                  </button>
+                  <div class="text-center text-muted small mt-1">
+                    <small data-i18n="demoNote">(Demo Mode: Auto-fills Raman Nair, OTP: 1234)</small>
+                  </div>
+                </div>
+
+                <!-- Mode Switch Tabs -->
+                <div class="auth-nav-tabs">
+                  <button type="button" id="tab-login-btn" class="auth-tab-btn active">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span data-i18n="loginTab">Farmer Login</span>
+                  </button>
+                  <button type="button" id="tab-register-btn" class="auth-tab-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span data-i18n="registerTab">New Farmer Registration</span>
+                  </button>
+                </div>
+
+                <!-- Form Header -->
+                <div class="mb-4">
+                  <h3 id="auth-heading" class="fw-bold text-primary-dark mb-1" data-i18n="loginTab">Farmer Login</h3>
+                  <p id="auth-subheading" class="text-muted small" data-i18n="loginSubtitle">Sign in to access personalized AI crop advisories, weather radar, and market trends</p>
+                </div>
+
+                <!-- 1. LOGIN FORM SECTION -->
+                <div id="login-section">
+                  <form id="form-login-farmer">
+                    <!-- Mobile Number -->
+                    <div class="mb-3">
+                      <label class="form-label fw-bold text-dark" data-i18n="mobileNumber">Mobile Number</label>
+                      <div class="auth-input-group">
+                        <i class="fa-solid fa-phone auth-input-icon"></i>
+                        <input type="tel" id="login-mobile" class="form-control form-control-lg" placeholder="9876543210" maxlength="10" required>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mt-1">
+                        <small class="text-muted">Enter 10-digit mobile number</small>
+                        <span class="badge bg-light text-success border">Verified SMS / OTP</span>
+                      </div>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="mb-4 form-check">
+                      <input type="checkbox" class="form-check-input" id="remember-me" checked>
+                      <label class="form-check-label text-muted small" for="remember-me" data-i18n="rememberMe">Remember me on this device</label>
+                    </div>
+
+                    <!-- Send OTP Button -->
+                    <div class="d-grid mb-3">
+                      <button type="button" id="btn-login-send-otp" class="btn btn-km-primary btn-lg">
+                        <span data-i18n="sendOtp">Send Verification OTP</span>
+                        <i class="fa-solid fa-paper-plane ms-1"></i>
+                      </button>
+                    </div>
+
+                    <!-- OTP Input Container -->
+                    <div id="login-otp-section" class="d-none mt-4 p-3 bg-light rounded-4 border">
+                      <div class="text-center mb-3">
+                        <label class="form-label fw-bold text-dark d-block" data-i18n="enterOtp">Enter 4-Digit OTP</label>
+                        <div class="otp-digit-grid mt-2">
+                          <input type="text" class="otp-box" id="login-otp-1" maxlength="1" inputmode="numeric" autofocus>
+                          <input type="text" class="otp-box" id="login-otp-2" maxlength="1" inputmode="numeric">
+                          <input type="text" class="otp-box" id="login-otp-3" maxlength="1" inputmode="numeric">
+                          <input type="text" class="otp-box" id="login-otp-4" maxlength="1" inputmode="numeric">
+                        </div>
+                        <input type="hidden" id="login-otp-full" value="">
+                      </div>
+
+                      <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                        <span id="otp-timer-display" class="otp-timer-badge">
+                          <i class="fa-regular fa-clock"></i> <span>00:30</span>
+                        </span>
+                        <button type="button" id="btn-resend-otp" class="btn btn-link btn-sm text-decoration-none text-success p-0" disabled>
+                          <i class="fa-solid fa-rotate-right me-1"></i> <span data-i18n="resendOtp">Resend OTP</span>
+                        </button>
+                      </div>
+
+                      <div class="d-grid">
+                        <button type="button" id="btn-login-verify" class="btn btn-success btn-lg fw-bold">
+                          <span data-i18n="verifyLogin">Verify & Enter Dashboard</span>
+                          <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- 2. REGISTRATION FORM SECTION -->
+                <div id="register-section" class="d-none">
+                  <form id="form-register-farmer">
+                    <div class="row g-3">
+                      
+                      <!-- Full Name -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="fullName">Full Name</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-user auth-input-icon"></i>
+                          <input type="text" id="reg-name" class="form-control" placeholder="e.g. Raman Nair / രാമൻ നായർ" required>
+                        </div>
+                      </div>
+
+                      <!-- Mobile -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="mobileNumber">Mobile Number</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-phone auth-input-icon"></i>
+                          <input type="tel" id="reg-mobile" class="form-control" placeholder="9876543210" maxlength="10" required>
+                        </div>
+                      </div>
+
+                      <!-- Email Address -->
+                      <div class="col-12">
+                        <label class="form-label fw-bold text-dark" data-i18n="emailAddress">Email Address (for Daily Reports & Alerts)</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-envelope auth-input-icon"></i>
+                          <input type="email" id="reg-email" class="form-control" placeholder="farmer@example.com" required>
+                        </div>
+                        <small class="text-muted form-text" data-i18n="emailHelp">
+                          <i class="fa-solid fa-circle-info text-success me-1"></i> Daily farm advisory, weather alerts, and crop reports will be sent to this email.
+                        </small>
+                      </div>
+
+                      <!-- District -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="districtSelect">District / Region</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-location-dot auth-input-icon"></i>
+                          <select id="reg-district" class="form-select">
+                            <option value="Thrissur">Thrissur (തൃശ്ശൂർ)</option>
+                            <option value="Palakkad">Palakkad (പാലക്കാട്)</option>
+                            <option value="Wayanad">Wayanad (വയനാട്)</option>
+                            <option value="Alappuzha">Alappuzha (ആലപ്പുഴ)</option>
+                            <option value="Ernakulam">Ernakulam (എറണാകുളം)</option>
+                            <option value="Idukki">Idukki (ഇടുക്കി)</option>
+                            <option value="Kottayam">Kottayam (കോട്ടയം)</option>
+                            <option value="Kozhikode">Kozhikode (കോഴിക്കോട്)</option>
+                            <option value="Malappuram">Malappuram (മലപ്പുറം)</option>
+                            <option value="Kannur">Kannur (കണ്ണൂർ)</option>
+                            <option value="Kasaragod">Kasaragod (കാസർഗോഡ്)</option>
+                            <option value="Kollam">Kollam (കൊല്ലം)</option>
+                            <option value="Pathanamthitta">Pathanamthitta (പത്തനംതിട്ട)</option>
+                            <option value="Thiruvananthapuram">Thiruvananthapuram (തിരുവനന്തപുരം)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Primary Crop -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="primaryCrop">Primary Crop</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-leaf auth-input-icon"></i>
+                          <select id="reg-crop" class="form-select">
+                            <option value="Paddy">Rice / Paddy (നെല്ല്)</option>
+                            <option value="Banana">Banana (വാഴ)</option>
+                            <option value="Coconut">Coconut (തെങ്ങ്)</option>
+                            <option value="Pepper">Black Pepper (കുരുമുളക്)</option>
+                            <option value="Rubber">Rubber (റബ്ബർ)</option>
+                            <option value="Vegetables">Vegetables (പച്ചക്കറികൾ)</option>
+                            <option value="Cardamom">Cardamom (ഏലം)</option>
+                            <option value="Tea">Tea (തേയില)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Land Area -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="landArea">Land Area (Acres)</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-ruler-combined auth-input-icon"></i>
+                          <input type="number" id="reg-land" class="form-control" step="0.1" min="0.1" placeholder="e.g. 2.5" value="2.0">
+                        </div>
+                      </div>
+
+                      <!-- Soil Type -->
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold text-dark" data-i18n="soilType">Soil Type</label>
+                        <div class="auth-input-group">
+                          <i class="fa-solid fa-mountain auth-input-icon"></i>
+                          <select id="reg-soil" class="form-select">
+                            <option value="Laterite Soil">Laterite Soil (ചെങ്കൽ മണ്ണ്)</option>
+                            <option value="Alluvial Soil">Alluvial Soil (എക്കൽ മണ്ണ്)</option>
+                            <option value="Red Soil">Red Soil (ചെമ്മണ്ണ്)</option>
+                            <option value="Black Soil">Black Soil (കരിമണ്ണ്)</option>
+                            <option value="Coastal Sandy">Coastal Sandy (തീരദേശ മണൽ)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Register Button -->
+                    <div class="d-grid mt-4">
+                      <button type="button" id="btn-register-submit" class="btn btn-km-primary btn-lg">
+                        <span data-i18n="registerBtn">Register & Start Farming Smart</span>
+                        <i class="fa-solid fa-user-check ms-1"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Footer Quick Toggle -->
+                <div class="text-center mt-4 pt-3 border-top">
+                  <span id="auth-switch-prompt" class="text-muted small">
+                    <span data-i18n="newFarmerPrompt">New to KrishiMitra? Register your farm here</span>
+                  </span>
+                  <button type="button" id="btn-toggle-auth-mode" class="btn btn-link btn-sm text-success fw-bold text-decoration-none ms-1">
+                    <span id="auth-switch-btn-text" data-i18n="registerTab">New Farmer Registration</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer text-center mt-auto">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=8.9"></script>
+</body>
+</html>
+
+

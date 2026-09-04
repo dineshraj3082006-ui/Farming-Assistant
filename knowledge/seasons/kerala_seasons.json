@@ -1,0 +1,23 @@
+[
+  {
+    "season": "Virippu (വിരിപ്പ് / Kharif)",
+    "months": "May / June to September / October",
+    "climate": "South-West Monsoon (Edavappathi)",
+    "majorCrops": ["Paddy (Autumn)", "Nendran Banana Planting", "Tapioca", "Vegetables"],
+    "guidanceEn": "High monsoon rainfall. Sowing done with pre-monsoon showers in May."
+  },
+  {
+    "season": "Mundakan (മുണ്ടകൻ / Rabi)",
+    "months": "October to January / February",
+    "climate": "North-East Monsoon (Thulavarsham)",
+    "majorCrops": ["Paddy (Winter)", "Cool season vegetables", "Pulses"],
+    "guidanceEn": "Most productive paddy season in Kerala. Harvesting in Jan-Feb."
+  },
+  {
+    "season": "Puncha (പുഞ്ച / Summer)",
+    "months": "January / February to May",
+    "climate": "Dry Summer",
+    "majorCrops": ["Irrigated Paddy in Kuttanad & Kole lands", "Summer Vegetables", "Watermelon"],
+    "guidanceEn": "Requires continuous irrigation and water conservation."
+  }
+]

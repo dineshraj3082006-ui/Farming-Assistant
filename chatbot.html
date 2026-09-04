@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ask KrishiMitra AI - Personal Farming Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body id="page-chatbot">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="chatbot.html" data-i18n="navChatbot">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-disease.html" data-i18n="navDisease">Crop Doctor</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-recommendation.html" data-i18n="navCropRec">Crop Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="weather.html" data-i18n="navWeather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="market.html" data-i18n="navMarket">Market Prices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <div class="chat-container">
+          
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon-box mb-0 text-white bg-white bg-opacity-20 width-50 height-50">
+                <i class="fa-solid fa-robot fs-3"></i>
+              </div>
+              <div>
+                <h1 class="h4 mb-0 text-white fw-bold" data-i18n="chatbotTitle">Ask KrishiMitra AI</h1>
+                <small class="text-white-50"><i class="fa-solid fa-circle text-success me-1 fs-6"></i> Malayalam & English RAG AI Assistant</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <button id="btn-auto-speak-toggle" class="btn btn-sm btn-light text-success fw-bold d-flex align-items-center gap-1 shadow-sm" title="Toggle Auto-Voice">
+                <i class="fa-solid fa-volume-high"></i>
+                <span class="d-none d-md-inline" id="auto-speak-label" data-i18n="autoVoiceOn">Auto-Voice: ON</span>
+              </button>
+              <button id="btn-clear-chat" class="btn btn-sm btn-outline-light" title="Clear Conversation">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+              <button id="btn-chat-mic" class="btn btn-km-voice" aria-label="Start voice assistant">
+                <i class="fa-solid fa-microphone fs-5"></i>
+                <span class="d-none d-sm-inline" data-i18n="speakBtn">Speak to KrishiMitra</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Messages Area -->
+          <div id="chat-messages" class="chat-messages">
+            <!-- Initial Greeting -->
+            <div class="chat-bubble bot">
+              <div class="chat-content">
+                👋 <strong>Namaskaram! I am KrishiMitra AI.</strong><br>
+                I am your personal agricultural assistant for Kerala. Ask me any query in English or Malayalam, or upload a photo of your crop!
+              </div>
+              <button class="btn-listen mt-1" data-audio="Namaskaram! I am KrishiMitra AI. How can I assist your farm today?" onclick="handleBubbleListenClick(this)">
+                <i class="fa-solid fa-volume-high"></i> <span data-i18n="listenBtn">Listen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Input Controls & Quick Chips -->
+          <div class="chat-input-area">
+            
+            <!-- Hidden Image Input -->
+            <input type="file" id="chat-file-input" class="d-none" accept="image/*">
+
+            <!-- Image Upload Preview Container -->
+            <div id="chat-image-preview-bar" class="d-none mb-2 p-2 bg-light rounded border align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img id="chat-img-thumb" src="" alt="Selected Leaf Image" class="rounded border" style="width: 45px; height: 45px; object-fit: cover;">
+                <span class="small fw-bold text-dark">📷 Plant Leaf Image Attached</span>
+              </div>
+              <button type="button" id="btn-remove-img" class="btn-close" aria-label="Remove Image"></button>
+            </div>
+
+            <!-- Quick Question Chips -->
+            <div class="chat-quick-chips">
+              <button class="chip-btn chip-accent-orange" data-question="My tomato leaves are turning yellow. What should I do?" data-i18n="q1">
+                🍅 My tomato leaves are turning yellow. What should I do?
+              </button>
+              <button class="chip-btn chip-accent-green" data-question="What should I plant now in Thrissur?" data-i18n="q2">
+                🌱 What should I plant now?
+              </button>
+              <button class="chip-btn chip-accent-blue" data-question="Is rain expected tomorrow in Thrissur?" data-i18n="q3">
+                🌧️ Is rain expected?
+              </button>
+              <button class="chip-btn chip-accent-teal" data-question="Why are my banana leaves turning yellow?" data-i18n="q4">
+                🍌 Why are banana leaves yellow?
+              </button>
+              <button class="chip-btn chip-accent-purple" data-question="What is today's market price for coconut in Kozhikode?" data-i18n="q5">
+                📊 Today's market prices
+              </button>
+            </div>
+
+            <div class="input-group">
+              <button type="button" id="btn-chat-upload" class="btn btn-outline-secondary" title="📷 Upload Crop Photo">
+                <i class="fa-solid fa-camera fs-5"></i>
+              </button>
+              <input type="text" id="chat-input" class="form-control form-control-lg" placeholder="Type your query or speak in Malayalam/English..." data-i18n-placeholder="chatbotPlaceholder">
+              <button id="btn-chat-send" class="btn btn-km-primary px-4">
+                <i class="fa-solid fa-paper-plane fs-5"></i>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer text-center">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card active">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item active" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=8.9"></script>
+</body>
+</html>
+
+

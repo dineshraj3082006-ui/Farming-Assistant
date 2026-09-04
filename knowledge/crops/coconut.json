@@ -1,0 +1,13 @@
+{
+  "crop": "Coconut",
+  "localName": "തെങ്ങ് / നാളികേരം",
+  "districts": ["Kozhikode", "Malappuram", "Thrissur", "Trivandrum", "Kollam", "Kannur"],
+  "seasons": ["Year-round plantation"],
+  "soils": ["Coastal Sandy Soil", "Laterite Soil", "Alluvial Soil"],
+  "varieties": ["West Coast Tall (WCT)", "Chowghat Orange Dwarf (COD)", "Kera Sankara Hybrid", "Chandrakalpa"],
+  "waterRequirement": "Moderate (40 - 50 Liters per palm per day during dry months)",
+  "fertilizerSchedule": "500g N, 320g P2O5, 1200g K2O per palm per year in two split doses (May-June & Sept-Oct). Apply 1kg common salt per palm.",
+  "commonIssues": ["Root Wilt Disease", "Rhinoceros Beetle", "Red Palm Weevil", "Yellowing of fronds due to potassium/magnesium deficiency"],
+  "guidanceEn": "Apply green leaf manure (25kg) and Vermicompost around the palm basin. Ensure basin radius of 1.8m is kept free of weeds.",
+  "guidanceMl": "മഴക്കാലത്തിന് മുന്നോടിയായി മെയ്-ജൂൺ മാസങ്ങളിൽ ജൈവവളങ്ങളും ഉപ്പും ഇട്ടുകൊടുക്കുക. ചുവട്ടിൽ വെള്ളം കെട്ടിനിൽക്കാൻ അനുവദിക്കരുത്."
+}

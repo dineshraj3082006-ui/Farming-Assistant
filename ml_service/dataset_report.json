@@ -1,0 +1,167 @@
+{
+  "dataset_root": "D:\\agri project\\dataset",
+  "num_classes": 17,
+  "total_images": 1020,
+  "split_totals": {
+    "train": 714,
+    "validation": 153,
+    "test": 153,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15
+  },
+  "class_imbalance": {
+    "min_samples_per_class": 42,
+    "max_samples_per_class": 42,
+    "imbalance_ratio": 1.0,
+    "is_balanced": true
+  },
+  "image_formats": {
+    ".jpg": 1020
+  },
+  "corrupted_images_count": 0,
+  "corrupted_files": [],
+  "data_leakage_detected": false,
+  "leakage_count": 0,
+  "leakage_details": [],
+  "classes": [
+    "Apple___Apple_scab",
+    "Apple___Black_rot",
+    "Apple___healthy",
+    "Corn_(maize)___Common_rust_",
+    "Corn_(maize)___healthy",
+    "Grape___Black_rot",
+    "Grape___healthy",
+    "Pepper__bell___Bacterial_spot",
+    "Pepper__bell___healthy",
+    "Potato___Early_blight",
+    "Potato___Late_blight",
+    "Potato___healthy",
+    "Tomato___Bacterial_spot",
+    "Tomato___Early_blight",
+    "Tomato___Late_blight",
+    "Tomato___Leaf_Mold",
+    "Tomato___healthy"
+  ],
+  "per_class_distribution": [
+    {
+      "class": "Apple___Apple_scab",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Apple___Black_rot",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Apple___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Corn_(maize)___Common_rust_",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Corn_(maize)___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Grape___Black_rot",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Grape___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Pepper__bell___Bacterial_spot",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Pepper__bell___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Potato___Early_blight",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Potato___Late_blight",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Potato___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Tomato___Bacterial_spot",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Tomato___Early_blight",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Tomato___Late_blight",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Tomato___Leaf_Mold",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    },
+    {
+      "class": "Tomato___healthy",
+      "train": 42,
+      "validation": 9,
+      "test": 9,
+      "total": 60
+    }
+  ]
+}

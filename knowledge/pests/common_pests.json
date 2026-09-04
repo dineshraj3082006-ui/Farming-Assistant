@@ -1,0 +1,20 @@
+[
+  {
+    "pest": "Fruit Fly (Bactrocera cucurbitae)",
+    "localName": "കായ് ഈച്ച",
+    "crops": ["Paddy", "Tomato", "Bitter Gourd", "Snake Gourd", "Mango"],
+    "damageEn": "Punctures fruit to lay eggs; maggots feed inside causing fruit decay and drop.",
+    "damageMl": "കായ്കൾ തുളച്ച് മുട്ടയിടുന്നു; പുഴുക്കൾ കാമ്പ് തിന്നു നശിപ്പിക്കുന്നു.",
+    "controlEn": ["Hang Pheromone Lure traps @ 10 traps/acre", "Spray Neem oil 5ml/L", "Collect and destroy infested fruits in deep pit"],
+    "controlMl": ["മഞ്ഞക്കെണികളും ഫെറോമോൺ കെണികളും സ്ഥാപിക്കുക", "വേപ്പെണ്ണ ലായനി 5 മില്ലി/ലിറ്റർ തളിക്കുക"]
+  },
+  {
+    "pest": "Rhinoceros Beetle & Red Palm Weevil",
+    "localName": "ഓലച്ചെല്ലിയും കൊമ്പൻ ചെല്ലിയും",
+    "crops": ["Coconut"],
+    "damageEn": "Bores into central crown leaf spindles causing V-shaped cut leaves.",
+    "damageMl": "തലപ്പിലെ ഇളം മണ്ട കുത്തിക്കയറി ഓലകൾ V ആകൃതിയിൽ നശിപ്പിക്കുന്നു.",
+    "controlEn": ["Hook out beetles using iron rod", "Fill top leaf axils with sand + neem cake mixture (1:1)", "Place Rhinolure pheromone traps"],
+    "controlMl": ["ഇരുമ്പു കൊളുത്തുപയോഗിച്ച് ചെല്ലിയെ കുത്തിയെടുക്കുക", "മണ്ടയിലെ കവിളുകളിൽ മണലും വേപ്പിൻപിണ്ണാക്കും കലർത്തി ഇടുക"]
+  }
+]

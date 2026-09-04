@@ -1,0 +1,11 @@
+[
+  {
+    "disease": "Root Wilt Disease (Phytoplasma)",
+    "localName": "തെങ്ങിലെ കാറ്റു വീഴ്ച രോഗം",
+    "crop": "Coconut",
+    "symptomsEn": ["Ribbing/flaccidity of fronds", "Yellowing and necrosis of outer fronds", "Button shedding"],
+    "symptomsMl": ["ഓലകൾ വില്ലുപോലെ വളഞ്ഞ് ഉണങ്ങുന്നത്", "മഞ്ഞളിപ്പും ഇളനീർ പൊഴിച്ചിലും"],
+    "treatmentEn": ["Apply recommended balanced NPK + MgSO4 (magnesium sulphate 500g/palm)", "Eradicate heavily diseased non-bearing palms", "Grow intercrops like banana or green manure"],
+    "treatmentMl": ["തെങ്ങിൻ തടത്തിൽ മഗ്നീഷ്യം സൾഫേറ്റ് 500 ഗ്രാം നൽകുക", "പച്ചിലവളങ്ങൾ വച്ചുപിടിപ്പിക്കുക"]
+  }
+]

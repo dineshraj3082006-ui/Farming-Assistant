@@ -1,0 +1,22 @@
+[
+  {
+    "disease": "Early Blight (Alternaria solani)",
+    "localName": "തക്കാളി അലി സാറ്റ് ഫംഗസ് രോഗം",
+    "crop": "Tomato",
+    "symptomsEn": ["Concentric dark brown circular spots on older leaves", "Yellow halo around infected spots", "Leaf blighting and stem lesions"],
+    "symptomsMl": ["താഴത്തെ മൂത്ത ഇലകളിൽ കറുത്ത വളയങ്ങളുള്ള പുള്ളികൾ", "പുള്ളികൾക്ക് ചുറ്റും മഞ്ഞനിറം පടരുന്നത്", "ഇലകൾ ഉണങ്ങി വീഴുന്നത്"],
+    "causes": ["High humidity", "Overhead irrigation", "Warm damp weather"],
+    "treatmentEn": ["Remove infected leaves immediately", "Avoid sprinkler/overhead watering; irrigate root basin", "Spray Pseudomonas fluorescens 20g/L or copper oxychloride 3g/L"],
+    "treatmentMl": ["കേടായ ഇലകൾ പറിച്ചു നശിപ്പിക്കുക", "ഇലകളിൽ വെള്ളം വീഴാതെ ചുവട്ടിൽ നനയ്ക്കുക", "സ്യൂഡോമോണസ് 20 ഗ്രാം/ലിറ്റർ വെള്ളത്തിൽ തളിക്കുക"]
+  },
+  {
+    "disease": "Bacterial Wilt (Ralstonia solanacearum)",
+    "localName": "തക്കാളി ബാക്ടീരിയൽ വാട്ടം",
+    "crop": "Tomato",
+    "symptomsEn": ["Rapid wilting of green leaves without yellowing", "Vascular browning inside lower stem"],
+    "symptomsMl": ["ഇലകൾ മഞ്ഞയാകാതെ പെട്ടെന്ന് വാടിപ്പോകുന്നത്", "തണ്ടിന്റെ ഉള്ളിൽ തവിട്ടുനിറം കാണപ്പെടുന്നത്"],
+    "causes": ["Soil-borne bacteria infected through root wounds in warm wet soil"],
+    "treatmentEn": ["Uproot infected plants and apply lime in the hole", "Drench surrounding soil with Pseudomonas fluorescens solution", "Use resistant varieties like Vellayani Vijay"],
+    "treatmentMl": ["രോഗം ബാധിച്ച ചെടികൾ വേരോടെ പിഴുതു മാറ്റി ചുണ്ണാമ്പ് ഇടുക", "സ്യൂഡോമോണസ് ലായനി ഒഴിച്ചു കൊടുക്കുക"]
+  }
+]

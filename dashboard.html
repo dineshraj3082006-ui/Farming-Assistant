@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Farmer Dashboard - KrishiMitra AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body id="page-dashboard">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <a href="profile.html" class="btn btn-km-outline btn-sm d-none d-sm-inline-flex" data-i18n="navProfile">My Farm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="chatbot.html" data-i18n="navChatbot">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-disease.html" data-i18n="navDisease">Crop Doctor</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-recommendation.html" data-i18n="navCropRec">Crop Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="weather.html" data-i18n="navWeather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="market.html" data-i18n="navMarket">Market Prices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    
+    <!-- Farmer Banner Header -->
+    <div class="farmer-banner mb-4">
+      <div class="row align-items-center g-3">
+        <div class="col-md-7">
+          <h1 class="h2 fw-bold text-white mb-2">
+            <span data-i18n="greetingMorning">Good Morning</span>, <span id="dash-farmer-name">Raman Nair</span> 👋
+          </h1>
+          <div class="d-flex flex-wrap align-items-center gap-3 text-white-50 fs-6">
+            <span>
+              <i class="fa-solid fa-location-dot text-warning me-1"></i>
+              <span data-i18n="locationLabel">Location</span>: <strong id="dash-location" class="text-white">Thrissur, Kerala</strong>
+            </span>
+            <span>
+              <i class="fa-solid fa-envelope text-info me-1"></i>
+              <strong id="dash-email" class="text-white">raman.nair@keralafarm.in</strong>
+            </span>
+            <span>
+              <i class="fa-solid fa-phone text-success me-1"></i>
+              <strong id="dash-mobile" class="text-white">+91 9876543210</strong>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <div class="weather-badge">
+            <i class="fa-solid fa-cloud-sun-rain fs-2 text-warning"></i>
+            <div class="text-start text-white">
+              <div class="fw-bold fs-4" id="dash-temp">29°C</div>
+              <small id="dash-weather-text">Partly Cloudy</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Farm Alerts Bar -->
+    <div id="dash-alert-container" class="alert alert-warning border-0 shadow-sm d-flex align-items-center justify-content-between p-3 rounded-md mb-4">
+      <div class="d-flex align-items-center gap-3">
+        <span class="fs-3 text-danger"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        <div>
+          <strong class="d-block text-dark fw-bold" data-i18n="weatherAlertTitle">Farming Weather Alert</strong>
+          <span id="dash-farm-alert" class="small text-dark">
+            Rain is expected tomorrow in Thrissur. Avoid unnecessary irrigation and check field drainage.
+          </span>
+        </div>
+      </div>
+      <button type="button" id="btn-dismiss-alert" class="btn-close" aria-label="Close"></button>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="row g-4 mb-4">
+      
+      <!-- Today's Farm Advice -->
+      <div class="col-lg-6">
+        <div class="km-card border-start border-4 border-success">
+          <div class="km-card-header">
+            <h2 class="h5 text-primary-dark mb-0">
+              <i class="fa-solid fa-lightbulb text-warning me-2"></i>
+              <span data-i18n="todayAdviceTitle">Today's Farm Advice</span>
+            </h2>
+            <span class="badge bg-success" data-i18n="poweredByAI">AI Generated</span>
+          </div>
+          <p class="fs-5 text-dark mb-3" id="dash-today-advice-main">
+            “Loading live weather advice...”
+          </p>
+          <div class="p-3 bg-light rounded border text-muted small" id="dash-today-advice-sub">
+            <i class="fa-solid fa-circle-info text-primary-green me-1"></i>
+            Real-time advisory syncing with live Kerala WeatherAPI radar and district climate conditions.
+          </div>
+        </div>
+      </div>
+
+      <!-- Crop Health Overview -->
+      <div class="col-lg-6">
+        <div class="km-card">
+          <div class="km-card-header">
+            <h2 class="h5 text-primary-dark mb-0">
+              <i class="fa-solid fa-heart-pulse text-danger me-2"></i>
+              <span data-i18n="cropHealthTitle">Crop Health Overview</span>
+            </h2>
+            <a href="crop-disease.html" class="btn btn-sm btn-km-outline" data-i18n="scanCrop">Scan Crop</a>
+          </div>
+
+          <div class="list-group list-group-flush">
+            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+              <div class="d-flex align-items-center gap-3">
+                <span class="fs-4">🍅</span>
+                <div>
+                  <h3 class="h6 mb-0 fw-bold">Tomato Plot</h3>
+                  <small class="text-muted">Last scanned 2 days ago</small>
+                </div>
+              </div>
+              <span class="badge badge-success-custom px-3 py-2 rounded-pill">
+                <i class="fa-solid fa-circle-check me-1"></i> Healthy
+              </span>
+            </div>
+
+            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+              <div class="d-flex align-items-center gap-3">
+                <span class="fs-4">🌾</span>
+                <div>
+                  <h3 class="h6 mb-0 fw-bold">Rice Paddy (Mundakan)</h3>
+                  <small class="text-muted">High humidity risk</small>
+                </div>
+              </div>
+              <span class="badge badge-warning-custom px-3 py-2 rounded-pill">
+                <i class="fa-solid fa-circle-exclamation me-1"></i> Moderate Risk
+              </span>
+            </div>
+
+            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+              <div class="d-flex align-items-center gap-3">
+                <span class="fs-4">🍌</span>
+                <div>
+                  <h3 class="h6 mb-0 fw-bold">Banana (Nendran)</h3>
+                  <small class="text-muted">Optimal growth</small>
+                </div>
+              </div>
+              <span class="badge badge-success-custom px-3 py-2 rounded-pill">
+                <i class="fa-solid fa-circle-check me-1"></i> Healthy
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="mb-4">
+      <h2 class="h4 fw-bold mb-3" data-i18n="quickActionsTitle">Quick Actions</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-5th">
+          <a href="chatbot.html" class="quick-action-card quick-action-green text-center text-decoration-none d-block py-3 px-2">
+            <div class="quick-action-icon-box mb-2"><i class="fa-solid fa-robot"></i></div>
+            <div class="quick-action-label" data-i18n="askAI">Ask AI</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5th">
+          <a href="crop-disease.html" class="quick-action-card quick-action-orange text-center text-decoration-none d-block py-3 px-2">
+            <div class="quick-action-icon-box mb-2"><i class="fa-solid fa-bug"></i></div>
+            <div class="quick-action-label" data-i18n="scanCrop">Scan Crop</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5th">
+          <a href="weather.html" class="quick-action-card quick-action-purple text-center text-decoration-none d-block py-3 px-2">
+            <div class="quick-action-icon-box mb-2"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+            <div class="quick-action-label" data-i18n="checkWeather">Weather</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5th">
+          <a href="market.html" class="quick-action-card quick-action-teal text-center text-decoration-none d-block py-3 px-2">
+            <div class="quick-action-icon-box mb-2"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="quick-action-label" data-i18n="marketPrices">Market Prices</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5th">
+          <a href="crop-recommendation.html" class="quick-action-card quick-action-blue text-center text-decoration-none d-block py-3 px-2">
+            <div class="quick-action-icon-box mb-2"><i class="fa-solid fa-seedling"></i></div>
+            <div class="quick-action-label" data-i18n="navCropRec">Crop Rec</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency Alerts Status Section -->
+    <div class="km-card">
+      <h3 class="h5 fw-bold mb-3">Farm Alerts Log</h3>
+      <div class="row g-2">
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 alert-box-rose d-flex align-items-center gap-3 shadow-sm">
+            <span class="fs-3 text-danger"><i class="fa-solid fa-circle-exclamation"></i></span>
+            <div>
+              <strong class="d-block">Pest / Disease Risk</strong>
+              <small>High humidity near Thrissur</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 alert-box-amber d-flex align-items-center gap-3 shadow-sm">
+            <span class="fs-3 text-warning"><i class="fa-solid fa-cloud-bolt"></i></span>
+            <div>
+              <strong class="d-block">Heavy Rain Warning</strong>
+              <small>Expected within 24h</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 alert-box-blue d-flex align-items-center gap-3 shadow-sm">
+            <span class="fs-3 text-primary"><i class="fa-solid fa-faucet-drip"></i></span>
+            <div>
+              <strong class="d-block">Irrigation Reminder</strong>
+              <small>Pause watering until Friday</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 alert-box-green d-flex align-items-center gap-3 shadow-sm">
+            <span class="fs-3 text-success"><i class="fa-solid fa-seedling"></i></span>
+            <div>
+              <strong class="d-block">Soil Condition</strong>
+              <small>Optimal moisture levels</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer text-center">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card active">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item active" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=8.9"></script>
+</body>
+</html>
+
+

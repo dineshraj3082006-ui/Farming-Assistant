@@ -1,0 +1,11 @@
+[
+  {
+    "disease": "Quick Wilt / Phytophthora Foot Rot",
+    "localName": "കുരുമുളകിലെ ദ്രുതവാട്ടം",
+    "crop": "Black Pepper",
+    "symptomsEn": ["Dark water-soaked lesions on leaves and vine bases", "Sudden wilting and leaf fall within days"],
+    "symptomsMl": ["ഇലകളിലും വള്ളിയുടെ ചുവട്ടിലും കറുത്ത നനഞ്ഞ പാടുകൾ", "കുറച്ചു ദിവസങ്ങൾക്കുള്ളിൽ വള്ളി വാടി ഉണങ്ങുന്നത്"],
+    "treatmentEn": ["Apply Trichoderma harzianum @ 50g mixed with 2kg neem cake per vine", "Spray 1% Bordeaux mixture pre-monsoon (May) and post-monsoon (Sept)", "Ensure good slope drainage"],
+    "treatmentMl": ["ട്രൈക്കോഡെർമ ചേർത്ത വേപ്പിൻപിണ്ണാക്ക് തടത്തിൽ ഇടുക", "1% ബോർഡോ മിശ്രിതം തളിക്കുക"]
+  }
+]

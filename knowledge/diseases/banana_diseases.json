@@ -1,0 +1,12 @@
+[
+  {
+    "disease": "Banana Sigatoka Leaf Spot (Mycosphaerella musicola)",
+    "localName": "വാഴയിലെ സിഗറ്റോക്ക ഇലപ്പുള്ളി രോഗം",
+    "crop": "Banana",
+    "symptomsEn": ["Small pale green yellow streaks on 3rd/4th leaf", "Streaks enlarging into dark brown spots with gray centers", "Premature drying of fronds"],
+    "symptomsMl": ["ഇലകളിൽ മഞ്ഞ-തവിട്ട് നീളൻ പാടുകൾ പ്രത്യക്ഷപ്പെടുന്നത്", "പാടുകൾ വലുതായി ഇലകൾ മൊത്തത്തിൽ കരിഞ്ഞുപോകുന്നത്"],
+    "causes": ["High humidity during monsoon", "Shady overcrowded plantations"],
+    "treatmentEn": ["Cut and burn severely affected lower leaves", "Spray 1% Bordeaux mixture or Pseudomonas 20g/L with mineral oil stick", "Ensure proper drainage"],
+    "treatmentMl": ["ബാധിച്ച ഇലകൾ മുറിച്ചു മാറ്റി കത്തിക്കുക", "1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ സ്യൂഡോമോണസ് തളിക്കുക"]
+  }
+]

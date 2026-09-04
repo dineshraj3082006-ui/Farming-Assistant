@@ -1,0 +1,12 @@
+{
+  "crop": "Banana (Nendran / Poovan / Palayankodan)",
+  "localName": "വാഴ (നേന്ത്രൻ / പൂവൻ / ഞാലിപ്പൂവൻ)",
+  "districts": ["Thrissur", "Ernakulam", "Wayanad", "Palakkad", "Trivandrum"],
+  "soils": ["Well-drained Loamy Soil", "Alluvial Soil", "Laterite Soil"],
+  "varieties": ["Nendran", "Grand Naine", "Red Banana (ചെങ്കദളി)", "Palayankodan"],
+  "waterRequirement": "High (Regular drip or basin irrigation every 2-3 days)",
+  "fertilizerSchedule": "190g N, 115g P2O5, 300g K2O per plant in 4 split applications at 1, 2, 3, and 5 months after planting.",
+  "commonIssues": ["Banana Sigatoka Leaf Spot", "Pseudostem Weevil", "Bunchy Top Virus", "Yellow leaves due to waterlogging or potassium deficit"],
+  "guidanceEn": "Ensure strong bamboo prop support for bunching plants. De-sucker regularly leaving only one sucker until flowering.",
+  "guidanceMl": "വാഴയ്ക്ക് നന്നായി വായുസഞ്ചാരമുള്ള മണ്ണും സൂര്യപ്രകാശവും വേണം. കാറ്റിൽ ഒടിയാതിരിക്കാൻ മുളകൊണ്ടു താങ്ങ് കൊടുക്കുക."
+}

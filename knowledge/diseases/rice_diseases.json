@@ -1,0 +1,22 @@
+[
+  {
+    "disease": "Paddy Blast (Magnaporthe oryzae)",
+    "localName": "നെല്ലിലെ ബ്ലാസ്റ്റ് രോഗം",
+    "crop": "Rice",
+    "symptomsEn": ["Spindle-shaped diamond lesions on leaves with gray centers", "Lesions coalescing causing leaf drying", "Neck rot leading to empty chaffy panicles"],
+    "symptomsMl": ["ഇലകളിൽ ചാരനിറമുള്ള നൂൽനൂൽ രൂപത്തിലുള്ള പാടുകൾ", "പാടുകൾ വലുതായി ഇലകൾ വാടുന്നത്", "കതിരിന് കേടുപറ്റി നെന്മണികൾ പാഴാകുന്നത്"],
+    "causes": ["High humidity", "Cool night temperatures", "Excess nitrogen fertilizer application"],
+    "treatmentEn": ["Spray Pseudomonas fluorescens @ 20g/L or Tricyclazole 75 WP @ 0.6g/L", "Avoid excessive nitrogen application", "Maintain standing water in field"],
+    "treatmentMl": ["സ്യൂഡോമോണസ് 20 ഗ്രാം/ലിറ്റർ എന്ന തോതിൽ തളിക്കുക", "അമിതമായ യൂറിയ ഉപയോഗം ഒഴിവാക്കുക", "പാടത്ത് ആവശ്യത്തിന് വെള്ളം നിലനിർത്തുക"]
+  },
+  {
+    "disease": "Sheath Blight (Rhizoctonia solani)",
+    "localName": "പോള രോഗം",
+    "crop": "Rice",
+    "symptomsEn": ["Greenish-gray oval spots on leaf sheaths near water line", "Lesions turning straw-colored with brown borders"],
+    "symptomsMl": ["വെള്ളത്തിന് മുകളിലെ അടയാളങ്ങളിൽ ചാര-പച്ചനിറമുള്ള പാടുകൾ", "പാടുകൾ തവിട്ടുനിറമായി പടരുന്നത്"],
+    "causes": ["Dense planting", "High relative humidity (>85%)"],
+    "treatmentEn": ["Spray Validamycin 3L @ 2ml/L or Pseudomonas @ 2%", "Avoid dense planting"],
+    "treatmentMl": ["സ്യൂഡോമോണസ് 2% ലായനി തളിക്കുക"]
+  }
+]

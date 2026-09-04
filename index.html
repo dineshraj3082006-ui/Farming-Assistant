@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KrishiMitra AI - Personal Farming Assistant for Kerala Farmers</title>
+  <meta name="description" content="AI-powered farming assistant providing crop advice, disease detection, weather alerts, and market price insights for Kerala farmers in Malayalam & English.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <a href="login.html" class="btn btn-km-outline d-none d-sm-inline-flex" data-i18n="navLogin">Farmer Login</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="chatbot.html" data-i18n="navChatbot">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-disease.html" data-i18n="navDisease">Crop Doctor</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-recommendation.html" data-i18n="navCropRec">Crop Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="weather.html" data-i18n="navWeather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="market.html" data-i18n="navMarket">Market Prices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-badge">
+            <i class="fa-solid fa-sparkles"></i>
+            <span data-i18n="poweredByAI">Powered by AI • Designed for Kerala Farmers</span>
+          </div>
+          <h1 data-i18n="heroTitle">Your AI-Powered Farming Assistant</h1>
+          <p class="lead" data-i18n="heroSubtitle">Smart farming guidance for every Kerala farmer.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="dashboard.html" class="btn btn-km-primary btn-lg w-100 w-sm-auto" data-i18n="getStarted">
+              Get Started <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+            <a href="chatbot.html" class="btn btn-km-outline text-white border-white btn-lg w-100 w-sm-auto" data-i18n="askAI">
+              <i class="fa-solid fa-robot ms-1"></i> Ask AI Assistant
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <img src="assets/images/kerala_farmer_hero.png" alt="Kerala Farmer holding AI Assistant app" class="hero-img img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features-showcase-section py-5" id="features">
+    <div class="container">
+      <div class="text-center max-w-800 mx-auto mb-5">
+        <h2 class="features-showcase-heading" data-i18n="featuresHeading">Smart Farming. Better Future.</h2>
+        <p class="features-showcase-subheading" data-i18n="featuresSubheading">Empowering farmers with artificial intelligence, local weather advisory, and real-time market insights.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1: AI Farming Assistant (Green) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-green">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature1Title">AI Farming Assistant</h3>
+            <p class="feature-card-desc" data-i18n="feature1Desc">Interactive 24/7 farming guide answering your crop queries in Malayalam & English.</p>
+            <a href="chatbot.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+
+        <!-- Feature 2: Crop Recommendation (Blue) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-blue">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature2Title">Crop Recommendation</h3>
+            <p class="feature-card-desc" data-i18n="feature2Desc">Data-driven crop selection based on soil type, district, season & water availability.</p>
+            <a href="crop-recommendation.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+
+        <!-- Feature 3: Plant Disease Detection (Orange) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-orange">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-bug"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature3Title">Plant Disease Detection</h3>
+            <p class="feature-card-desc" data-i18n="feature3Desc">Instant diagnosis of plant leaf diseases with actionable treatment advice.</p>
+            <a href="crop-disease.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+
+        <!-- Feature 4: Weather Alerts (Purple) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-purple">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-cloud-sun-rain"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature4Title">Weather Alerts</h3>
+            <p class="feature-card-desc" data-i18n="feature4Desc">Hyper-local weather warnings and irrigation advisories tailored for Kerala districts.</p>
+            <a href="weather.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+
+        <!-- Feature 5: Market Price Insights (Teal) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-teal">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature5Title">Market Price Insights</h3>
+            <p class="feature-card-desc" data-i18n="feature5Desc">Compare live market prices across Kerala mandis with trend analytics.</p>
+            <a href="market.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+
+        <!-- Feature 6: Malayalam Voice Assistant (Pink/Rose) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card feature-card-rose">
+            <div class="feature-card-icon-box">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+            <h3 class="feature-card-title" data-i18n="feature6Title">Malayalam Voice Assistant</h3>
+            <p class="feature-card-desc" data-i18n="feature6Desc">Speak directly in Malayalam for effortless hands-free farming help.</p>
+            <a href="chatbot.html" class="feature-card-btn" data-i18n="explore">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Flow Section: How KrishiMitra Works -->
+  <section class="py-5 arch-section" id="how-it-works">
+    <div class="container text-center">
+      <h2 class="display-6 fw-bold mb-3 arch-heading" data-i18n="archTitle">How KrishiMitra Works</h2>
+      <p class="arch-subheading mb-4">Intelligent workflow connecting Kerala farmers with AI analysis and agricultural expertise</p>
+      
+      <div class="arch-timeline">
+        <!-- Step 1: Farmer Input (Green) -->
+        <div class="arch-card arch-card-green">
+          <div class="arch-icon-box"><i class="fa-solid fa-user-gear"></i></div>
+          <h4 class="arch-card-title" data-i18n="archStep1">Farmer Input</h4>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <!-- Step 2: AI Analysis Engine (Blue) -->
+        <div class="arch-card arch-card-blue">
+          <div class="arch-icon-box"><i class="fa-solid fa-brain"></i></div>
+          <h4 class="arch-card-title" data-i18n="archStep2">AI Analysis Engine</h4>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <!-- Step 3: Weather & Soil Data (Teal) -->
+        <div class="arch-card arch-card-teal">
+          <div class="arch-icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
+          <h4 class="arch-card-title" data-i18n="archStep3">Weather & Soil Data</h4>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <!-- Step 4: Smart Advisory (Orange) -->
+        <div class="arch-card arch-card-orange">
+          <div class="arch-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+          <h4 class="arch-card-title" data-i18n="archStep4">Smart Advisory</h4>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <!-- Step 5: Farmer Action (Purple) -->
+        <div class="arch-card arch-card-purple">
+          <div class="arch-icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
+          <h4 class="arch-card-title" data-i18n="archStep5">Farmer Action</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer py-4 text-center mt-5">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card active">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item active" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=8.9"></script>
+</body>
+</html>
+
+

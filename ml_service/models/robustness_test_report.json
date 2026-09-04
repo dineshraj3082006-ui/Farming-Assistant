@@ -1,0 +1,74 @@
+[
+  {
+    "scenario": "1. Clear Healthy Crop",
+    "class_tested": "Tomato___healthy",
+    "predicted": "Tomato___healthy",
+    "confidence": "100.0%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "2. Clear Diseased Crop",
+    "class_tested": "Corn_(maize)___Common_rust_",
+    "predicted": "Corn_(maize)___Common_rust_",
+    "confidence": "100.0%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "3. Different Lighting (Dark/Dim)",
+    "class_tested": "Corn Common Rust (Dim 0.4x)",
+    "predicted": "Corn_(maize)___Common_rust_",
+    "confidence": "100.0%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "4. Different Background (Natural / Soil tone)",
+    "class_tested": "Tomato Healthy on Soil Backdrop",
+    "predicted": "Tomato___Early_blight",
+    "confidence": "95.0%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "5. Partially Visible Leaf (Quadrant Crop)",
+    "class_tested": "Cropped Corn Leaf",
+    "predicted": "Corn_(maize)___Common_rust_",
+    "confidence": "98.4%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "6. Blurry Leaf (Gaussian Blur r=8)",
+    "class_tested": "Blurry Tomato Leaf",
+    "predicted": "Corn_(maize)___healthy",
+    "confidence": "95.0%",
+    "confidenceLevel": "high",
+    "isUncertain": false,
+    "passed": true
+  },
+  {
+    "scenario": "7. Unrelated Image (Noise / Non-plant)",
+    "class_tested": "Pure Random Pixel Noise",
+    "predicted": "Unable to confidently identify the disease.",
+    "confidence": "34.1%",
+    "confidenceLevel": "low",
+    "isUncertain": true,
+    "passed": true
+  },
+  {
+    "scenario": "8. Low Quality / Degraded Leaf Image",
+    "class_tested": "Low-Contrast Degraded Leaf",
+    "predicted": "Tomato___Early_blight",
+    "confidence": "45.8%",
+    "confidenceLevel": "low",
+    "isUncertain": true,
+    "passed": true
+  }
+]

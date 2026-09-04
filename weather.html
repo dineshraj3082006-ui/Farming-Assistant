@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Smart Weather & Farm Alerts - KrishiMitra AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8.9">
+</head>
+<body id="page-weather">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+        <span data-i18n="brandName">KrishiMitra AI</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <button id="btn-lang-switch" class="btn btn-lang-toggle" aria-label="Switch Language">
+          <i class="fa-solid fa-language"></i>
+          <span id="current-lang-text">മലയാളം</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="chatbot.html" data-i18n="navChatbot">AI Assistant</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-disease.html" data-i18n="navDisease">Crop Doctor</a></li>
+          <li class="nav-item"><a class="nav-link" href="crop-recommendation.html" data-i18n="navCropRec">Crop Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link active" href="weather.html" data-i18n="navWeather">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="market.html" data-i18n="navMarket">Market Prices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+      <div>
+        <h1 class="h2 fw-bold page-header-title mb-1" data-i18n="weatherPageTitle">Smart Weather & Farm Alerts</h1>
+        <p class="page-header-subtitle mb-0">Hyper-local climate forecast for agricultural management in Kerala</p>
+      </div>
+      <div class="min-w-200 w-100 w-md-auto">
+        <select id="weather-district-select" class="form-select form-select-lg border-success fw-bold">
+          <option value="Thrissur" selected>Thrissur (തൃശ്ശൂർ)</option>
+          <option value="Palakkad">Palakkad (പാലക്കാട്)</option>
+          <option value="Wayanad">Wayanad (വയനാട്)</option>
+          <option value="Alappuzha">Alappuzha (ആലപ്പുഴ)</option>
+          <option value="Ernakulam">Ernakulam (എറണാകുളം)</option>
+          <option value="Idukki">Idukki (ഇടുക്കി)</option>
+          <option value="Kottayam">Kottayam (കോട്ടയം)</option>
+          <option value="Kozhikode">Kozhikode (കോഴിക്കോട്)</option>
+          <option value="Malappuram">Malappuram (മലപ്പുറം)</option>
+          <option value="Kannur">Kannur (കണ്ണൂർ)</option>
+          <option value="Kasaragod">Kasaragod (കാസർഗോഡ്)</option>
+          <option value="Kollam">Kollam (കൊല്ലം)</option>
+          <option value="Pathanamthitta">Pathanamthitta (പത്തനംതിട്ട)</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram (തിരുവനന്തപുരം)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Active Weather Alert Banner -->
+    <div class="alert alert-warning border-start border-4 border-warning shadow-sm mb-4">
+      <div class="d-flex align-items-start gap-3">
+        <span class="fs-2 text-warning"><i class="fa-solid fa-cloud-bolt"></i></span>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <h2 class="h5 fw-bold text-dark mb-1" data-i18n="weatherAlertTitle">⚠️ Farming Weather Advisory</h2>
+            <span class="badge bg-success-subtle text-success border border-success px-2 py-1 small">
+              <i class="fa-solid fa-circle-dot text-success animate-pulse me-1"></i> Live API
+            </span>
+          </div>
+          <p id="weather-alert-text" class="mb-0 text-dark fs-6 mt-1">
+            Loading real-time agricultural weather advisory...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Current Weather Cards -->
+    <div class="row g-4 mb-4">
+      
+      <!-- Big Temp & Condition Card -->
+      <div class="col-lg-5">
+        <div class="km-card bg-gradient-green text-white p-4 h-100 position-relative overflow-hidden">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="badge bg-white text-dark fw-bold px-3 py-2 shadow-sm">
+              <i class="fa-solid fa-satellite-dish text-success me-1"></i> Live WeatherAPI
+            </span>
+            <span id="weather-icon-badge" class="fs-1">🌤️</span>
+          </div>
+          <div class="display-3 fw-bold text-white mb-1" id="weather-temp">--°C</div>
+          <div class="fs-4 text-white-50 mb-3" id="weather-condition">Fetching live radar...</div>
+          
+          <div class="pt-3 border-top border-white-50 d-flex justify-content-between align-items-center small text-white-50">
+            <span><i class="fa-solid fa-temperature-half me-1"></i> Feels like: <strong id="weather-feels-like" class="text-white">--°C</strong></span>
+            <span><i class="fa-solid fa-clock me-1"></i> <span id="weather-updated">Just now</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather Metrics Grid -->
+      <div class="col-lg-7">
+        <div class="row g-3">
+          
+          <!-- Humidity -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-teal text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-droplet"></i></div>
+              <small class="vibrant-label d-block" data-i18n="humidity">Humidity</small>
+              <span class="vibrant-val d-block" id="weather-humidity">--%</span>
+            </div>
+          </div>
+
+          <!-- Rain Probability -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-blue text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+              <small class="vibrant-label d-block" data-i18n="rainProb">Rain Probability</small>
+              <span class="vibrant-val d-block" id="weather-rain-prob">--%</span>
+            </div>
+          </div>
+
+          <!-- Wind Speed -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-purple text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-wind"></i></div>
+              <small class="vibrant-label d-block" data-i18n="windSpeed">Wind Speed</small>
+              <span class="vibrant-val d-block" id="weather-wind">-- km/h</span>
+            </div>
+          </div>
+
+          <!-- UV Index -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-amber text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-sun"></i></div>
+              <small class="vibrant-label d-block">UV Index</small>
+              <span class="vibrant-val d-block" id="weather-uv">5 (Mod)</span>
+            </div>
+          </div>
+
+          <!-- Pressure -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-indigo text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-gauge-simple-high"></i></div>
+              <small class="vibrant-label d-block">Pressure</small>
+              <span class="vibrant-val d-block" id="weather-pressure">1012 hPa</span>
+            </div>
+          </div>
+
+          <!-- Sunrise / Sunset -->
+          <div class="col-6 col-md-4">
+            <div class="vibrant-card-rose text-center py-3 px-2 h-100">
+              <div class="vibrant-icon-circle"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+              <small class="vibrant-label d-block">Sun Cycle</small>
+              <span class="vibrant-val d-block fs-6 mt-1" style="font-size: 0.95rem !important;">
+                <span id="weather-sunrise">06:15 AM</span> - <span id="weather-sunset">06:35 PM</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7-Day Forecast Grid -->
+    <div class="km-card mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="h5 fw-bold mb-0 text-primary-dark" data-i18n="forecast7Day">7-Day Real-Time Weather Forecast</h3>
+        <span class="badge bg-light text-muted border">Daily Forecast • WeatherAPI</span>
+      </div>
+      <div id="forecast-grid" class="row g-3">
+        <!-- Rendered dynamically by script.js?v=8.4 -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer text-center">
+    <div class="container">
+      <p class="mb-1 site-footer-title"><strong>KrishiMitra AI</strong> — SIH25074 Prototype for Kerala Farmers</p>
+      <small class="site-footer-subtitle">Designed with modern accessible UI & Malayalam Web Speech AI integration.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile Services Drawer Sheet -->
+  <div id="mobileServicesBackdrop" class="mobile-services-backdrop" aria-hidden="true">
+    <div class="mobile-services-sheet" role="dialog" aria-modal="true" aria-label="KrishiMitra Services">
+      <div class="mobile-sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="h6 fw-bold text-primary-dark mb-0">
+          <i class="fa-solid fa-shapes text-success me-2"></i>KrishiMitra Services
+        </h3>
+        <button type="button" id="btnCloseMobileSheet" class="btn-close" aria-label="Close services sheet"></button>
+      </div>
+      <div class="mobile-sheet-grid">
+        <a href="index.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-house"></i></div>
+          <span class="mobile-sheet-label">Home</span>
+        </a>
+        <a href="dashboard.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <span class="mobile-sheet-label">Dashboard</span>
+        </a>
+        <a href="chatbot.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-robot"></i></div>
+          <span class="mobile-sheet-label">Ask AI</span>
+        </a>
+        <a href="crop-disease.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-bug"></i></div>
+          <span class="mobile-sheet-label">Doctor</span>
+        </a>
+        <a href="crop-recommendation.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="mobile-sheet-label">Crop Rec</span>
+        </a>
+        <a href="weather.html" class="mobile-sheet-card active">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <span class="mobile-sheet-label">Weather</span>
+        </a>
+        <a href="market.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-store"></i></div>
+          <span class="mobile-sheet-label">Market</span>
+        </a>
+        <a href="profile.html" class="mobile-sheet-card">
+          <div class="mobile-sheet-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <span class="mobile-sheet-label">My Farm</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item" id="mob-nav-home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="dashboard.html" class="mobile-nav-item" id="mob-nav-dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="chatbot.html" class="mobile-nav-item" id="mob-nav-chat">
+      <i class="fa-solid fa-robot"></i>
+      <span>Ask AI</span>
+    </a>
+    <a href="crop-disease.html" class="mobile-nav-item" id="mob-nav-doctor">
+      <i class="fa-solid fa-bug"></i>
+      <span>Doctor</span>
+    </a>
+    <button type="button" class="mobile-nav-item" id="btnToggleMobileServices" aria-label="Open More Services">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>More</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/translations.js?v=8.4"></script>
+  <script src="js/api-services.js?v=8.4"></script>
+  <script src="js/voice-engine.js?v=8.4"></script>
+  <script src="js/script.js?v=9.0"></script>
+</body>
+</html>
+
+
