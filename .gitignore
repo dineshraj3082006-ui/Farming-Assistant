@@ -31,3 +31,6 @@ dataset/
 Thumbs.db
 .vscode/
 .idea/
+
+
+.env.example
