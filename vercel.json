@@ -1,5 +1,15 @@
 {
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "cleanUrls": true
+  "version": 2,
+  "cleanUrls": true,
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "knowledge/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
 }

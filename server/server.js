@@ -28,10 +28,16 @@ app.use(express.static(path.join(__dirname, '../'), {
   etag: true
 }));
 
-// Ensure upload directory exists
-const uploadDir = path.join(__dirname, '../uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+// Ensure upload directory exists (compatible with Vercel serverless /tmp)
+const uploadDir = (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) 
+  ? '/tmp/uploads' 
+  : path.join(__dirname, '../uploads');
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (e) {
+  console.warn('[Server] Upload directory initialization note:', e.message);
 }
 
 // Multer Storage Configuration for Crop Leaf Images
@@ -782,47 +788,52 @@ app.get('/api/health', (req, res) => {
   res.json({ status: "OK", server: "KrishiMitra AI Backend", demoMode: DEMO_MODE });
 });
 
-// Start Express Server with graceful error handling
-const server = app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(`🌾 KrishiMitra AI Backend Server running on port ${PORT}`);
-  console.log(`📌 DEMO_MODE: ${DEMO_MODE}`);
-  console.log(`🌐 Local Webpage: http://localhost:${PORT}/`);
-  console.log(`=======================================================`);
+// Export app for Vercel Serverless Function deployment
+module.exports = app;
 
-  // Verify and auto-start Python ML Microservice if offline
-  try {
-    const http = require('http');
-    const { spawn } = require('child_process');
-    const healthReq = http.get('http://127.0.0.1:5001/health', (r) => {
-      if (r.statusCode === 200) {
-        console.log('[Express Backend] 🤖 Python ML Crop Doctor microservice is active on port 5001.');
-      }
-    });
-    healthReq.on('error', () => {
-      console.log('[Express Backend] 🤖 Starting Python ML Crop Doctor microservice on port 5001...');
-      const py = process.platform === 'win32' ? 'python' : 'python3';
-      const mlProc = spawn(py, [path.join(__dirname, '../ml_service/app.py')], {
-        detached: true,
-        stdio: 'ignore'
+// Only start Express standalone server if run directly (node server/server.js)
+if (require.main === module && !process.env.VERCEL) {
+  const server = app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(`🌾 KrishiMitra AI Backend Server running on port ${PORT}`);
+    console.log(`📌 DEMO_MODE: ${DEMO_MODE}`);
+    console.log(`🌐 Local Webpage: http://localhost:${PORT}/`);
+    console.log(`=======================================================`);
+
+    // Verify and auto-start Python ML Microservice if offline
+    try {
+      const http = require('http');
+      const { spawn } = require('child_process');
+      const healthReq = http.get('http://127.0.0.1:5001/health', (r) => {
+        if (r.statusCode === 200) {
+          console.log('[Express Backend] 🤖 Python ML Crop Doctor microservice is active on port 5001.');
+        }
       });
-      mlProc.unref();
-    });
-    healthReq.setTimeout(1500, () => healthReq.destroy());
-  } catch (e) {
-    console.warn('[Express Backend] ML service auto-check warning:', e.message);
-  }
-});
+      healthReq.on('error', () => {
+        console.log('[Express Backend] 🤖 Starting Python ML Crop Doctor microservice on port 5001...');
+        const py = process.platform === 'win32' ? 'python' : 'python3';
+        const mlProc = spawn(py, [path.join(__dirname, '../ml_service/app.py')], {
+          detached: true,
+          stdio: 'ignore'
+        });
+        mlProc.unref();
+      });
+      healthReq.setTimeout(1500, () => healthReq.destroy());
+    } catch (e) {
+      console.warn('[Express Backend] ML service auto-check warning:', e.message);
+    }
+  });
 
-server.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`\n⚠️  [Port Conflict] Port ${PORT} is already in use by another instance or process.`);
-    console.error(`   The existing KrishiMitra server is already active at http://localhost:${PORT}/`);
-    console.error(`   To kill the existing process and restart, run in PowerShell:`);
-    console.error(`   Get-Process -Id (Get-NetTCPConnection -LocalPort ${PORT}).OwningProcess | Stop-Process -Force\n`);
-  } else {
-    console.error('[Express Server Error]:', err);
-  }
-});
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n⚠️  [Port Conflict] Port ${PORT} is already in use by another instance or process.`);
+      console.error(`   The existing KrishiMitra server is already active at http://localhost:${PORT}/`);
+      console.error(`   To kill the existing process and restart, run in PowerShell:`);
+      console.error(`   Get-Process -Id (Get-NetTCPConnection -LocalPort ${PORT}).OwningProcess | Stop-Process -Force\n`);
+    } else {
+      console.error('[Express Server Error]:', err);
+    }
+  });
+}
 
 

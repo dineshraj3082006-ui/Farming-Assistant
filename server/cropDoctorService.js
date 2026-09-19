@@ -8,7 +8,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Primary Authoritative Knowledge Base
-const KB_PATH = path.join(__dirname, '../knowledge/disease_solutions/plant_diseases_kb.json');
+const defaultKbPath = path.join(__dirname, '../knowledge/disease_solutions/plant_diseases_kb.json');
+const KB_PATH = fs.existsSync(defaultKbPath) ? defaultKbPath : path.join(process.cwd(), 'knowledge/disease_solutions/plant_diseases_kb.json');
 let plantKnowledgeBase = {};
 
 try {

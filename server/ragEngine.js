@@ -34,7 +34,10 @@ class RAGEngine {
   // 1. IN-MEMORY KNOWLEDGE BASE INDEXING (ALL 8 CATEGORIES)
   // ------------------------------------------------------------------------
   loadKnowledgeBase() {
-    const baseDir = path.join(__dirname, '../knowledge');
+    let baseDir = path.join(__dirname, '../knowledge');
+    if (!fs.existsSync(baseDir)) {
+      baseDir = path.join(process.cwd(), 'knowledge');
+    }
 
     const readDirJson = (dirPath, categoryName) => {
       if (!fs.existsSync(dirPath)) return [];
