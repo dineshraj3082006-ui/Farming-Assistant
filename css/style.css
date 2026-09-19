@@ -75,9 +75,24 @@ h3 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
 /* Prevent iOS auto-zoom on mobile inputs */
 @media (max-width: 768px) {
   .form-control,
-  .form-select {
+  .form-select,
+  .form-control-lg,
+  .form-select-lg {
     font-size: 16px !important;
   }
+}
+
+/* Helper Utilities for Max Widths & Media Containment */
+.max-w-700 {
+  max-width: 700px !important;
+}
+
+.max-w-800 {
+  max-width: 800px !important;
+}
+
+img, video, canvas {
+  max-width: 100%;
 }
 
 .text-primary-green {
@@ -510,6 +525,150 @@ h3 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
   margin-bottom: 1rem;
 }
 
+/* Crop Recommendation Card Optimization */
+.km-crop-card {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.km-crop-card .badge.text-wrap {
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+.crop-card-title {
+  font-size: clamp(1.02rem, 2.2vw, 1.25rem);
+  letter-spacing: -0.01em;
+}
+
+.crop-suitability-badge {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.crop-fin-badges .badge {
+  font-size: 0.82rem;
+  padding: 0.38rem 0.65rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.crop-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  background: rgba(244, 248, 244, 0.85);
+  border: 1px solid rgba(76, 154, 42, 0.15);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.84rem;
+}
+
+.crop-meta-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.crop-meta-label {
+  font-weight: 700;
+  color: #495057;
+}
+
+.crop-meta-val {
+  font-weight: 600;
+  color: #1a1a1a;
+  word-break: break-word;
+}
+
+.crop-reasons {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.crop-kau-box {
+  padding: 0.85rem 1rem;
+  font-size: 0.86rem;
+  border-radius: 12px;
+}
+
+@media (max-width: 991px) {
+  .km-crop-card {
+    padding: clamp(1rem, 2.5vw, 1.35rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .km-crop-card {
+    padding: 0.95rem 0.85rem !important;
+    border-radius: 14px !important;
+  }
+
+  .crop-card-title {
+    font-size: 1.05rem;
+  }
+
+  .crop-suitability-badge {
+    font-size: 0.82rem;
+    padding: 0.28rem 0.6rem;
+  }
+
+  .crop-fin-badges .badge {
+    font-size: 0.76rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .crop-meta-grid {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.78rem;
+    gap: 0.4rem;
+  }
+
+  .crop-reasons {
+    font-size: 0.86rem;
+    line-height: 1.48;
+  }
+
+  .crop-kau-box {
+    font-size: 0.82rem;
+    padding: 0.7rem 0.75rem !important;
+  }
+
+  /* Crop Recommendation Form Controls on Phone */
+  #crop-rec-form .form-select-lg,
+  #crop-rec-form .form-control-lg {
+    font-size: 0.92rem !important;
+    padding: 0.55rem 0.75rem !important;
+    border-radius: 10px;
+  }
+
+  #crop-rec-form .form-label {
+    font-size: 0.88rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #rec-results-container h2 {
+    font-size: 1.25rem !important;
+  }
+
+  #rec-results-container .badge {
+    font-size: 0.78rem !important;
+    padding: 0.32rem 0.65rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .crop-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+
 /* Hero Section */
 .hero-section {
   padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(2rem, 4vw, 4rem);
@@ -641,8 +800,8 @@ h3 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
 
 @media (max-width: 768px) {
   .chat-container {
-    height: calc(100dvh - 150px);
-    min-height: 460px;
+    height: calc(100dvh - 140px);
+    min-height: 380px;
     max-height: 780px;
     border-radius: var(--radius-sm);
   }
@@ -1047,20 +1206,22 @@ h3 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (max-width: 992px) {
-  .arch-card {
-    min-width: 140px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   .arch-timeline {
-    flex-direction: column;
-    gap: 0.85rem;
+    flex-direction: column !important;
+    gap: 0.85rem !important;
+    max-width: 380px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .arch-card {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
   }
   .arch-arrow {
-    transform: rotate(90deg);
+    transform: rotate(90deg) !important;
+    margin: 0.15rem 0 !important;
   }
 }
 
@@ -1946,19 +2107,37 @@ body::before {
 
 /* Responsive 7-Day Forecast Grid for Weather */
 #forecast-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 0.85rem;
-  padding-bottom: 0.5rem;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  gap: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#forecast-grid > div[class*="col-"] {
+  flex: 0 0 auto !important;
+  min-width: 135px !important;
+  max-width: 165px !important;
+  width: auto !important;
+  padding: 0 !important;
+  scroll-snap-align: start;
 }
 
 @media (min-width: 992px) {
   #forecast-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    overflow-x: visible;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 0.85rem !important;
+    overflow-x: visible !important;
+  }
+  #forecast-grid > div[class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 }
 
@@ -2055,6 +2234,13 @@ body::before {
     justify-content: center;
   }
 
+  /* Realtime & Alert Containers Flex Wrap */
+  #dash-alert-container,
+  #agro-realtime-status {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+
   /* Auth Card on Mobile/Tablet */
   .auth-wrapper {
     min-height: auto;
@@ -2067,10 +2253,16 @@ body::before {
 }
 
 @media (max-width: 576px) {
+  /* Mobile Container Gutters */
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   /* Small Screens Navbar */
   .navbar-brand {
-    font-size: 1.1rem;
-    max-width: calc(100vw - 150px);
+    font-size: 1.08rem;
+    max-width: calc(100vw - 145px);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -2080,8 +2272,8 @@ body::before {
   }
 
   .btn-lang-toggle {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.82rem;
+    padding: 0.32rem 0.55rem;
+    font-size: 0.8rem;
     gap: 0.3rem;
   }
 
@@ -2090,8 +2282,8 @@ body::before {
   }
 
   .navbar-toggler {
-    padding: 0.35rem 0.55rem;
-    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.92rem;
   }
 
   /* Hero CTA Buttons */
@@ -2121,6 +2313,21 @@ body::before {
     font-size: 0.92rem;
   }
 
+  /* Crop Doctor Diagnosis Header Actions */
+  #doctor-result-card .border-bottom.gap-2 {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  #doctor-result-card .border-bottom.gap-2 .d-flex.gap-2 {
+    width: 100%;
+  }
+
+  #doctor-result-card .border-bottom.gap-2 .d-flex.gap-2 .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
   /* Crop Recommendation Submit Button */
   #btn-submit-rec {
     width: 100% !important;
@@ -2130,16 +2337,33 @@ body::before {
 
   /* Chatbot Mobile Layout */
   .chat-container {
-    height: calc(100dvh - 140px);
-    min-height: 440px;
+    height: calc(100dvh - 130px);
+    min-height: 380px;
     border-radius: var(--radius-sm);
   }
 
   .chat-header {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0.75rem 0.85rem;
+    padding: 0.65rem 0.75rem;
     gap: 0.45rem;
+  }
+
+  .chat-header > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .chat-header > div:first-child small {
+    display: block;
+    max-width: 175px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chat-header > div:last-child {
+    flex-shrink: 0;
   }
 
   .chat-header .feature-icon-box {
@@ -2167,14 +2391,46 @@ body::before {
   }
 
   .chat-input-area .btn-km-primary {
-    padding-left: 0.9rem !important;
-    padding-right: 0.9rem !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
   }
 
   /* Weather Select on Mobile */
   #weather-district-select {
     font-size: 1rem;
     width: 100%;
+  }
+
+  /* Vibrant Cards on Mobile */
+  .vibrant-card-teal,
+  .vibrant-card-blue,
+  .vibrant-card-purple,
+  .vibrant-card-amber,
+  .vibrant-card-indigo,
+  .vibrant-card-rose,
+  .vibrant-card-green,
+  .vibrant-card-orange {
+    padding: 0.85rem 0.5rem !important;
+    border-radius: 14px !important;
+  }
+
+  .vibrant-val {
+    font-size: 1.2rem !important;
+  }
+
+  .vibrant-label {
+    font-size: 0.72rem !important;
+  }
+
+  .vibrant-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .vibrant-icon-circle i {
+    font-size: 1.05rem !important;
   }
 
   /* Market Filter Pills Bar */
@@ -2192,6 +2448,11 @@ body::before {
   /* Profile Header & Sections */
   .profile-header-banner {
     padding: 1.25rem 1rem;
+  }
+
+  #prof-display-name {
+    font-size: 1.25rem;
+    word-break: break-word;
   }
 
   .profile-avatar-circle {
@@ -2213,6 +2474,127 @@ body::before {
   .auth-tab-btn {
     font-size: 0.86rem;
     padding: 0.5rem 0.5rem;
+  }
+
+  /* Voice Modal on Mobile */
+  .voice-modal-card {
+    padding: 1.75rem 1.25rem;
+    max-width: 92vw;
+  }
+}
+
+/* Extra Small Phones (<= 375px like iPhone SE, mini devices) */
+@media (max-width: 375px) {
+  .navbar-brand {
+    font-size: 1rem;
+    max-width: calc(100vw - 140px);
+  }
+
+  .btn-lang-toggle {
+    padding: 0.28rem 0.45rem;
+    font-size: 0.76rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.88rem;
+  }
+
+  .auth-tab-btn {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.35rem;
+    gap: 0.25rem;
+  }
+
+  .mobile-nav-item {
+    min-width: 48px;
+    padding: 0.2rem 0.25rem;
+    font-size: 0.68rem;
+  }
+
+  .mobile-nav-item i {
+    font-size: 1.2rem;
+  }
+
+  .sample-crop-btn {
+    font-size: 0.8rem !important;
+    padding: 0.35rem 0.85rem !important;
+  }
+}
+
+/* Ultra Compact Devices (<= 360px) */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .navbar-custom {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.95rem;
+    max-width: calc(100vw - 132px);
+  }
+
+  .btn-lang-toggle {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .mobile-nav-item {
+    min-width: 44px;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.15rem;
+  }
+
+  .mobile-nav-item i {
+    font-size: 1.1rem;
+  }
+
+  .chat-bubble {
+    max-width: 95%;
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+/* Landscape Orientation for Mobile Phones (Height <= 550px) */
+@media (max-height: 550px) {
+  .chat-container {
+    height: calc(100dvh - 85px) !important;
+    min-height: 280px !important;
+    max-height: 94vh !important;
+  }
+
+  .chat-header {
+    padding: 0.45rem 0.75rem !important;
+  }
+
+  .chat-header .feature-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .chat-header h1 {
+    font-size: 0.95rem !important;
+  }
+
+  .chat-input-area {
+    padding: 0.35rem 0.6rem !important;
+  }
+
+  .voice-modal-card {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .mobile-services-sheet {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
   }
 }
 

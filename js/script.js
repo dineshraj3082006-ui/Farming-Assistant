@@ -1288,33 +1288,53 @@ function initCropRecommendation() {
 
           const cardHtml = `
             <div class="col-md-6 mb-4">
-              <div class="km-card shadow-sm h-100 border-top border-4 ${theme.border}">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <div>
-                    <h3 class="mb-1 fs-5 fw-bold text-primary-dark">${crop.icon || '🌾'} ${name}</h3>
-                    <div class="d-flex flex-wrap gap-1 align-items-center mt-1">
-                      <span class="badge bg-success-subtle text-success border border-success-subtle">
-                        <i class="fa-solid fa-coins me-1"></i>${income}
-                      </span>
-                      ${totalIncome ? `
-                      <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
-                        <i class="fa-solid fa-chart-line me-1"></i>${totalIncome}
-                      </span>` : ''}
-                    </div>
+              <div class="km-card km-crop-card shadow-sm h-100 border-top border-4 ${theme.border} d-flex flex-column">
+                
+                <!-- Card Header: Title & Suitability Badge -->
+                <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+                  <div class="flex-grow-1 min-w-0">
+                    <h3 class="crop-card-title mb-0 fw-bold text-primary-dark text-break lh-sm">
+                      <span class="me-1">${crop.icon || '🌾'}</span>${name}
+                    </h3>
                   </div>
-                  <span class="badge ${theme.badge} fs-6 px-3 py-2 rounded-pill shadow-sm">
-                    <i class="fa-solid fa-star me-1"></i>${isMl ? 'യോജ്യത' : 'Suitability'}: ${crop.suitability}%
+                  <span class="badge ${theme.badge} crop-suitability-badge rounded-pill shadow-sm text-nowrap flex-shrink-0">
+                    <i class="fa-solid fa-star me-1"></i><span class="d-none d-sm-inline me-1">${isMl ? 'യോജ്യത' : 'Suitability'}:</span>${crop.suitability}%
                   </span>
                 </div>
 
-                <div class="row g-2 mb-3 small text-muted bg-light p-2 rounded">
-                  <div class="col-6"><strong><i class="fa-regular fa-clock text-primary-green me-1"></i>${isMl ? 'കാലയളവ്' : 'Period'}:</strong> ${period}</div>
-                  <div class="col-6"><strong><i class="fa-solid fa-droplet text-info me-1"></i>${isMl ? 'വെള്ളം' : 'Water'}:</strong> ${water}</div>
+                <!-- Financial Badges (Acre & Total) -->
+                <div class="crop-fin-badges d-flex flex-wrap gap-2 align-items-center mb-3">
+                  <span class="badge bg-success-subtle text-success border border-success-subtle py-1 px-2 text-wrap text-start">
+                    <i class="fa-solid fa-coins me-1"></i>${income}
+                  </span>
+                  ${totalIncome ? `
+                  <span class="badge bg-primary-subtle text-primary border border-primary-subtle py-1 px-2 text-wrap text-start">
+                    <i class="fa-solid fa-chart-line me-1"></i>${totalIncome}
+                  </span>` : ''}
                 </div>
 
-                <p class="mb-3 text-dark"><strong>${isMl ? 'പ്രധാന മേന്മകൾ' : 'Key Agronomic Reasons'}:</strong> ${benefits}</p>
+                <!-- Period & Water Requirement Meta Grid -->
+                <div class="crop-meta-grid mb-3">
+                  <div class="crop-meta-item">
+                    <i class="fa-regular fa-clock text-primary-green me-1"></i>
+                    <span class="crop-meta-label">${isMl ? 'കാലയളവ്' : 'Period'}:</span> 
+                    <span class="crop-meta-val">${period}</span>
+                  </div>
+                  <div class="crop-meta-item">
+                    <i class="fa-solid fa-droplet text-info me-1"></i>
+                    <span class="crop-meta-label">${isMl ? 'വെള്ളം' : 'Water'}:</span> 
+                    <span class="crop-meta-val">${water}</span>
+                  </div>
+                </div>
 
-                <div class="p-3 ${theme.tipBg} bg-opacity-25 rounded border border-opacity-25 small mt-auto">
+                <!-- Agronomic Reasons -->
+                <p class="mb-3 text-dark text-break crop-reasons">
+                  <strong class="text-primary-dark">${isMl ? 'പ്രധാന മേന്മകൾ' : 'Key Agronomic Reasons'}:</strong> 
+                  ${benefits}
+                </p>
+
+                <!-- KAU Farming Practices Box -->
+                <div class="p-3 ${theme.tipBg} bg-opacity-25 rounded border border-opacity-25 small mt-auto text-break crop-kau-box">
                   <strong class="d-block mb-1"><i class="fa-solid fa-lightbulb text-warning me-1"></i> ${isMl ? 'കൃഷി ടിപ്പുകൾ (KAU)' : 'KAU Farming Practices'}:</strong>
                   ${tips}
                 </div>

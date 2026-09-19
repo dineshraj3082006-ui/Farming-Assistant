@@ -97,7 +97,7 @@
 
 3. **Install Python ML Dependencies**:
    ```bash
-   pip install -r requirements.txt
+   pip install -r ml_service/requirements.txt
    ```
 
 4. **Set Up Environment Variables**:
@@ -183,10 +183,9 @@ krishimitra-ai/
 │   ├── keralaMarketData.js           # Kerala APMC wholesale market data
 │   ├── ragEngine.js                  # Agronomic RAG chat engine
 │   └── server.js                     # Express.js REST API server
-├── .env.example            # Environment variables template
 ├── .gitignore              # Git ignore rules (node_modules, caches, dataset)
 ├── package.json            # Node.js project manifest & scripts
-├── requirements.txt        # Python pip dependencies
+├── vercel.json             # Vercel deployment configuration
 ├── index.html              # Landing page
 ├── dashboard.html          # Farmer main dashboard
 ├── crop-disease.html       # Crop Doctor diagnostic portal
