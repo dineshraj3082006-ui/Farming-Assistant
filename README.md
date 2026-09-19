@@ -97,7 +97,7 @@
 
 3. **Install Python ML Dependencies**:
    ```bash
-   pip install -r ml_service/requirements.txt
+   pip install -r ml_service/requirements-ml.txt
    ```
 
 4. **Set Up Environment Variables**:
