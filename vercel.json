@@ -3,14 +3,14 @@
   "framework": null,
   "cleanUrls": true,
   "functions": {
-    "api/index.js": {
+    "api/**": {
       "includeFiles": "knowledge/**"
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/api"
     }
   ]
 }

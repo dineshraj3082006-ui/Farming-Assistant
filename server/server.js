@@ -66,7 +66,7 @@ let farmerProfileStore = {
 // ------------------------------------------------------------------------
 // 1. CHAT API: POST /api/chat
 // ------------------------------------------------------------------------
-app.post('/api/chat', async (req, res) => {
+app.post(['/api/chat', '/chat'], async (req, res) => {
   try {
     const { language = 'en', farmerProfile = {}, history = [], hasImage = false, activeDiagnosis = null } = req.body;
     const message = req.body.message || req.body.query || '';
@@ -131,7 +131,7 @@ app.post('/api/chat', async (req, res) => {
 // ------------------------------------------------------------------------
 // 1b. TTS PROXY: GET /api/tts — Proxies Google Translate TTS to avoid CORS
 // ------------------------------------------------------------------------
-app.get('/api/tts', async (req, res) => {
+app.get(['/api/tts', '/tts'], async (req, res) => {
   try {
     const text = req.query.q || '';
     const tl = req.query.tl || 'ml';
@@ -167,7 +167,7 @@ app.get('/api/tts', async (req, res) => {
 // ------------------------------------------------------------------------
 // 2. CROP DOCTOR API: POST /api/analyze-crop
 // ------------------------------------------------------------------------
-app.post('/api/analyze-crop', upload.single('cropImage'), async (req, res) => {
+app.post(['/api/analyze-crop', '/analyze-crop'], upload.single('cropImage'), async (req, res) => {
   try {
     const file = req.file;
     const presetKey = req.body.presetKey || req.body.filename || '';
@@ -197,7 +197,7 @@ app.post('/api/analyze-crop', upload.single('cropImage'), async (req, res) => {
 // ------------------------------------------------------------------------
 // 3. CROP RECOMMENDATION API: POST /api/recommend-crops
 // ------------------------------------------------------------------------
-app.post('/api/recommend-crops', (req, res) => {
+app.post(['/api/recommend-crops', '/recommend-crops'], (req, res) => {
   try {
     delete require.cache[require.resolve('./cropRecommendationService.js')];
     const { recommendCrops } = require('./cropRecommendationService.js');
@@ -605,7 +605,7 @@ async function fetchFromOpenMeteo(lat, lon) {
   };
 }
 
-app.get('/api/weather', async (req, res) => {
+app.get(['/api/weather', '/weather'], async (req, res) => {
   let lat = null;
   let lon = null;
   let districtName = req.query.district || null;
@@ -701,7 +701,7 @@ app.get('/api/weather', async (req, res) => {
 // ------------------------------------------------------------------------
 // 5. MARKET PRICES API: GET /api/market-prices & /api/market-chart
 // ------------------------------------------------------------------------
-app.get('/api/market-prices', (req, res) => {
+app.get(['/api/market-prices', '/market-prices'], (req, res) => {
   const { district = 'All', search = '', category = 'All', refresh = 'false' } = req.query;
 
   // Clear require cache for hot development updates
@@ -725,7 +725,7 @@ app.get('/api/market-prices', (req, res) => {
   });
 });
 
-app.get('/api/market-chart', (req, res) => {
+app.get(['/api/market-chart', '/market-chart'], (req, res) => {
   const { crop = 'tea_leaves', refresh = 'false' } = req.query;
 
   delete require.cache[require.resolve('./keralaMarketData.js')];
@@ -742,17 +742,17 @@ app.get('/api/market-chart', (req, res) => {
 // ------------------------------------------------------------------------
 // 6. FARMER PROFILE & REGISTRATION API
 // ------------------------------------------------------------------------
-app.get('/api/farmer-profile', (req, res) => {
+app.get(['/api/farmer-profile', '/farmer-profile'], (req, res) => {
   return res.json({ success: true, profile: farmerProfileStore });
 });
 
-app.put('/api/farmer-profile', (req, res) => {
+app.put(['/api/farmer-profile', '/farmer-profile'], (req, res) => {
   farmerProfileStore = { ...farmerProfileStore, ...req.body };
   console.log('[Profile] Updated profile in store:', farmerProfileStore);
   return res.json({ success: true, profile: farmerProfileStore });
 });
 
-app.post('/api/farmer-login', (req, res) => {
+app.post(['/api/farmer-login', '/farmer-login'], (req, res) => {
   const { name, mobile, email, district = 'Thrissur', language = 'en' } = req.body;
   farmerProfileStore = {
     ...farmerProfileStore,
@@ -770,7 +770,7 @@ app.post('/api/farmer-login', (req, res) => {
   });
 });
 
-app.post('/api/send-advisory-email', (req, res) => {
+app.post(['/api/send-advisory-email', '/send-advisory-email'], (req, res) => {
   const { email = farmerProfileStore.email, subject = "KrishiMitra AI - Daily Farm Advisory", message } = req.body;
   console.log(`[Email Service] Simulating Advisory Email dispatch to: ${email}`);
   console.log(`[Email Service] Subject: ${subject}`);
@@ -784,7 +784,7 @@ app.post('/api/send-advisory-email', (req, res) => {
 });
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get(['/api/health', '/health'], (req, res) => {
   res.json({ status: "OK", server: "KrishiMitra AI Backend", demoMode: DEMO_MODE });
 });
 
