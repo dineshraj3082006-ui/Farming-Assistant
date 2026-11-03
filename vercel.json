@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "framework": null,
-  "cleanUrls": true,
   "functions": {
     "api/**": {
       "includeFiles": "knowledge/**"
@@ -11,6 +9,10 @@
     {
       "source": "/api/(.*)",
       "destination": "/api"
+    },
+    {
+      "source": "/((?!api/|assets/|favicon|.*\\..*).*)",
+      "destination": "/dist/index.html"
     }
   ]
 }
