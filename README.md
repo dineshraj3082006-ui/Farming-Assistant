@@ -186,15 +186,16 @@ krishimitra-ai/
 ├── .gitignore              # Git ignore rules (node_modules, caches, dataset)
 ├── package.json            # Node.js project manifest & scripts
 ├── vercel.json             # Vercel deployment configuration
-├── index.html              # Landing page
-├── dashboard.html          # Farmer main dashboard
-├── crop-disease.html       # Crop Doctor diagnostic portal
-├── crop-recommendation.html# Crop suitability recommendation tool
-├── market.html             # APMC commodity price tracker
-├── weather.html            # Hyper-local weather forecast & advisories
-├── chatbot.html            # Bilingual conversational agricultural assistant
-├── login.html              # Farmer mobile authentication
-└── profile.html            # Farmer farm & crop profile management
+├── src/
+│   ├── components/                   # Navbar, Footer, MobileNav, VoiceModal
+│   ├── context/                      # LanguageContext, FarmerProfileContext, VoiceContext
+│   ├── pages/                        # Home, Dashboard, CropDisease, CropRecommendation, Market, Weather, Chatbot, Login, Profile
+│   ├── services/                     # ApiService backend integration
+│   ├── App.jsx                       # React Router configuration
+│   └── main.jsx                      # React 19 root application entry
+├── public/                           # Static assets & public images
+├── index.html                        # React Vite Single Page App root
+├── vite.config.js                    # Vite configuration & API proxy setup
 ```
 
 ---

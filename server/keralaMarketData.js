@@ -1058,10 +1058,23 @@ module.exports = {
     return keralaCommodities
       .filter(item => {
         // District match
-        const matchDistrict = dist === 'all' || item.district.toLowerCase() === dist || item.marketEn.toLowerCase().includes(dist) || item.marketMl.toLowerCase().includes(dist);
+        const matchDistrict = dist === 'all' || 
+          item.district.toLowerCase() === dist || 
+          item.district.toLowerCase().includes(dist) ||
+          item.marketEn.toLowerCase().includes(dist) || 
+          item.marketMl.toLowerCase().includes(dist);
         
-        // Category match
-        const matchCat = cat === 'all' || item.category.toLowerCase() === cat;
+        // Category match with resilient aliases
+        const itemCat = (item.category || '').toLowerCase();
+        const matchCat = cat === 'all' || 
+          itemCat === cat || 
+          itemCat.includes(cat) || 
+          cat.includes(itemCat) ||
+          (cat === 'tubers' && (itemCat.includes('tuber') || itemCat.includes('cereal') || itemCat.includes('grain'))) ||
+          (cat === 'fruits' && itemCat.includes('fruit')) ||
+          (cat === 'vegetables' && itemCat.includes('veg')) ||
+          (cat === 'spices' && itemCat.includes('spice')) ||
+          (cat === 'plantation' && itemCat.includes('plantation'));
 
         // Query match
         const matchQuery = !q || 

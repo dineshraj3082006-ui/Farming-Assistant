@@ -120,6 +120,9 @@ class RAGEngine {
       { patterns: [/\bpadavalam\b/g, /\bsnake gourd\b/g], target: 'snake gourd പടവലം' },
       { patterns: [/\bvellarikka\b/g, /\bvellari\b/g, /\bcucumber\b/g], target: 'cucumber വെള്ളരി' },
       { patterns: [/\bmanga\b/g, /\bmaanga\b/g, /\bmango\b/g, /\bmangoes\b/g], target: 'mango മാങ്ങ' },
+      { patterns: [/\bgrape\b/g, /\bgrapes\b/g, /\bgraps\b/g, /\bmunthiri\b/g, /\bmunthirikku\b/g, /\bmunthiringa\b/g, /\bmunthirik\b/g], target: 'grape munthiri മുന്തിരി' },
+      { patterns: [/\bpotato\b/g, /\bpotatoes\b/g, /\burulakizhangu\b/g, /\burulakkizhangu\b/g], target: 'potato ഉരുളക്കിഴങ്ങ്' },
+      { patterns: [/\bapple\b/g, /\bapples\b/g, /\baappil\b/g], target: 'apple ആപ്പിൾ' },
 
       // Agricultural Concepts & Cover Crops
       { patterns: [/\bhoub\b/g, /\bshoud\b/g, /\bshoudl\b/g, /\bshuod\b/g], target: 'should' },
@@ -232,12 +235,22 @@ class RAGEngine {
     } else if (/\b(mango|mangoes|manga|മാവ്|മാങ്ങ)\b/i.test(combinedQuery)) {
       detectedCrop = 'Mango';
       explicitCropInQuery = true;
+    } else if (/\b(grape|grapes|graps|munthiri|മുന്തിരി)\b/i.test(combinedQuery)) {
+      detectedCrop = 'Grape';
+      explicitCropInQuery = true;
+    } else if (/\b(potato|potatoes|urulakizhangu|ഉരുളക്കിഴങ്ങ്)\b/i.test(combinedQuery)) {
+      detectedCrop = 'Potato';
+      explicitCropInQuery = true;
+    } else if (/\b(apple|apples|aappil|ആപ്പിൾ)\b/i.test(combinedQuery)) {
+      detectedCrop = 'Apple';
+      explicitCropInQuery = true;
     } else if (/\b(vegetable|vegetables|pachakari|പച്ചക്കറി)\b/i.test(combinedQuery)) {
       detectedCrop = 'Vegetables';
       explicitCropInQuery = true;
     } else {
       // Follow-up context from history
-      if (/\b(tea|തേയില)\b/i.test(historyText)) detectedCrop = 'Tea';
+      if (/\b(grape|മുന്തിരി)\b/i.test(historyText)) detectedCrop = 'Grape';
+      else if (/\b(tea|തേയില)\b/i.test(historyText)) detectedCrop = 'Tea';
       else if (/\b(coffee|കാപ്പി)\b/i.test(historyText)) detectedCrop = 'Coffee';
       else if (/\b(rubber|റബ്ബർ)\b/i.test(historyText)) detectedCrop = 'Rubber';
       else if (/\b(banana|വാഴ|vazha)\b/i.test(historyText)) detectedCrop = 'Banana';
@@ -245,18 +258,20 @@ class RAGEngine {
       else if (/\b(coconut|തെങ്ങ്|thenga)\b/i.test(historyText)) detectedCrop = 'Coconut';
       else if (/\b(tomato|തക്കാളി|thakkali)\b/i.test(historyText)) detectedCrop = 'Tomato';
       else if (/\b(pepper|കുരുമുളക്)\b/i.test(historyText)) detectedCrop = 'Pepper';
-      else if (activeDiagnosis && (activeDiagnosis.crop || activeDiagnosis.cropEn)) {
+      else if (activeDiagnosis && (activeDiagnosis.crop || activeDiagnosis.cropEn) && (combinedQuery.includes('this') || combinedQuery.includes('leaf') || combinedQuery.includes('scan') || combinedQuery.includes('doctor') || combinedQuery.includes('ഇത്') || combinedQuery.includes('ഇല'))) {
         const ac = (activeDiagnosis.cropEn || activeDiagnosis.crop).toLowerCase();
-        if (ac.includes('rice') || ac.includes('paddy') || ac.includes('നെല്ല്')) detectedCrop = 'Paddy';
+        if (ac.includes('grape') || ac.includes('മുന്തിരി')) detectedCrop = 'Grape';
+        else if (ac.includes('rice') || ac.includes('paddy') || ac.includes('നെല്ല്')) detectedCrop = 'Paddy';
         else if (ac.includes('chilli') || ac.includes('chilly') || ac.includes('മുളക്')) detectedCrop = 'Chilli';
         else if (ac.includes('banana') || ac.includes('nendran') || ac.includes('വാഴ')) detectedCrop = 'Banana';
         else if (ac.includes('coconut') || ac.includes('തെങ്ങ്')) detectedCrop = 'Coconut';
         else if (ac.includes('pepper') || ac.includes('കുരുമുളക്')) detectedCrop = 'Pepper';
         else if (ac.includes('tomato') || ac.includes('തക്കാളി')) detectedCrop = 'Tomato';
         else if (ac.includes('potato') || ac.includes('ഉരുളക്കിഴങ്ങ്')) detectedCrop = 'Potato';
+        else if (ac.includes('apple') || ac.includes('ആപ്പിൾ')) detectedCrop = 'Apple';
         else if (ac.includes('healthy')) detectedCrop = 'Healthy';
         else detectedCrop = activeDiagnosis.cropEn || activeDiagnosis.crop;
-        explicitCropInQuery = true;
+        explicitCropInQuery = false;
       }
       else if (farmerProfile.mainCrop && !combinedQuery.includes('cover crop') && !combinedQuery.includes('green manure') && !combinedQuery.includes('മൂടുവിള') && !combinedQuery.includes('പച്ചിലവളം')) {
         detectedCrop = farmerProfile.mainCrop;
@@ -321,8 +336,14 @@ class RAGEngine {
       intent = 'GREETING';
     } else if (combinedQuery.includes('cover crop') || combinedQuery.includes('cover crops') || combinedQuery.includes('green manure') || combinedQuery.includes('sunn hemp') || combinedQuery.includes('sunnhemp') || combinedQuery.includes('daincha') || combinedQuery.includes('sesbania') || combinedQuery.includes('calopogonium') || combinedQuery.includes('mucuna') || combinedQuery.includes('മൂടുവിള') || combinedQuery.includes('പച്ചിലവളം')) {
       intent = 'COVER_CROPS';
+    } else if (/\b(profit|profitable|income|lucrative|returns|margins|high profit|more profit|commercial crop|cash crop|ലാഭം|കൂടുതൽ ലാഭം)\b/i.test(qLower) || combinedQuery.includes('ലാഭം') || combinedQuery.includes('കൂടുതൽ വരുമാനം')) {
+      intent = 'HIGH_PROFIT_CROPS';
     } else if (/\b(price|prices|market|mandi|rate|rates|cost|വില|വിപണി)\b/i.test(qLower) || combinedQuery.includes('വില') || combinedQuery.includes('വിപണി')) {
       intent = 'MARKET_PRICE';
+    } else if (combinedQuery.includes('which crop') || combinedQuery.includes('what to plant') || combinedQuery.includes('what should i plant') || combinedQuery.includes('recommend') || combinedQuery.includes('suitable crop') || combinedQuery.includes('ഏത് വിള') || combinedQuery.includes('നടേണ്ടത്')) {
+      intent = 'CROP_SELECTION';
+    } else if (combinedQuery.includes('when to plant') || combinedQuery.includes('season') || combinedQuery.includes('planting time') || combinedQuery.includes('sowing time') || combinedQuery.includes('virippu') || combinedQuery.includes('mundakan') || combinedQuery.includes('puncha') || combinedQuery.includes('സീസൺ') || combinedQuery.includes('നടീൽ സമയം') || combinedQuery.includes('planted in this season')) {
+      intent = 'SEASON';
     } else if (combinedQuery.includes('weather') || combinedQuery.includes('rain') || combinedQuery.includes('rainfall') || combinedQuery.includes('forecast') || combinedQuery.includes('മഴ') || combinedQuery.includes('കാലാവസ്ഥ')) {
       intent = 'WEATHER';
     } else if (combinedQuery.includes('how many month') || combinedQuery.includes('how many months') || combinedQuery.includes('how long') || combinedQuery.includes('duration') || combinedQuery.includes('growth period') || combinedQuery.includes('harvest time') || combinedQuery.includes('maturity time') || combinedQuery.includes('എത്ര മാസം') || combinedQuery.includes('കാലയളവ്') || combinedQuery.includes('വിളവെടുപ്പ്')) {
@@ -333,7 +354,7 @@ class RAGEngine {
       intent = 'IRRIGATION';
     } else if (detectedPest || combinedQuery.includes('pest') || combinedQuery.includes('pests') || combinedQuery.includes('insect') || combinedQuery.includes('caterpillar') || combinedQuery.includes('borer') || combinedQuery.includes('beetle') || combinedQuery.includes('aphid') || combinedQuery.includes('whitefly') || combinedQuery.includes('thrip') || combinedQuery.includes('കീടം') || combinedQuery.includes('പുഴു') || combinedQuery.includes('ചെല്ലി')) {
       intent = 'PEST';
-    } else if (detectedDisease || (activeDiagnosis && (activeDiagnosis.crop || activeDiagnosis.disease)) || combinedQuery.includes('disease') || combinedQuery.includes('blight') || combinedQuery.includes('blast') || combinedQuery.includes('wilt') || combinedQuery.includes('rot') || combinedQuery.includes('yellow') || combinedQuery.includes('spot') || combinedQuery.includes('spots') || combinedQuery.includes('രോഗം') || combinedQuery.includes('പാടുകൾ') || combinedQuery.includes('പുള്ളി') || combinedQuery.includes('വാട്ടം') || combinedQuery.includes('ചീയൽ') || combinedQuery.includes('scanned') || combinedQuery.includes('doctor')) {
+    } else if (detectedDisease || (activeDiagnosis && (combinedQuery.includes('scan') || combinedQuery.includes('doctor') || combinedQuery.includes('remedy') || combinedQuery.includes('cure') || combinedQuery.includes('treatment') || combinedQuery.includes('medicine') || combinedQuery.includes('marunnu') || combinedQuery.includes('what happened') || combinedQuery.includes('this leaf') || combinedQuery.includes('ഈ ഇല') || combinedQuery.includes('ഇതിന്'))) || combinedQuery.includes('disease') || combinedQuery.includes('blight') || combinedQuery.includes('blast') || combinedQuery.includes('wilt') || combinedQuery.includes('rot') || combinedQuery.includes('yellow') || combinedQuery.includes('spot') || combinedQuery.includes('spots') || combinedQuery.includes('രോഗം') || combinedQuery.includes('പാടുകൾ') || combinedQuery.includes('പുള്ളി') || combinedQuery.includes('വാട്ടം') || combinedQuery.includes('ചീയൽ')) {
       intent = 'DISEASE';
     } else if (combinedQuery.includes('soil') || combinedQuery.includes('laterite') || combinedQuery.includes('alluvial') || combinedQuery.includes('ph') || combinedQuery.includes('lime') || combinedQuery.includes('മണ്ണ്') || combinedQuery.includes('ചെങ്കൽ')) {
       intent = 'SOIL';
@@ -870,14 +891,99 @@ STRICT DOMAIN & ANSWER GUIDELINES:
   synthesizeDynamicAnswer(query, language, farmerProfile = {}, history = [], retrievedDocs = [], entities = {}, weatherContext = null, marketContext = null, activeDiagnosis = null) {
     const isMl = language === 'ml';
     const district = entities.district || farmerProfile.district || 'Thrissur';
-    const crop = (activeDiagnosis && (activeDiagnosis.cropEn || activeDiagnosis.crop)) || entities.crop || farmerProfile.mainCrop || '';
+    // Explicit crop mentioned by farmer in query ALWAYS takes top priority
+    let crop = entities.crop || '';
+    if (!crop && activeDiagnosis && (intent === 'DISEASE' || query.toLowerCase().includes('this') || query.toLowerCase().includes('leaf') || query.toLowerCase().includes('scan'))) {
+      crop = activeDiagnosis.cropEn || activeDiagnosis.crop || '';
+    }
+    if (!crop) {
+      crop = farmerProfile.mainCrop || '';
+    }
     const soil = entities.soil || farmerProfile.soilType || 'Laterite Soil';
     const intent = entities.intent;
 
     let answer = "";
 
+    // HIGH PROFIT COMMERCIAL CASH CROPS IN KERALA
+    if (intent === 'HIGH_PROFIT_CROPS' || (intent === 'MARKET_PRICE' && (query.toLowerCase().includes('profit') || query.toLowerCase().includes('more') || query.toLowerCase().includes('high')))) {
+      answer = isMl ?
+        `💰 **നിലവിൽ കേരളത്തിൽ ഏറ്റവും കൂടുതൽ ലാഭം നൽകുന്ന വിളകൾ (High-Profit Commercial Crops in Kerala):**\n\n` +
+        `1. 🌿 **ചെറിയ ഏലം (Small Green Cardamom)**:\n` +
+        `   • **വിപണി വില**: **₹2,200 – ₹2,550 / kg** (വണ്ടൻമേട് സ്പൈസസ് പാർക്ക് ഓക്ഷൻ)\n` +
+        `   • **ലാഭ സാധ്യത**: ഉയർന്ന ഡിമാൻഡ്; ഇടുക്കി, വയനാട് മലയോര മേഖലകളിൽ ഏക്കറിന് ഏറ്റവും ഉയർന്ന വരുമാനം.\n\n` +
+        `2. 🌿 **കുരുമുളക് (Black Pepper - Garbled)**:\n` +
+        `   • **വിപണി വില**: **₹620 – ₹645 / kg** (കൊച്ചി ടെർമിനൽ മാർക്കറ്റ്)\n` +
+        `   • **ലാഭ സാധ്യത**: തെങ്ങിലും കവുങ്ങിലും പടർത്തി ഇടവിളയായി ചെയ്യാം; അധിക ഭൂമി ആവശ്യമില്ല.\n\n` +
+        `3. 🌰 **ജാതിക്കയും ജാതിപത്രിയും (Nutmeg & Mace)**:\n` +
+        `   • **വിപണി വില**: ജാതിക്ക **₹310 – ₹330/kg**, ചുവന്ന ജാതിപത്രി **₹1,350 – ₹1,420/kg** (കാലടി & അങ്കമാലി മണ്ടി)\n` +
+        `   • **ലാഭ സാധ്യത**: ജാതിപത്രിക്ക് വൻ കയറ്റുമതി മൂല്യം; വർഷത്തിൽ രണ്ടുതവണ വിളവെടുപ്പ്.\n\n` +
+        `4. 🍌 **നേന്ത്രവാഴ (Nendran Banana)**:\n` +
+        `   • **വിപണി വില**: **₹58 – ₹64 / kg** (എറണാകുളം, തൃശ്ശൂർ ഹോൾസെയിൽ)\n` +
+        `   • **ലാഭ സാധ്യത**: 9-10 മാസത്തിൽ പെട്ടെന്നുള്ള വരുമാനം; ഓണക്കാലത്തും ഉത്സവ സീസണിലും വൻ ഡിമാൻഡ്.\n\n` +
+        `5. 🌶️ **കാന്താരി മുളക് (Kanthari Chilli)**:\n` +
+        `   • **വിപണി വില**: **₹75 – ₹95 / kg** (നാടൻ കാന്താരിക്ക് വൻ തോതിൽ ആവശ്യക്കാർ)\n` +
+        `   • **ലാഭ സാധ്യത**: കുറഞ്ഞ സ്ഥലത്ത് തുടർച്ചയായ പ്രതിവാര വിളവെടുപ്പും സ്ഥിരവരുമാനവും.\n\n` +
+        `6. 🍇 **മുന്തിരി കൃഷി (Commercial Grapes)**:\n` +
+        `   • **വിപണി വില**: **₹90 – ₹130 / kg** (പാലക്കാട് & കമ്പം-ഇടുക്കി അതിർത്തി വിപണികൾ).\n\n` +
+        `💡 *താങ്കളുടെ സ്ഥല വിസ്തൃതിയും (${district}) മണ്ണിനവും (${soil}) നൽകിയാൽ അനുയോജ്യമായ കൃഷി പ്ലാൻ നൽകാം!*` :
+        `💰 **Most Profitable Cash Crops & Commercial Cultivation in Kerala Right Now:**\n\n` +
+        `1. 🌿 **Small Green Cardamom (ഏലം)**:\n` +
+        `   • **Spot Mandi Rate**: **₹2,200 to ₹2,550 / kg** (Spices Board Vandanmedu Auction)\n` +
+        `   • **Profit Potential**: Highest net return per acre in high-altitude Idukki and Wayanad zones.\n\n` +
+        `2. 🌿 **Black Pepper (കുരുമുളക് - Garbled)**:\n` +
+        `   • **Spot Mandi Rate**: **₹620 to ₹645 / kg** (Kochi Terminal Market)\n` +
+        `   • **Profit Potential**: Excellent vertical intercrop on coconut and arecanut palms with minimal extra land cost.\n\n` +
+        `3. 🌰 **Nutmeg & Mace (ജാതിക്ക & ജാതിപത്രി)**:\n` +
+        `   • **Spot Mandi Rate**: Nutmeg with shell **₹310–₹330/kg**, Red Flower Mace **₹1,350–₹1,420/kg** (Kalady Mandi)\n` +
+        `   • **Profit Potential**: Dual income from both seed nut and premium export mace with low labor.\n\n` +
+        `4. 🍌 **Nendran Banana (നേന്ത്രൻ വാഴ)**:\n` +
+        `   • **Spot Mandi Rate**: **₹58 to ₹64 / kg** (Ernakulam & Thrissur Wholesale Auctions)\n` +
+        `   • **Profit Potential**: Quick 9-10 month ROI with constant year-round ceremonial and chips demand.\n\n` +
+        `5. 🌶️ **Bird's Eye Chilli / Kanthari (കാന്താരി മുളക്)**:\n` +
+        `   • **Spot Mandi Rate**: **₹75 to ₹95 / kg** (Local Mandis)\n` +
+        `   • **Profit Potential**: Steady weekly cash flow from continuous multi-year harvesting.\n\n` +
+        `6. 🍇 **Commercial Grapes (മുന്തിരി)**:\n` +
+        `   • **Spot Mandi Rate**: **₹90 to ₹130 / kg** (Palakkad & Cumbum-Idukki border markets).\n\n` +
+        `💡 *Share your land size and soil type to get a personalized commercial farm plan!*`;
+    }
+
+    // SEASONAL PLANTING CALENDAR & CROP SELECTION
+    else if (intent === 'SEASON' || intent === 'CROP_SELECTION') {
+      answer = isMl ?
+        `🗓️ **നിലവിലെ സീസണിൽ (${district} ജില്ലയിൽ) നടാൻ ഏറ്റവും അനുയോജ്യമായ വിളകൾ:**\n\n` +
+        `🌱 **മുണ്ടകൻ / ശീതകാല സീസൺ (Mundakan / Rabi Season):**\n\n` +
+        `1. 🥬 **പച്ചക്കറികൾ (ഉയർന്ന വിളവ് ലഭിക്കുന്ന സമയം)**:\n` +
+        `   • **തക്കാളി (Tomato)**: മണ്ണുത്തി അനഘ, മനുലക്ഷ്മി, ശക്തി ഇനങ്ങൾ.\n` +
+        `   • **പയർ (Yardlong Bean)**: ശാരദ, ലോല, ഗീതിക ഇനങ്ങൾ (45 ദിവസത്തിൽ വിളവ്).\n` +
+        `   • **മുളക് (Chilli)**: ഉജ്ജ്വല, അനുഗ്രഹ, ജ്വാലാമുഖി.\n` +
+        `   • **വെണ്ട (Okra)**: കിരൺ, സുസ്ഥിര, സൽക്കീർത്തി.\n` +
+        `   • **ശീതകാല പച്ചക്കറികൾ**: കാബേജ്, കോളിഫ്ലവർ.\n\n` +
+        `2. 🌾 **നെല്ല് (Mundakan Winter Paddy)**:\n` +
+        `   • ഉമ (Uma), ജ്യോതി (Jyothi), വർഷ (Varsha) ഇനങ്ങൾ.\n\n` +
+        `3. 🍌 **നേന്ത്രവാഴ (Nendran Banana)**:\n` +
+        `   • വാഴത്തടങ്ങളിൽ പുതയിടലും വളപ്രയോഗവും നടത്താൻ അനുയോജ്യമായ സമയം.\n\n` +
+        `4. 🍇 **മുന്തിരി (Grape Pruning & Planting)**:\n` +
+        `   • ഒക്ടോബർ-നവംബർ മാസങ്ങളിലെ പ്രധാന കമ്പുകോതലും പുതിയ തൈ നടീലും.\n\n` +
+        `💡 *നിങ്ങളുടെ കൃഷിസ്ഥലത്തിന്റെ മണ്ണിനം (${soil}) നൽകിയാൽ വളക്കൂറ് പരിശോധിച്ച് കൂടുതൽ കൃത്യമായ വിത്തിന നിർദ്ദേശം നൽകാം.*` :
+        `🗓️ **Best Crops to Plant in This Season for ${district} (${soil}):**\n\n` +
+        `🌱 **Current Season: Mundakan (Rabi / Winter Season)**\n\n` +
+        `1. 🥬 **High-Yield Vegetable Crops (Prime Season)**:\n` +
+        `   • **Tomato**: High yielding hybrid varieties (Anagha, Sakthi, Manulakshmi).\n` +
+        `   • **Yardlong Bean (Cowpea)**: Lola, Sarada, Geethika (first harvest in 45-50 days).\n` +
+        `   • **Chilli**: Ujjwala, Anugraha, Jwalamukhi (high pest & wilt resistance).\n` +
+        `   • **Okra (Bhendi)**: Susthira, Kiran, Salkeerthi.\n` +
+        `   • **Cool Season Veggies**: Cabbage, Cauliflower, and Beetroot in midland & highland plots.\n\n` +
+        `2. 🌾 **Winter Paddy (Mundakan Rice)**:\n` +
+        `   • Uma (MO-16), Jyothi (PTB-39), and Prathyasa for blast-resistant wetland cultivation.\n\n` +
+        `3. 🍌 **Commercial Banana (Nendran)**:\n` +
+        `   • Excellent time for organic compost application and root basin earthing-up.\n\n` +
+        `4. 🍇 **Grapes (മുന്തിരി)**:\n` +
+        `   • Post-monsoon forward fruit pruning in Bower trellis system for summer harvest.\n\n` +
+        `💡 *Ask me for fertilizer doses or irrigation spacing for any of these crops!*`;
+    }
+
     // 1. CROP DURATION / GROWTH PERIOD
-    if (intent === 'CROP_DURATION') {
+    else if (intent === 'CROP_DURATION') {
       if (crop.toLowerCase().includes('paddy') || crop.toLowerCase().includes('rice')) {
         answer = isMl ?
           `🌾 **നെല്ലിന്റെ വളർച്ചാ കാലയളവ് (Paddy Growth Duration):**\n\n• **ആകെ കാലയളവ്**: **3.5 മുതൽ 4 മാസം** (110 മുതൽ 120 ദിവസം).\n• **ഹ്രസ്വകാല ഇനങ്ങൾ** (ജ്യോതി, കാഞ്ചന): 100 – 115 ദിവസം\n• **ഇടത്തരം ഇനങ്ങൾ** (ഉമ, മട്ട ത്രിവേണി): 120 – 135 ദിവസം\n• **ദീർഘകാല ഇനങ്ങൾ**: 140 – 150 ദിവസം` :
@@ -961,9 +1067,10 @@ STRICT DOMAIN & ANSWER GUIDELINES:
     }
 
     // 4. PLANT DISEASES & YELLOW LEAVES
-    else if (intent === 'DISEASE' || (activeDiagnosis && (activeDiagnosis.crop || activeDiagnosis.disease))) {
+    else if (intent === 'DISEASE') {
       // 1. If active diagnosis object from Crop Doctor is available, synthesize rich custom guidance
-      if (activeDiagnosis && (activeDiagnosis.organicTreatment || activeDiagnosis.chemicalTreatment || activeDiagnosis.symptoms)) {
+      const isAboutActiveDiagnosis = activeDiagnosis && (!entities.explicitCropInQuery || (entities.crop && activeDiagnosis.cropEn && entities.crop.toLowerCase() === activeDiagnosis.cropEn.toLowerCase()));
+      if (isAboutActiveDiagnosis && (activeDiagnosis.organicTreatment || activeDiagnosis.chemicalTreatment || activeDiagnosis.symptoms)) {
         const dCrop = isMl ? (activeDiagnosis.cropMl || activeDiagnosis.crop) : (activeDiagnosis.cropEn || activeDiagnosis.crop);
         const dDis = isMl ? (activeDiagnosis.diseaseMl || activeDiagnosis.disease) : (activeDiagnosis.diseaseEn || activeDiagnosis.disease);
         const dConf = activeDiagnosis.confidence || '95%';
@@ -990,7 +1097,11 @@ STRICT DOMAIN & ANSWER GUIDELINES:
           `🌱 *Avoid foliar spraying right before rainfall. Ask me if you need specific dilution instructions!*`;
       }
       // 2. Crop-specific built-in fallbacks if activeDiagnosis details weren't passed
-      else if (crop.toLowerCase().includes('paddy') || crop.toLowerCase().includes('rice')) {
+      else if (crop.toLowerCase().includes('grape')) {
+        answer = isMl ?
+          `🍇 **മുന്തിരിയിലെ പ്രധാന രോഗങ്ങളും പ്രതിരോധ മാർഗ്ഗങ്ങളും (Grape Diseases & Remedy):**\n\n• **കരിംചീയൽ (Black Rot)**: ഇലകളിൽ ചെറിയ തവിട്ടുനിറ പാടുകൾ, മുന്തിരിങ്ങകൾ ചുരുങ്ങി കറുത്തു കല്ലിക്കൽ.\n• **ഡൗണി മിൽഡ്യൂ (Downy Mildew)**: ഇലകളുടെ അടിവശത്ത് വെളുത്ത പൂപ്പലും മുകൾഭാഗത്ത് മഞ്ഞപ്പുള്ളികളും.\n• **ജൈവ പരിഹാരം**: സ്യൂഡോമോണസ് (20g/L) 10-14 ദിവസത്തിലൊരിക്കൽ തളിക്കുക; ട്രൈക്കോഡെർമ ചേർത്ത ചാണകപ്പൊടി തടത്തിലിടുക.\n• **കുമിൾനാശിനി**: 1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ കോപ്പർ ഓക്സിക്ലോറൈഡ് (3g/L) മഴയ്ക്ക് മുമ്പ് തളിക്കുക.\n• **മുൻകരുതൽ**: പന്തലിൽ നല്ല വെയിലും കാറ്റും ലഭിക്കാൻ ഉണങ്ങിയ ഇലകളും കമ്പുകളും പ്രൂൺ ചെയ്ത് മാറ്റുക.` :
+          `🍇 **Grape Diseases & Scientific Care (KAU Guidelines):**\n\n• **Black Rot (*Guignardia bidwellii*)**: Circular brown leaf lesions; berries shrivel into hard black mummies.\n• **Downy Mildew (*Plasmopara viticola*)**: Yellow oily spots on upper leaf surface, white downy mold underneath.\n• **Bio-Control**: Foliar spray of **Pseudomonas fluorescens** (20g/L) every 10–14 days.\n• **Fungicide Spray**: Apply **1% Bordeaux mixture** or Copper Oxychloride (3g/L) before monsoon onset.\n• **Canopy Care**: Prune dead shoots and thin vine canopy for maximum sunlight and rapid foliage drying.`;
+      } else if (crop.toLowerCase().includes('paddy') || crop.toLowerCase().includes('rice')) {
         answer = isMl ?
           `🌾 **നെല്ലിലെ ഇല മഞ്ഞനിറവും ബ്ലാസ്റ്റ് രോഗ നിയന്ത്രണവും (Paddy Blast & Sheath Blight):**\n\n• **ലക്ഷണങ്ങൾ**: ഇലകളിൽ കണ്ണ് ആകൃതിയിലുള്ള പുള്ളികൾ, അഗ്രം കരിയൽ.\n• **ജൈവ പരിഹാരം**: സ്യൂഡോമോണസ് 20 ഗ്രാം/ലിറ്റർ ഇലകളിൽ തളിക്കുക.\n• **രാസ പരിഹാരം**: ട്രൈസൈക്ലസോൾ 75 WP (Tricyclazole 0.6g/L) അല്ലെങ്കിൽ ഐസോപ്രോത്തിയോലേൻ തളിക്കുക.\n• **മുൻകരുതൽ**: യൂറിയ വളം നൽകുന്നത് ഉടൻ നിർത്തുക, പാടത്ത് ആവശ്യത്തിന് വെള്ളം നിലനിർത്തുക.` :
           `🌾 **Paddy Leaf Blast & Disease Control (KAU Guidelines):**\n\n• **Symptoms**: Spindle-shaped eye lesions with brown margins and grey centers.\n• **Bio-Control**: Foliar spray of **Pseudomonas fluorescens** (20g/L) at tillering and panicle emergence.\n• **Chemical Remedy**: Spray **Tricyclazole 75 WP** (0.6g/L) or Isoprothiolane 40 EC (1.5ml/L).\n• **Precaution**: Stop chemical urea/nitrogen fertilizer immediately; maintain 2–3 cm standing water.`;
@@ -1065,6 +1176,10 @@ STRICT DOMAIN & ANSWER GUIDELINES:
         answer = isMl ?
           `🍌 **നേന്ത്രവാഴ കൃഷിക്ക് ആവശ്യമായ ഘടകങ്ങൾ (Banana Cultivation Guide):**\n\n• **മണ്ണും സൂര്യപ്രകാശവും**: നല്ല നീർവാർച്ചയുള്ള പശിമരാശി മണ്ണും പൂർണ്ണ സൂര്യപ്രകാശവും.\n• **കുഴിയും അകലവും**: 50x50x50 cm കുഴികൾ, 2m x 2m അകലത്തിൽ നടുക.\n• **വളപ്രയോഗം (ഒരു വാഴയ്ക്ക്)**: അടിവളമായി 10 kg ചാണകപ്പൊടി + 500g വേപ്പിൻപിണ്ണാക്ക്; നട്ട് 1, 2, 3, 5 മാസങ്ങളിൽ 190g യൂറിയ, 115g രാജ്ഫോസ്, 300g പൊട്ടാഷ് നൽകുക.\n• **നന**: വേനൽക്കാലത്ത് 2–3 ദിവസത്തിലൊരിക്കൽ നനയ്ക്കുക (അല്ലെങ്കിൽ തുള്ളിനന വഴി ദിനംപ്രതി 15–20 ലിറ്റർ).` :
           `🍌 **Key Requirements for Nendran Banana Cultivation:**\n\n• **Soil & Sunlight**: Well-drained fertile loamy soil with full sun exposure and wind protection.\n• **Spacing & Pits**: 2m x 2m spacing; 50cm x 50cm x 50cm planting pits.\n• **Fertilizer Dose (Per Plant)**: Basal 10 kg compost + 500g neem cake; top-dress 190g Urea, 115g Rock Phosphate, 300g Potash in 4 split doses (months 1, 2, 3, 5).\n• **Water**: 15–20 liters/plant daily via drip irrigation during summer.`;
+      } else if (crop.toLowerCase().includes('grape')) {
+        answer = isMl ?
+          `🍇 **കേരളത്തിൽ മുന്തിരി കൃഷി ചെയ്യുന്ന രീതി (Grape Cultivation Guidelines):**\n\n• **അനുയോജ്യമായ ഇനങ്ങൾ**: ബാംഗ്ലൂർ ബ്ലൂ (Bangalore Blue - കേരളത്തിന് ഏറ്റവും ഉത്തമം), മസ്കറ്റ്.\n• **പന്തൽ സംവിധാനം (Bower System)**: 2 മീറ്റർ ഉയരത്തിൽ ജി.ഐ കമ്പികൾ ഉപയോഗിച്ച് പന്തൽ നിർമ്മിച്ച് വള്ളികൾ പടർത്തുക.\n• **കമ്പുകോതൽ (Pruning)**: വർഷത്തിൽ രണ്ടുതവണ - ഏപ്രിലിൽ ആദ്യ പ്രൂണിംഗും ഒക്ടോബർ അവസാനത്തിൽ പൂവിടുന്നതിനുള്ള പ്രധാന പ്രൂണിംഗും.\n• **വളപ്രയോഗം**: പ്രൂണിംഗിന് ശേഷം ഒരു ചെടിക്ക് 500g യൂറിയ, 500g രാജ്ഫോസ്, 1kg പൊട്ടാഷ് + 20kg ചാണകപ്പൊടി നൽകുക.\n• **നന**: കായ്പിടുത്ത സമയത്ത് ആഴ്ചയിൽ 2 തവണ നനയ്ക്കുക; വിളവെടുപ്പിന് 10 ദിവസം മുമ്പ് നന നിർത്തുക.` :
+          `🍇 **Grape Cultivation Guidelines for Kerala (KAU Standards):**\n\n• **Recommended Varieties**: Bangalore Blue (most disease-resilient for Kerala climate), Muscat, Thompson Seedless.\n• **Trellising (Bower System)**: Train vines on overhead telephone/bower wire trellises at 2m height for sunlight exposure.\n• **Pruning Cycle**: Two prunings annually — **Foundation Pruning in April** (after summer harvest) and **Forward/Fruit Pruning in October**.\n• **Fertilizer Schedule**: Per vine annually: NPK 500:500:1000g in 2 split doses after pruning with 20kg organic farmyard manure.\n• **Water Management**: Irrigate twice weekly during fruit set; stop irrigation 10-12 days before cluster harvest to enhance sweetness.`;
       } else {
         answer = isMl ?
           `🌾 **${crop} കൃഷി രീതിയും ആവശ്യകതകളും (${district}, ${soil}):**\n\n• **നിലമൊരുക്കൽ**: നിലം നന്നായി ഉഴുത് സെന്റൊന്നിന് 100 kg ചാണകപ്പൊടിയും വേപ്പിൻപിണ്ണാക്കും ചേർക്കുക.\n• **വിത്ത്/തൈകൾ**: KAU സാക്ഷ്യപ്പെടുത്തിയ നല്ലയിനം വിത്തുകൾ ഉപയോഗിക്കുക.\n• **നന**: ചെടിയുടെ ചുവട്ടിൽ ക്രമമായി നനയ്ക്കുകയും വെള്ളക്കെട്ട് ഒഴിവാക്കുകയും ചെയ്യുക.` :
@@ -1133,6 +1248,10 @@ STRICT DOMAIN & ANSWER GUIDELINES:
           answer = isMl ?
             `🌾 **നെല്ല് സംഭരണ വില & വിപണി വിലനിലവാരം:**\n\n• **സർക്കാർ സംഭരണവില (Kerala Govt MSP)**: **₹28.20 / kg** (സപ്ലൈകോ വഴി സംഭരണം)\n• **മട്ട അരി മൊത്തവില**: **₹48 / kg** (പാലക്കാട് വിപണി)\n• **വിപണി പ്രവണത**: സർക്കാർ സംഭരണ പിന്തുണയുള്ള സുരക്ഷിത വിപണി.` :
             `🌾 **Paddy (Rice) Market & MSP Rates:**\n\n• **Kerala Govt MSP Procurement Rate**: **₹28.20 / kg** (Procured via Supplyco)\n• **Matta Rice Wholesale**: **₹48 / kg** (Palakkad Wholesale Mandi)\n• **Market Trend**: Fully supported under Kerala paddy procurement program.`;
+        } else if (cLower.includes('grape')) {
+          answer = isMl ?
+            `🍇 **മുന്തിരി വിപണി നിരക്കുകൾ (Grape Market Rates):**\n\n• **ഹോൾസെയിൽ (Wholesale)**: **₹90 – ₹115 / kg** (പാലക്കാട് & കൊച്ചി ഫ്രൂട്ട്സ് മാർക്കറ്റ്)\n• **റീട്ടെയിൽ (Retail)**: **₹120 – ₹150 / kg**\n• **വിപണി ട്രെൻഡ്**: ഉയർന്ന ഡിമാൻഡ് (+5% വളർച്ച).` :
+            `🍇 **Grape Wholesale Market Prices (Kerala Mandis):**\n\n• **Wholesale Rate**: **₹90 to ₹115 / kg** (Palakkad & Ernakulam Wholesale Fruit Markets)\n• **Retail Consumer Rate**: **₹120 to ₹150 / kg**\n• **Market Trend**: Strong consumer fruit demand (+5% positive momentum).`;
         } else {
           answer = isMl ?
             `📊 **${entities.crop} വിപണി വിലനിലവാരം (${district}):**\n\n• **ശരാശരി മൊത്തവില**: **₹45 – ₹60 / kg** (പ്രാദേശിക കാർഷിക വിപണി)\n• **വിപണി പ്രവണത**: സ്ഥിരതയുള്ള ഡിമാൻഡ്.` :
@@ -1173,11 +1292,94 @@ STRICT DOMAIN & ANSWER GUIDELINES:
         `🌾 **You're very welcome! (നിങ്ങൾക്ക് സ്വാഗതം!)**\n\nI am glad I could help you. If you have any more farming questions regarding crop care, fertilizers, disease management, weather, or market rates, feel free to ask anytime. Happy farming! 🌱🚜`;
     }
 
-    // 13. GENERAL AGRICULTURAL GUIDANCE
+    // 13. CROP PROFILE OVERVIEW (When a crop name is entered directly)
+    else if (entities.explicitCropInQuery && crop) {
+      if (crop.toLowerCase().includes('grape')) {
+        answer = isMl ?
+          `🍇 **മുന്തിരി കൃഷി അവലോകനം (Grape Cultivation & Advisory):**\n\n` +
+          `• **അനുയോജ്യമായ ഇനങ്ങൾ**: ബാംഗ്ലൂർ ബ്ലൂ (Bangalore Blue - കേരളത്തിലെ കാലാവസ്ഥയ്ക്ക് ഏറ്റവും അനുയോജ്യം), തോംസൺ സീഡ്‌ലെസ്സ്.\n` +
+          `• **പന്തൽ രീതി (Bower System)**: 2 മീറ്റർ ഉയരത്തിൽ പന്തൽ നിർമ്മിച്ച് വള്ളി പടർത്തുക.\n` +
+          `• **കമ്പുകോതൽ (Pruning)**: ഒക്ടോബർ മാസത്തിൽ പൂവിടുന്നതിനുള്ള പ്രധാന പ്രൂണിംഗും ഏപ്രിലിൽ ആദ്യ പ്രൂണിംഗും.\n` +
+          `• **രോഗനിയന്ത്രണം**: കരിംചീയൽ (Black Rot), ഡൗണി മിൽഡ്യൂ എന്നിവയ്ക്ക് 1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ സ്യൂഡോമോണസ് (20g/L) തളിക്കുക.\n` +
+          `• **വിപണി വില**: ഹോൾസെയിൽ **₹90 – ₹115 / kg** (പാലക്കാട്, കൊച്ചി മാർക്കറ്റുകൾ).` :
+          `🍇 **Grape Cultivation & Scientific Advisory (മുന്തിരി):**\n\n` +
+          `• **Recommended Varieties**: Bangalore Blue (most resilient for Kerala climate), Muscat, Thompson Seedless.\n` +
+          `• **Trellis Training (Bower System)**: Overhead wire arbor at 2m height for maximum sunlight and ventilation.\n` +
+          `• **Pruning Calendar**: **October forward fruit pruning** for prime summer harvest, and April post-harvest foundation pruning.\n` +
+          `• **Disease Protection**: Spray **1% Bordeaux mixture** or **Pseudomonas fluorescens** (20g/L) against Black Rot & Downy Mildew.\n` +
+          `• **Current Market Rate**: **₹90 to ₹115 / kg** (Palakkad & Ernakulam Wholesale Mandis).`;
+      } else if (crop.toLowerCase().includes('banana')) {
+        answer = isMl ?
+          `🍌 **നേന്ത്രവാഴ കൃഷി അവലോകനം (Nendran Banana Advisory):**\n\n` +
+          `• **കാലാവധി**: 9–10 മാസം (വിളവെടുപ്പ് സമയം).\n` +
+          `• **വളപ്രയോഗം**: കുഴിക്ക് 10kg ചാണകപ്പൊടി; 190g യൂറിയ, 115g രാജ്ഫോസ്, 300g പൊട്ടാഷ് 4 തവണകളായി നൽകുക.\n` +
+          `• **രോഗനിയന്ത്രണം**: സിഗാറ്റോക്ക ഇലപ്പുള്ളിക്ക് സ്യൂഡോമോണസ് (20g/L) അല്ലെങ്കിൽ 1% ബോർഡോ മിശ്രിതം.\n` +
+          `• **വിപണി വില**: ഹോൾസെയിൽ **₹58 – ₹64 / kg** (തൃശ്ശൂർ, എറണാകുളം മാർക്കറ്റ്).` :
+          `🍌 **Nendran Banana Cultivation & Advisory (നേന്ത്രൻ വാഴ):**\n\n` +
+          `• **Duration**: 9 to 10 months from planting to harvest.\n` +
+          `• **Fertilizer Dose**: Basal 10kg compost; top-dress 190g Urea, 115g Rock Phosphate, 300g Potash in 4 split doses.\n` +
+          `• **Disease Control**: Foliar spray of Pseudomonas (20g/L) or 1% Bordeaux mixture against Sigatoka leaf spot.\n` +
+          `• **Current Market Rate**: **₹58 to ₹64 / kg** in Kerala wholesale auctions.`;
+      } else if (crop.toLowerCase().includes('paddy') || crop.toLowerCase().includes('rice')) {
+        answer = isMl ?
+          `🌾 **നെല്ല് കൃഷി അവലോകനം (Paddy Rice Advisory):**\n\n` +
+          `• **ഇനങ്ങൾ**: ഉമ, ജ്യോതി, കാഞ്ചന, ഐശ്വര്യ (110–120 ദിവസം).\n` +
+          `• **സീസണുകൾ**: വിരിപ്പ് (മെയ്-ജൂൺ), മുണ്ടകൻ (സെപ്റ്റംബർ-ഒക്ടോബർ), പുഞ്ച (ഡിസംബർ-ജനുവരി).\n` +
+          `• **രോഗനിയന്ത്രണം**: ബ്ലാസ്റ്റ് രോഗത്തിന് സ്യൂഡോമോണസ് (20g/L) തളിക്കുക; യൂറിയ അമിതമായി നൽകരുത്.\n` +
+          `• **സർക്കാർ സംഭരണവില**: **₹28.20 / kg** (സപ്ലൈകോ വഴി).` :
+          `🌾 **Paddy (Rice) Cultivation & Advisory (നെല്ല്):**\n\n` +
+          `• **Recommended Varieties**: Uma, Jyothi, Kanchana, Aiswarya (110 to 120 days).\n` +
+          `• **Cropping Seasons**: Virippu (Kharif), Mundakan (Rabi), Puncha (Summer Kole).\n` +
+          `• **Disease Protection**: Spray Pseudomonas (20g/L) at tillering against Leaf Blast; stop excess urea.\n` +
+          `• **Kerala Govt MSP**: **₹28.20 / kg** through Supplyco procurement.`;
+      } else if (crop.toLowerCase().includes('pepper')) {
+        answer = isMl ?
+          `🌿 **കുരുമുളക് കൃഷി അവലോകനം (Black Pepper Advisory):**\n\n` +
+          `• **ഇനങ്ങൾ**: പന്നിയൂർ 1 മുതൽ 9 വരെയുള്ള ഹൈബ്രിഡ് ഇനങ്ങൾ.\n` +
+          `• **ഇടവിള**: തെങ്ങിലും കവുങ്ങിലും പടർത്താം; നടീൽ കുഴിയിൽ 50g ട്രൈക്കോഡെർമ ചേർത്ത ചാണകം നൽകുക.\n` +
+          `• **രോഗനിയന്ത്രണം**: ദ്രുതവാട്ടത്തിന് (Quick Wilt) 1% ബോർഡോ മിശ്രിതം തടത്തിൽ ഒഴിക്കുക.\n` +
+          `• **വിപണി വില**: ഗാർബിൾഡ് കുരുമുളക് **₹620 – ₹645 / kg** (കൊച്ചി ടെർമിനൽ).` :
+          `🌿 **Black Pepper Cultivation & Advisory (കുരുമുളക്):**\n\n` +
+          `• **High-Yield Varieties**: Panniyur-1 to Panniyur-9.\n` +
+          `• **Intercropping**: Ideal on coconut and arecanut palms; blend 50g Trichoderma with compost in planting pit.\n` +
+          `• **Disease Protection**: Drench 1% Bordeaux mixture or Copper Oxychloride against Quick Wilt before monsoon.\n` +
+          `• **Current Market Rate**: **₹620 to ₹645 / kg** (Kochi Terminal Market).`;
+      } else if (crop.toLowerCase().includes('cardamom')) {
+        answer = isMl ?
+          `🌿 **ഏലം കൃഷി അവലോകനം (Cardamom Advisory):**\n\n` +
+          `• **ഇനങ്ങൾ**: ഞള്ളാനി (Njallani Green Gold - ഏറ്റവും കൂടുതൽ വിളവ്), പി.സി.ആർ-1, തിരുതാളി.\n` +
+          `• **കാലാവസ്ഥ**: തണലും ഈർപ്പവുമുള്ള ഇടുക്കി, വയനാട് മലയോര മേഖലകൾ.\n` +
+          `• **രോഗനിയന്ത്രണം**: അഴുകൽ രോഗത്തിന് 1% ബോർഡോ മിശ്രിതവും ട്രൈക്കോഡെർമയും.\n` +
+          `• **ലേല വില**: **₹1,850 – ₹2,450 / kg** (വണ്ടൻമേട് സ്പൈസസ് പാർക്ക് ഓക്ഷൻ).` :
+          `🌿 **Cardamom Cultivation & Advisory (ഏലം):**\n\n` +
+          `• **Prime Variety**: Njallani Green Gold (highest yielding), PCR-1, ICRI-2.\n` +
+          `• **Altitude & Climate**: High humidity forest loam with 50% shade in Idukki and Wayanad.\n` +
+          `• **Disease Care**: Apply 1% Bordeaux mixture and Trichoderma against Capsule Rot / Azhukal.\n` +
+          `• **Auction Rate**: **₹1,850 to ₹2,450 / kg** at Spices Board Vandanmedu auction.`;
+      } else if (crop.toLowerCase().includes('coconut')) {
+        answer = isMl ?
+          `🌴 **തെങ്ങ് കൃഷി അവലോകനം (Coconut Advisory):**\n\n` +
+          `• **ഇനങ്ങൾ**: ഡബ്ല്യു.സി.ടി (West Coast Tall), കേരസങ്കര, ചന്ദ്രശങ്കര.\n` +
+          `• **വളപ്രയോഗം**: തെങ്ങൊന്നിന് പ്രതിവർഷം 1.3kg യൂറിയ, 2kg രാജ്ഫോസ്, 2kg പൊട്ടാഷ് + 500g മഗ്നീഷ്യം സൾഫേറ്റ്.\n` +
+          `• **കീടനിയന്ത്രണം**: കൊമ്പൻചെല്ലിക്ക് മണ്ടയിലെ കവിളുകളിൽ വേപ്പിൻപിണ്ണാക്കും മണലും നിറയ്ക്കുക.\n` +
+          `• **വിപണി വില**: പച്ചത്തേങ്ങ **₹36 – ₹38 / kg**, കൊപ്ര **₹92 / kg**.` :
+          `🌴 **Coconut Cultivation & Advisory (തെങ്ങ്):**\n\n` +
+          `• **Recommended Varieties**: WCT (West Coast Tall), Kera Sankara (hybrid), Chandra Sankara.\n` +
+          `• **Fertilizer Dose**: Annually per palm: 1.3kg Urea, 2kg Rock Phosphate, 2kg MOP + 500g Magnesium Sulphate.\n` +
+          `• **Pest Protection**: Place neem cake + sand mixture in top frond axils against Rhinoceros beetle.\n` +
+          `• **Current Market Rate**: Fresh Coconut **₹36 to ₹38 / kg**, Copra **₹92 / kg**.`;
+      } else {
+        answer = isMl ?
+          `🌱 **${crop} കൃഷി വിവരങ്ങളും പരിപാലനവും (${district}, ${soil}):**\n\n• നല്ല വളർച്ചയ്ക്ക് മണ്ണിലെ ഈർപ്പവും ജൈവവള ലഭ്യതയും ഉറപ്പാക്കുക.\n• കൂടുതൽ കൃത്യമായ വിവരങ്ങൾക്ക് വളപ്രയോഗം, നന, രോഗലക്ഷണങ്ങൾ, വിപണി വില എന്നിവ ചോദിക്കാം.` :
+          `🌱 **${crop} Cultivation & Care Advisory (${district}, ${soil}):**\n\n• For optimal growth of ${crop}, maintain consistent root moisture and apply balanced organic compost.\n• Ask me anytime for specific fertilizer schedules, pest/disease remedies, planting seasons, or market rates for ${crop}!`;
+      }
+    }
+
+    // 14. GENERAL AGRICULTURAL GUIDANCE
     else {
       answer = isMl ?
-        `🌱 **കൃഷിമിത്ര AI കാർഷിക നിർദ്ദേശം (${farmerProfile.name || 'കർഷകൻ'}, ${district}, ${soil}):**\n\n• ${crop} വിളയുടെ മികച്ച വളർച്ചയ്ക്ക് മണ്ണിലെ ഈർപ്പവും ജൈവവള ലഭ്യതയും ഉറപ്പാക്കുക.\n• കൂടുതൽ കൃത്യമായ വിവരങ്ങൾക്ക് വളപ്രയോഗം, നന, രോഗലക്ഷണങ്ങൾ, കാലാവസ്ഥ എന്നിവ ചോദിക്കാം.` :
-        `🌱 **KrishiMitra AI Guidance for ${farmerProfile.name || 'Farmer'} (${district}, ${soil}):**\n\n• For optimal growth of ${crop}, maintain consistent soil moisture and apply organic bio-fertilizers (Jiwamrita/compost).\n• For exact dosages and schedules, please ask specifically about fertilizer, irrigation, disease diagnosis, or weather.`;
+        `🌱 **കൃഷിമിത്ര AI കാർഷിക നിർദ്ദേശം (${farmerProfile.name || 'കർഷകൻ'}, ${district}, ${soil}):**\n\n• താങ്കളുടെ കൃഷിയിടത്തിൽ വിളകളുടെ മികച്ച വളർച്ചയ്ക്ക് മണ്ണിലെ ഈർപ്പവും ജൈവവള ലഭ്യതയും ഉറപ്പാക്കുക.\n• കൂടുതൽ കൃത്യമായ വിവരങ്ങൾക്ക് വളപ്രയോഗം, നന, രോഗലക്ഷണങ്ങൾ, കാലാവസ്ഥ എന്നിവ ചോദിക്കാം.` :
+        `🌱 **KrishiMitra AI Guidance for ${farmerProfile.name || 'Farmer'} (${district}, ${soil}):**\n\n• For optimal crop health on your farm, maintain consistent soil moisture and apply organic bio-fertilizers (Jiwamrita/compost).\n• For exact dosages and schedules, please ask specifically about fertilizer, irrigation, disease diagnosis, or weather.`;
     }
 
     return {

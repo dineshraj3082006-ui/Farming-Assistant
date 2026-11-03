@@ -12,6 +12,10 @@ const path = require('path');
 const fs = require('fs');
 
 const ragEngine = require('./ragEngine');
+const otpService = require('./otpService');
+const { connectDB, isDbConnected, ensureDbConnected } = require('./db');
+const Farmer = require('./models/Farmer');
+const Diagnosis = require('./models/Diagnosis');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,6 +27,22 @@ const NVIDIA_MODEL = process.env.NVIDIA_MODEL || 'meta/llama-3.3-70b-instruct';
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Handle JSON parsing errors cleanly for all API requests
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && 'body' in err) {
+    return res.status(400).json({ success: false, error: 'Invalid JSON payload received.' });
+  }
+  next(err);
+});
+
+// Initialize MongoDB connection asynchronously
+connectDB().catch(err => console.warn('[MongoDB] Init connection note:', err.message));
+// Static files: serve React built dist first, then root static assets
+const distDir = path.join(__dirname, '../dist');
+if (fs.existsSync(distDir)) {
+  app.use(express.static(distDir, { maxAge: '1h', etag: true }));
+}
 app.use(express.static(path.join(__dirname, '../'), {
   maxAge: '1h',
   etag: true
@@ -674,10 +694,24 @@ app.get(['/api/weather', '/weather'], async (req, res) => {
       weatherPayload = await fetchFromOpenMeteo(lat, lon, districtName || 'Thrissur');
     }
 
+    const current = weatherPayload?.current || {};
+    const adv = weatherPayload?.farmingAdvice || {};
     const responsePayload = {
       success: true,
       demoMode: false,
       ...(districtName ? { district: districtName } : {}),
+      temp: current.temp || '30°C',
+      feelsLike: current.feelsLike || '33°C',
+      condition: current.condition || 'Partly Cloudy',
+      conditionMl: current.conditionMl || 'ഭാഗികമായി മേഘാവൃതമായ അന്തരീക്ഷം',
+      icon: current.icon || '🌤️',
+      humidity: current.humidity || '76%',
+      rainProbability: current.rainProbability || '40%',
+      windSpeed: current.windSpeed || '12 km/h',
+      uv: current.uv || 'Moderate (5.2)',
+      pressure: current.pressure || '1010 hPa',
+      advisory: adv.en || `Favorable weather in ${districtName || 'Thrissur'} for scheduled agricultural tasks.`,
+      advisoryMl: adv.ml || `${districtName || 'തൃശ്ശൂർ'} ജില്ലയിൽ കാർഷിക ആവശ്യങ്ങൾക്ക് അനുകൂലമായ കാലാവസ്ഥ.`,
       ...weatherPayload
     };
 
@@ -740,19 +774,108 @@ app.get(['/api/market-chart', '/market-chart'], (req, res) => {
 });
 
 // ------------------------------------------------------------------------
-// 6. FARMER PROFILE & REGISTRATION API
+// 6. FARMER PROFILE & MONGODB PERSISTENCE API
 // ------------------------------------------------------------------------
-app.get(['/api/farmer-profile', '/farmer-profile'], (req, res) => {
-  return res.json({ success: true, profile: farmerProfileStore });
+app.get(['/api/farmer-profile', '/farmer-profile'], async (req, res) => {
+  const mobile = req.query.mobile;
+  const connected = isDbConnected() || await ensureDbConnected();
+  if (mobile && connected) {
+    try {
+      const cleanMobile = otpService.normalizeMobile(mobile);
+      const farmerDoc = await Farmer.findOne({ mobile: cleanMobile }).lean();
+      if (farmerDoc) {
+        return res.json({ success: true, source: 'MongoDB', profile: farmerDoc });
+      }
+      return res.json({ success: true, notFound: true, profile: null });
+    } catch (err) {
+      console.warn('[MongoDB Profile Get Note]:', err.message);
+    }
+  }
+  return res.json({ success: true, source: 'Store', profile: farmerProfileStore });
 });
 
-app.put(['/api/farmer-profile', '/farmer-profile'], (req, res) => {
-  farmerProfileStore = { ...farmerProfileStore, ...req.body };
-  console.log('[Profile] Updated profile in store:', farmerProfileStore);
-  return res.json({ success: true, profile: farmerProfileStore });
+app.put(['/api/farmer-profile', '/farmer-profile'], async (req, res) => {
+  const rawMobile = req.body?.mobile;
+  if (!rawMobile) {
+    return res.status(400).json({ success: false, error: 'Mobile number is required' });
+  }
+
+  const cleanMobile = otpService.normalizeMobile(rawMobile);
+  console.log(`[Profile] Updating profile in database for mobile: ${cleanMobile}`);
+
+  const connected = isDbConnected() || await ensureDbConnected();
+  if (connected) {
+    try {
+      const profileData = {
+        mobile: cleanMobile,
+        name: req.body.name || 'Kerala Farmer',
+        email: req.body.email || '',
+        district: req.body.district || 'Thrissur',
+        location: req.body.location || `${req.body.district || 'Thrissur'}, Kerala`,
+        landArea: String(req.body.landArea || req.body.farmSize || '2.0'),
+        farmSize: String(req.body.farmSize || `${req.body.landArea || '2.0'} acres`),
+        mainCrop: req.body.mainCrop || 'Paddy',
+        mainCrops: req.body.mainCrops || `${req.body.mainCrop || 'Paddy'}, Vegetables`,
+        soilType: req.body.soilType || 'Laterite Soil',
+        waterAvailability: req.body.waterAvailability || 'Moderate',
+        waterSource: req.body.waterSource || 'Open Well',
+        language: req.body.language || 'ml',
+        autoVoice: req.body.autoVoice !== false,
+        lastLoginAt: new Date()
+      };
+
+      const updatedDoc = await Farmer.findOneAndUpdate(
+        { mobile: cleanMobile },
+        { $set: profileData },
+        { upsert: true, returnDocument: 'after', setDefaultsOnInsert: true }
+      ).lean();
+
+      console.log(`🍃 [MongoDB] Profile successfully saved for mobile: ${cleanMobile} (Name: ${updatedDoc.name})`);
+      return res.json({ success: true, source: 'MongoDB', profile: updatedDoc });
+    } catch (err) {
+      console.error('⚠️ [MongoDB Save Error]:', err.message);
+      return res.status(500).json({ success: false, error: err.message });
+    }
+  }
+
+  return res.json({ success: true, source: 'Store', profile: req.body });
 });
 
-app.post(['/api/farmer-login', '/farmer-login'], (req, res) => {
+// ------------------------------------------------------------------------
+// REAL-TIME OTP ENDPOINTS (Twilio SMS Service)
+// ------------------------------------------------------------------------
+app.post(['/api/otp/send', '/otp/send'], async (req, res) => {
+  try {
+    const { mobile } = req.body || {};
+    if (!mobile) {
+      return res.status(400).json({ success: false, error: 'Mobile number is required' });
+    }
+    const result = await otpService.sendOtp(mobile);
+    return res.json(result);
+  } catch (err) {
+    console.error('[OTP API Error]:', err.message);
+    return res.status(400).json({ success: false, error: err.message });
+  }
+});
+
+app.post(['/api/otp/verify', '/otp/verify'], async (req, res) => {
+  try {
+    const { mobile, otp } = req.body || {};
+    if (!mobile || !otp) {
+      return res.status(400).json({ success: false, error: 'Mobile number and OTP are required' });
+    }
+    const result = await otpService.verifyOtp(mobile, otp);
+    if (!result.success) {
+      return res.status(400).json(result);
+    }
+    return res.json(result);
+  } catch (err) {
+    console.error('[OTP Verification Error]:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post(['/api/farmer-login', '/farmer-login'], async (req, res) => {
   const { name, mobile, email, district = 'Thrissur', language = 'en' } = req.body;
   farmerProfileStore = {
     ...farmerProfileStore,
@@ -762,12 +885,98 @@ app.post(['/api/farmer-login', '/farmer-login'], (req, res) => {
     district: district || farmerProfileStore.district,
     language: language || farmerProfileStore.language
   };
+
+  if (isDbConnected() && farmerProfileStore.mobile) {
+    try {
+      const mobileToSave = otpService.normalizeMobile(farmerProfileStore.mobile);
+      const doc = await Farmer.findOneAndUpdate(
+        { mobile: mobileToSave },
+        { ...farmerProfileStore, mobile: mobileToSave, lastLoginAt: new Date() },
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      ).lean();
+      return res.json({
+        success: true,
+        source: 'MongoDB',
+        message: `Welcome, ${doc.name}! Farm profile loaded from MongoDB.`,
+        profile: doc
+      });
+    } catch (err) {
+      console.warn('⚠️ [MongoDB Login Note]:', err.message);
+    }
+  }
+
   console.log(`[Farmer Registration] Farmer logged in: ${farmerProfileStore.name} | Mobile: ${farmerProfileStore.mobile} | Email: ${farmerProfileStore.email}`);
   return res.json({
     success: true,
+    source: 'Store',
     message: `Welcome, ${farmerProfileStore.name}! Daily agricultural reports and weather alerts configured for ${farmerProfileStore.email}.`,
     profile: farmerProfileStore
   });
+});
+
+// ------------------------------------------------------------------------
+// 7. CROP DIAGNOSIS HISTORY API (MongoDB)
+// ------------------------------------------------------------------------
+app.post(['/api/diagnosis-history', '/diagnosis-history'], async (req, res) => {
+  try {
+    const { mobile, diagnosis } = req.body || {};
+    if (!diagnosis) {
+      return res.status(400).json({ success: false, error: 'Diagnosis data required' });
+    }
+
+    const cleanMobile = otpService.normalizeMobile(mobile || '9876543210');
+    console.log(`[Diagnosis API] Saving leaf scan for mobile: ${cleanMobile}`);
+
+    const safeArr = (v) => Array.isArray(v) ? v : (v ? [String(v)] : []);
+    const parseConfidence = (c) => {
+      if (!c) return 92;
+      const parsed = parseInt(String(c).replace('%', ''));
+      return isNaN(parsed) ? 90 : parsed;
+    };
+
+    const connected = isDbConnected() || await ensureDbConnected();
+    if (connected) {
+      const record = await Diagnosis.create({
+        mobile: cleanMobile,
+        crop: diagnosis.crop || diagnosis.cropEn || 'Crop',
+        cropEn: diagnosis.cropEn || diagnosis.crop || 'Crop',
+        condition: diagnosis.condition || diagnosis.disease || diagnosis.diseaseEn || 'Healthy',
+        diseaseEn: diagnosis.diseaseEn || diagnosis.disease || diagnosis.condition || 'Healthy',
+        severity: diagnosis.severity || 'Moderate',
+        confidence: parseConfidence(diagnosis.confidence),
+        symptoms: safeArr(diagnosis.symptoms),
+        organicSolution: safeArr(diagnosis.organicSolution || diagnosis.organicTreatment),
+        chemicalSolution: safeArr(diagnosis.chemicalSolution || diagnosis.chemicalTreatment),
+        prevention: diagnosis.prevention || '',
+        imageUrl: diagnosis.imageUrl || ''
+      });
+      console.log(`🍃 [MongoDB] Diagnosis recorded for mobile: ${cleanMobile} (ID: ${record._id})`);
+      return res.json({ success: true, source: 'MongoDB', record });
+    }
+
+    return res.json({ success: true, source: 'Store', message: 'Saved to session store' });
+  } catch (err) {
+    console.error('⚠️ [MongoDB Diagnosis Save Error]:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.get(['/api/diagnosis-history', '/diagnosis-history'], async (req, res) => {
+  try {
+    const mobile = req.query.mobile || farmerProfileStore.mobile;
+    const connected = isDbConnected() || await ensureDbConnected();
+    if (connected && mobile) {
+      const cleanMobile = otpService.normalizeMobile(mobile);
+      const records = await Diagnosis.find({ mobile: cleanMobile })
+        .sort({ createdAt: -1 })
+        .limit(20)
+        .lean();
+      return res.json({ success: true, source: 'MongoDB', count: records.length, records });
+    }
+    return res.json({ success: true, source: 'Store', count: 0, records: [] });
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 app.post(['/api/send-advisory-email', '/send-advisory-email'], (req, res) => {
@@ -786,6 +995,26 @@ app.post(['/api/send-advisory-email', '/send-advisory-email'], (req, res) => {
 // Health check
 app.get(['/api/health', '/health'], (req, res) => {
   res.json({ status: "OK", server: "KrishiMitra AI Backend", demoMode: DEMO_MODE });
+});
+
+// React SPA Fallback: serve React App index.html for client-side routing
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads') || req.path.includes('.')) {
+    return next();
+  }
+  const distIndex = path.join(__dirname, '../dist/index.html');
+  if (fs.existsSync(distIndex)) {
+    return res.sendFile(distIndex);
+  }
+  next();
+});
+
+// Global API error handler ensuring JSON responses
+app.use((err, req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/otp')) {
+    return res.status(err.status || 500).json({ success: false, error: err.message || 'Internal Server Error' });
+  }
+  next(err);
 });
 
 // Export app for Vercel Serverless Function deployment

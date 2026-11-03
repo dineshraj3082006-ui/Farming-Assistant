@@ -263,6 +263,49 @@ const CropDoctorService = {
       preventionMl: "ആഴ്ചയിലൊരിക്കൽ ചെടികൾ നിരീക്ഷിക്കുന്നത് തുടരുക.",
       audioSummaryEn: "Your plant leaf is completely healthy! Continue regular organic care with Jiwamrita and regular watering.",
       audioSummaryMl: "നിങ്ങളുടെ ചെടിയുടെ ഇല തികച്ചും ആരോഗ്യവത്താണ്! പതിവ് ജൈവ പരിചരണവും നനയും തുടരുക."
+    },
+
+    grape_black_rot: {
+      cropEn: "Grape",
+      cropMl: "മുന്തിരി (Grape)",
+      diseaseEn: "Black Rot (Guignardia bidwellii)",
+      diseaseMl: "മുന്തിരിയിലെ കരിംചീയൽ രോഗം (Black Rot)",
+      confidence: "95%",
+      severity: "Moderate",
+      symptomsEn: [
+        "Small reddish-brown circular spots on leaves that develop dark margins and tiny black pycnidia specks",
+        "Infected grape berries turn soft, rot, shrivel, and transform into hard, wrinkled black mummies",
+        "Dark elongated sunken cankers on young grapevine shoots and tendrils"
+      ],
+      symptomsMl: [
+        "ഇലകളിൽ ചെറിയ തവിട്ടുനിറത്തിലുള്ള പുള്ളികൾ പടരുന്നു",
+        "മുന്തിരിങ്ങകൾ ചുരുങ്ങി ഉണങ്ങി കറുത്തു കല്ലിക്കുന്നത് (Black rot mummies)",
+        "തണ്ടുകളിലും ഇലത്തണ്ടുകളിലും കറുത്ത വ്രണങ്ങൾ രൂപപ്പെടുന്നത്"
+      ],
+      organicTreatmentEn: [
+        "Remove and safely burn all shriveled mummified grape clusters and infected canes during pruning",
+        "Foliar spray of 1% Bordeaux Mixture or Copper Oxychloride (3g/L) before monsoon showers",
+        "Drench soil with Trichoderma viride enriched compost around the vine base",
+        "Spray Pseudomonas fluorescens (20g/L) every 10–14 days to boost foliar resistance"
+      ],
+      organicTreatmentMl: [
+        "രോഗം ബാധിച്ച ഉണങ്ങിയ മുന്തിരിക്കുലകളും കമ്പുകളും വെട്ടിമാറ്റി നശിപ്പിക്കുക",
+        "മഴയ്ക്ക് മുമ്പായി 1% ബോർഡോ മിശ്രിതം അല്ലെങ്കിൽ കോപ്പർ ഓക്സിക്ലോറൈഡ് (3g/L) തളിക്കുക",
+        "ട്രൈക്കോഡെർമ ചേർത്ത ചാണകപ്പൊടി മുന്തിരിത്തടത്തിൽ ചേർക്കുക",
+        "സ്യൂഡോമോണസ് (20g/L) ഇലകളിൽ തളിക്കുക"
+      ],
+      chemicalTreatmentEn: [
+        "Spray Mancozeb 75 WP (2g/L) or Tebuconazole (1ml/L) at 10-14 day intervals during berry cluster formation",
+        "Ensure excellent vine canopy ventilation using Bower trellising system"
+      ],
+      chemicalTreatmentMl: [
+        "രോഗബാധ രൂക്ഷമാണെങ്കിൽ മാങ്കോസെബ് (2g/L) തളിക്കുക",
+        "പന്തലിൽ നല്ല വെയിലും കാറ്റും ഉറപ്പാക്കുക"
+      ],
+      preventionEn: "Ensure proper vine spacing and bower pruning to allow sunlight penetration and rapid foliage drying.",
+      preventionMl: "പന്തലിൽ നല്ല വെയിൽ ലഭിക്കാനും കാറ്റോടാനും ഇടയകലം പാലിച്ച് കമ്പുകോതൽ നടത്തുക.",
+      audioSummaryEn: "Grape Black Rot detected with 95% confidence. Remove mummified berries, prune for air circulation, and spray 1% Bordeaux Mixture or Mancozeb.",
+      audioSummaryMl: "മുന്തിരിയിൽ കരിംചീയൽ രോഗം കണ്ടെത്തി. ഉണങ്ങിയ മുന്തിരിക്കുലകൾ മാറ്റി 1% ബോർഡോ മിശ്രിതം തളിക്കുക."
     }
   },
 
@@ -456,7 +499,7 @@ const CropDoctorService = {
       // Step C: Fallback to regional agronomic knowledge recovery if crop name is known
       const lowerName = (presetKey + ' ' + (file ? (file.originalname || file.filename || '') : '')).toLowerCase();
       if (lowerName.includes('banana') || lowerName.includes('വാഴ') || lowerName.includes('nendran') || lowerName.includes('sigatoka') ||
-          lowerName.includes('grape') || lowerName.includes('മുന്തിരി') || lowerName.includes('blackrot') ||
+          lowerName.includes('grape') || lowerName.includes('grapes') || lowerName.includes('graps') || lowerName.includes('munthiri') || lowerName.includes('മുന്തിരി') || lowerName.includes('blackrot') ||
           lowerName.includes('coconut') || lowerName.includes('തെങ്ങ്') ||
           lowerName.includes('chilli') || lowerName.includes('മുളക്') ||
           lowerName.includes('tomato') || lowerName.includes('തക്കാളി') ||
@@ -543,8 +586,8 @@ const CropDoctorService = {
     } else if (k.includes('apple') || k.includes('ആപ്പിൾ')) {
       record = plantKnowledgeBase['Apple___Apple_scab'] || this.diseaseDatabase.tomato_early_blight;
       rawKey = 'Apple___Apple_scab';
-    } else if (k.includes('grape') || k.includes('മുന്തിരി')) {
-      record = plantKnowledgeBase['Grape___Black_rot'] || this.diseaseDatabase.tomato_early_blight;
+    } else if (k.includes('grape') || k.includes('grapes') || k.includes('graps') || k.includes('munthiri') || k.includes('മുന്തിരി')) {
+      record = this.diseaseDatabase.grape_black_rot || plantKnowledgeBase['Grape___Black_rot'];
       rawKey = 'Grape___Black_rot';
     } else if (k.includes('healthy') || k.includes('clean') || k.includes('good') || k.includes('നല്ലത്')) {
       record = this.diseaseDatabase.healthy_leaf;
